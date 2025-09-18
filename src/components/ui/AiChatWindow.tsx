@@ -126,6 +126,7 @@ export function AiChatWindow() {
     const [chatSession, setChatSession] = useState<ChatSession | null>(null);
     const [isInitializing, setIsInitializing] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
     
     const { textareaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 50,
@@ -181,6 +182,20 @@ export function AiChatWindow() {
     useEffect(() => {
         initializeChatSession();
     }, []);
+
+    // Auto-scroll to bottom when messages change
+    const scrollToBottom = () => {
+        setTimeout(() => {
+            messagesEndRef.current?.scrollIntoView({ 
+                behavior: "smooth",
+                block: "end"
+            });
+        }, 100);
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, isTyping]);
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === "Enter" && !e.shiftKey) {
@@ -389,6 +404,9 @@ export function AiChatWindow() {
                                 </motion.div>
                             )}
                         </AnimatePresence>
+                        
+                        {/* Invisible element to scroll to */}
+                        <div ref={messagesEndRef} />
                     </div>
 
                     {/* Input Area */}
