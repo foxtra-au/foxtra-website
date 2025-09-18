@@ -110,18 +110,77 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 )
 Textarea.displayName = "Textarea"
 
+interface ChatSession {
+    chat_id: string;
+    access_token?: string;
+    status: string;
+    demo_mode?: boolean;
+}
+
 export function AiChatWindow() {
     const [value, setValue] = useState("");
     const [isTyping, setIsTyping] = useState(false);
     const [isPending, startTransition] = useTransition();
     const [inputFocused, setInputFocused] = useState(false);
-    const [messages, setMessages] = useState<Array<{id: string, text: string, isUser: boolean}>>([]);
+    const [messages, setMessages] = useState<Array<{id: string, text: string, isUser: boolean, timestamp?: string}>>([]);
+    const [chatSession, setChatSession] = useState<ChatSession | null>(null);
+    const [isInitializing, setIsInitializing] = useState(false);
+    const [error, setError] = useState<string | null>(null);
     
     const { textareaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 50,
         maxHeight: 120,
     });
 
+
+    // Initialize chat session
+    const initializeChatSession = async () => {
+        if (isInitializing || chatSession) return;
+        
+        setIsInitializing(true);
+        setError(null);
+        
+        try {
+            const response = await fetch('/api/chat/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_id: `user-${Date.now()}`,
+                    user_name: 'Website Visitor'
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to create chat session: ${response.status}`);
+            }
+
+            const sessionData = await response.json();
+            setChatSession(sessionData);
+            
+            // Add welcome message
+            if (sessionData.demo_mode) {
+                setMessages([{
+                    id: 'welcome',
+                    text: "👋 Hi there! I'm Foxtra's AI assistant. I'm here to help you learn about our AI services. What would you like to know?",
+                    isUser: false,
+                    timestamp: new Date().toISOString()
+                }]);
+            }
+            
+        } catch (err) {
+            console.error('Failed to initialize chat:', err);
+            setError(err instanceof Error ? err.message : 'Failed to initialize chat');
+        } finally {
+            setIsInitializing(false);
+        }
+    };
+
+    // Initialize chat session on component mount
+    useEffect(() => {
+        initializeChatSession();
+    }, []);
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === "Enter" && !e.shiftKey) {
@@ -132,49 +191,98 @@ export function AiChatWindow() {
         }
     };
 
-    const handleSendMessage = (customMessage?: string) => {
+    const handleSendMessage = async (customMessage?: string) => {
         const messageText = customMessage || value.trim();
-        if (messageText) {
-            const userMessage = {
-                id: Date.now().toString(),
-                text: messageText,
-                isUser: true
+        if (!messageText || isTyping || !chatSession) return;
+        
+        // Add user message immediately
+        const userMessage = {
+            id: Date.now().toString(),
+            text: messageText,
+            isUser: true,
+            timestamp: new Date().toISOString()
+        };
+        
+        setMessages(prev => [...prev, userMessage]);
+        setValue("");
+        adjustHeight(true);
+        setError(null);
+        
+        // Start AI response
+        setIsTyping(true);
+        
+        try {
+            const response = await fetch('/api/chat/completion', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: chatSession.chat_id,
+                    message: messageText,
+                    access_token: chatSession.access_token
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Failed to get AI response: ${response.status}`);
+            }
+
+            const data = await response.json();
+            
+            const aiResponse = {
+                id: data.message_id || `ai-${Date.now()}`,
+                text: data.response,
+                isUser: false,
+                timestamp: data.timestamp || new Date().toISOString()
             };
             
-            setMessages(prev => [...prev, userMessage]);
-            setValue("");
-            adjustHeight(true);
+            setMessages(prev => [...prev, aiResponse]);
             
-            startTransition(() => {
-                setIsTyping(true);
-                setTimeout(() => {
-                    const aiResponse = {
-                        id: (Date.now() + 1).toString(),
-                        text: getAIResponse(messageText),
-                        isUser: false
-                    };
-                    setMessages(prev => [...prev, aiResponse]);
-                    setIsTyping(false);
-                }, 2000);
-            });
+        } catch (err) {
+            console.error('Failed to send message:', err);
+            setError('Failed to send message. Please try again.');
+            
+            // Add fallback error message
+            const errorResponse = {
+                id: `error-${Date.now()}`,
+                text: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
+                isUser: false,
+                timestamp: new Date().toISOString()
+            };
+            
+            setMessages(prev => [...prev, errorResponse]);
+        } finally {
+            setIsTyping(false);
         }
     };
 
-    const getAIResponse = (question: string): string => {
-        const lowerQuestion = question.toLowerCase();
+    // Cleanup function to end chat session
+    const endChatSession = async () => {
+        if (!chatSession) return;
         
-        if (lowerQuestion.includes('service') || lowerQuestion.includes('offer')) {
-            return "We offer AI chat agents, voice agents, custom development, and marketing automation. Our solutions help businesses automate customer interactions and scale operations efficiently.";
-        } else if (lowerQuestion.includes('cost') || lowerQuestion.includes('price') || lowerQuestion.includes('much')) {
-            return "Our AI chat agents start at $299/month with 1,000 conversations included. Custom development projects begin at $5,000. We offer flexible pricing based on your specific needs.";
-        } else if (lowerQuestion.includes('setup') || lowerQuestion.includes('long') || lowerQuestion.includes('time')) {
-            return "Most AI agents can be deployed within 24-48 hours. This includes integration with your systems, training on your content, and testing. We'll have you up and running quickly!";
-        } else if (lowerQuestion.includes('demo') || lowerQuestion.includes('schedule') || lowerQuestion.includes('meeting')) {
-            return "I'd be happy to schedule a demo! You can book a 30-minute call with our team to see the AI agent in action and discuss your specific use case. Would you like me to send you a calendar link?";
-        } else {
-            return "Thanks for your question! Our AI agents can help with customer support, lead qualification, appointment booking, and more. Would you like to know more about any specific service?";
+        try {
+            await fetch('/api/chat/end', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: chatSession.chat_id,
+                    access_token: chatSession.access_token
+                }),
+            });
+        } catch (err) {
+            console.error('Failed to end chat session:', err);
         }
     };
+
+    // Cleanup on unmount
+    useEffect(() => {
+        return () => {
+            endChatSession();
+        };
+    }, [chatSession]);
     
 
     return (
@@ -194,7 +302,7 @@ export function AiChatWindow() {
                             className="inline-block"
                         >
                             <h3 className="text-xl font-medium tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white/90 to-white/60 pb-1">
-                                Try Our AI Chat Agent
+                                {isInitializing ? "Connecting..." : "Try Our AI Chat Agent"}
                             </h3>
                             <motion.div 
                                 className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
@@ -209,8 +317,21 @@ export function AiChatWindow() {
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.3 }}
                         >
-                            Ask a question or try a quick prompt
+                            {isInitializing ? "Setting up your chat session..." : 
+                             error ? "Connection error - trying demo mode" : 
+                             chatSession?.demo_mode ? "Demo mode - Ask me anything!" :
+                             "Connected to Retell AI - Ask me anything!"}
                         </motion.p>
+                        
+                        {error && (
+                            <motion.div 
+                                className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg p-2"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                            >
+                                {error}
+                            </motion.div>
+                        )}
                     </div>
 
                     {/* Chat Messages */}
@@ -313,7 +434,13 @@ export function AiChatWindow() {
                                 onClick={() => handleSendMessage("Schedule a demo")}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="flex items-center gap-2 px-3 py-2 bg-white/[0.03] hover:bg-white/[0.08] rounded-lg text-sm text-white/70 hover:text-white/90 transition-all"
+                                disabled={isTyping || !chatSession || isInitializing}
+                                className={cn(
+                                    "flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all",
+                                    (chatSession && !isInitializing)
+                                        ? "bg-white/[0.03] hover:bg-white/[0.08] text-white/70 hover:text-white/90"
+                                        : "bg-white/[0.02] text-white/40 cursor-not-allowed"
+                                )}
                             >
                                 <div className="text-white/60">
                                     <Calendar className="w-4 h-4" />
@@ -326,15 +453,15 @@ export function AiChatWindow() {
                                 onClick={() => handleSendMessage()}
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                disabled={isTyping || !value.trim()}
+                                disabled={isTyping || !value.trim() || !chatSession || isInitializing}
                                 className={cn(
                                     "px-4 py-2 rounded-lg text-sm font-medium transition-all",
                                     "flex items-center gap-2",
-                                    value.trim()
+                                    (value.trim() && chatSession && !isInitializing)
                                         ? "text-black shadow-lg"
                                         : "bg-white/[0.05] text-white/40"
                                 )}
-                                style={value.trim() ? { backgroundColor: '#FFCC02' } : {}}
+                                style={(value.trim() && chatSession && !isInitializing) ? { backgroundColor: '#FFCC02' } : {}}
                             >
                                 {isTyping ? (
                                     <LoaderIcon className="w-4 h-4 animate-spin" />
