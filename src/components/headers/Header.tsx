@@ -35,6 +35,7 @@ import {
   Home,
   Car,
   Shield,
+  DollarSign,
 } from 'lucide-react'
 import { navigationConfig, authLinks, type AuthLink } from '@/config/nav'
 
@@ -64,6 +65,7 @@ const iconMap = {
   Home,
   Car,
   Shield,
+  DollarSign,
 }
 
 export function Header() {

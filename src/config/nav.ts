@@ -68,6 +68,12 @@ export const navigationConfig: NavItem[] = [
             href: "/services/cloud-management",
             iconName: "Cloud",
           },
+          {
+            label: "Pricing",
+            description: "Transparent pricing for all services",
+            href: "/pricing",
+            iconName: "DollarSign",
+          },
         ],
       },
     ],

@@ -98,9 +98,9 @@ const FAQTabs: React.FC<FAQTabsProps> = ({ categories, selected, setSelected }) 
         key={key}
         onClick={() => setSelected(key)}
         className={cn(
-          "relative overflow-hidden whitespace-nowrap rounded-md border px-3 py-1.5 text-sm font-medium transition-colors duration-500",
+          "relative overflow-hidden whitespace-nowrap rounded-md border px-3 py-2.5 text-sm font-medium transition-colors duration-500",
           selected === key
-            ? "border-purple-500 text-white"
+            ? "border-rose-500 text-white"
             : "border-white/20 bg-transparent text-white/70 hover:text-white"
         )}
       >
