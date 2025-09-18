@@ -12,9 +12,10 @@ interface ServiceBannerProps {
     badge?: string;
     features: string[];
     bannerImage?: string;
+    rightComponent?: React.ReactNode;
 }
 
-export function ServiceBanner({ title, description, badge, features, bannerImage }: ServiceBannerProps) {
+export function ServiceBanner({ title, description, badge, features, bannerImage, rightComponent }: ServiceBannerProps) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: (i: number) => ({
@@ -91,7 +92,7 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                         </motion.div>
                     </div>
 
-                    {/* Right side - Features or Image */}
+                    {/* Right side - Custom Component, Features or Image */}
                     <div className="lg:text-left">
                         <motion.div
                             custom={4}
@@ -99,7 +100,9 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                             initial="hidden"
                             animate="visible"
                         >
-                            {bannerImage || features.length === 0 ? (
+                            {rightComponent ? (
+                                rightComponent
+                            ) : bannerImage || features.length === 0 ? (
                                 <div className="flex justify-center">
                                     <img
                                         src={bannerImage || "/services/custom-development.png"}
