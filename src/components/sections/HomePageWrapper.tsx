@@ -114,7 +114,7 @@ export function HomePageWrapper({ children }: HomePageWrapperProps) {
         />
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 pb-6">
         {children}
       </div>
     </div>
