@@ -5,12 +5,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import {
     SendIcon,
-    XIcon,
     LoaderIcon,
-    Sparkles,
-    MessageCircle,
-    Clock,
-    DollarSign,
     Calendar,
     User,
     Bot,
@@ -69,11 +64,6 @@ function useAutoResizeTextarea({
     return { textareaRef, adjustHeight };
 }
 
-interface QuickQuestion {
-    icon: React.ReactNode;
-    question: string;
-    category: string;
-}
 
 interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -132,28 +122,6 @@ export function AiChatWindow() {
         maxHeight: 120,
     });
 
-    const quickQuestions: QuickQuestion[] = [
-        { 
-            icon: <MessageCircle className="w-4 h-4" />, 
-            question: "What services do you offer?", 
-            category: "Services" 
-        },
-        { 
-            icon: <DollarSign className="w-4 h-4" />, 
-            question: "How much does it cost?", 
-            category: "Pricing" 
-        },
-        { 
-            icon: <Clock className="w-4 h-4" />, 
-            question: "How long does setup take?", 
-            category: "Timeline" 
-        },
-        { 
-            icon: <Calendar className="w-4 h-4" />, 
-            question: "Schedule a demo", 
-            category: "Demo" 
-        },
-    ];
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (e.key === "Enter" && !e.shiftKey) {
@@ -208,9 +176,6 @@ export function AiChatWindow() {
         }
     };
     
-    const selectQuickQuestion = (question: string) => {
-        handleSendMessage(question);
-    };
 
     return (
         <div className="w-full h-full flex flex-col bg-transparent text-white relative">
@@ -342,7 +307,20 @@ export function AiChatWindow() {
                             />
                         </div>
 
-                        <div className="p-3 border-t border-white/[0.1] flex items-center justify-end">
+                        <div className="p-3 border-t border-white/[0.1] flex items-center justify-between">
+                            <motion.button
+                                type="button"
+                                onClick={() => handleSendMessage("Schedule a demo")}
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="flex items-center gap-2 px-3 py-2 bg-white/[0.03] hover:bg-white/[0.08] rounded-lg text-sm text-white/70 hover:text-white/90 transition-all"
+                            >
+                                <div className="text-white/60">
+                                    <Calendar className="w-4 h-4" />
+                                </div>
+                                <span>Schedule a demo</span>
+                            </motion.button>
+                            
                             <motion.button
                                 type="button"
                                 onClick={() => handleSendMessage()}
@@ -368,26 +346,6 @@ export function AiChatWindow() {
                         </div>
                     </motion.div>
 
-                    {/* Quick Questions */}
-                    <div className="grid grid-cols-2 gap-2">
-                        {quickQuestions.map((question, index) => (
-                            <motion.button
-                                key={question.question}
-                                onClick={() => selectQuickQuestion(question.question)}
-                                className="flex items-center gap-2 px-3 py-2 bg-white/[0.03] hover:bg-white/[0.08] rounded-lg text-sm text-white/70 hover:text-white/90 transition-all text-left group"
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 + 0.4 }}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                            >
-                                <div className="text-white/60 group-hover:text-white/80 transition-colors">
-                                    {question.icon}
-                                </div>
-                                <span className="text-xs leading-tight">{question.question}</span>
-                            </motion.button>
-                        ))}
-                    </div>
                 </motion.div>
             </div>
         </div>
