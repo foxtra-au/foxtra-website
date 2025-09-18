@@ -1,6 +1,5 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServiceSections, ServicePageWrapper, ChatDemo, AiChatAgentFeatures } from '@/components/sections'
-import { ChatWindow } from '@/components/ui/ChatWindow'
 import { AiChatWindow } from '@/components/ui/AiChatWindow'
 import { FAQ } from '@/components/ui/faq-tabs'
 import { aiChatAgentFAQ } from '@/data/faq-data'
@@ -41,7 +40,6 @@ export default function AiChatAgent() {
         faqData={aiChatAgentFAQ.faqData}
         className="mt-16"
       />
-      <ChatWindow />
     </ServicePageWrapper>
   )
 }
