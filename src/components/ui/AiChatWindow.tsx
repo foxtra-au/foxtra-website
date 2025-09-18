@@ -12,6 +12,8 @@ import {
     Clock,
     DollarSign,
     Calendar,
+    User,
+    Bot,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as React from "react"
@@ -212,9 +214,9 @@ export function AiChatWindow() {
 
     return (
         <div className="w-full h-full flex flex-col bg-transparent text-white relative">
-            <div className="flex-1 flex flex-col max-w-lg mx-auto w-full">
+            <div className="flex-1 flex flex-col w-full">
                 <motion.div 
-                    className="relative z-10 space-y-6"
+                    className="relative z-10 space-y-6 max-w-full h-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-2xl p-6"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -256,18 +258,28 @@ export function AiChatWindow() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     className={cn(
-                                        "flex",
+                                        "flex items-start gap-2",
                                         message.isUser ? "justify-end" : "justify-start"
                                     )}
                                 >
+                                    {!message.isUser && (
+                                        <div className="flex size-8 shrink-0 items-center justify-center rounded-md border border-white/20 text-white/60 bg-white/5">
+                                            <Bot className="h-4 w-4" />
+                                        </div>
+                                    )}
                                     <div className={cn(
-                                        "max-w-[80%] p-3 rounded-lg text-sm",
+                                        "max-w-[70%] p-3 rounded-lg text-sm",
                                         message.isUser 
-                                            ? "bg-white text-black ml-4" 
-                                            : "bg-white/10 text-white/90 mr-4"
+                                            ? "bg-white text-black" 
+                                            : "bg-white/10 text-white/90"
                                     )}>
                                         {message.text}
                                     </div>
+                                    {message.isUser && (
+                                        <div className="flex size-8 shrink-0 items-center justify-center rounded-md border border-white/20 text-white/60 bg-white/5">
+                                            <User className="h-4 w-4" />
+                                        </div>
+                                    )}
                                 </motion.div>
                             ))}
                         </AnimatePresence>
@@ -276,12 +288,15 @@ export function AiChatWindow() {
                         <AnimatePresence>
                             {isTyping && (
                                 <motion.div 
-                                    className="flex justify-start"
+                                    className="flex items-start gap-2 justify-start"
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                 >
-                                    <div className="bg-white/10 text-white/90 mr-4 p-3 rounded-lg flex items-center gap-2">
+                                    <div className="flex size-8 shrink-0 items-center justify-center rounded-md border border-white/20 text-white/60 bg-white/5">
+                                        <Bot className="h-4 w-4" />
+                                    </div>
+                                    <div className="bg-white/10 text-white/90 p-3 rounded-lg flex items-center gap-2">
                                         <span className="text-sm">AI is typing</span>
                                         <TypingDots />
                                     </div>
@@ -292,7 +307,7 @@ export function AiChatWindow() {
 
                     {/* Input Area */}
                     <motion.div 
-                        className="relative backdrop-blur-xl bg-white/[0.05] rounded-xl border border-white/[0.1] shadow-lg"
+                        className="relative rounded-xl border border-white/[0.1]"
                         initial={{ scale: 0.98 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.1 }}
@@ -338,10 +353,10 @@ export function AiChatWindow() {
                                     "px-4 py-2 rounded-lg text-sm font-medium transition-all",
                                     "flex items-center gap-2",
                                     value.trim()
-                                        ? "text-white shadow-lg"
+                                        ? "text-black shadow-lg"
                                         : "bg-white/[0.05] text-white/40"
                                 )}
-                                style={value.trim() ? { backgroundColor: '#FF335C' } : {}}
+                                style={value.trim() ? { backgroundColor: '#FFCC02' } : {}}
                             >
                                 {isTyping ? (
                                     <LoaderIcon className="w-4 h-4 animate-spin" />
