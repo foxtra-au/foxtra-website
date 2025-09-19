@@ -25,9 +25,9 @@ export function DesignShowcase() {
               </div>
               
               <div className="flex justify-center"> 
-                <LiquidButton className="text-white border rounded-full" size={'xl'}>
-                  Let's Get Started
-                </LiquidButton> 
+              <LiquidButton className="text-white border rounded-full" size={'xl'}>
+                Let&apos;s Get Started
+              </LiquidButton>
               </div> 
             </main>
         </div>

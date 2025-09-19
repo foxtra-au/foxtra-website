@@ -83,7 +83,7 @@ export const ImageAutoSlider = ({
         }
       `}</style>
       
-      <div className={cn("w-full min-h-screen relative overflow-hidden flex items-center justify-center", className)}>
+      <div className={cn("w-full relative overflow-hidden flex items-center justify-center", className)}>
         {/* Scrolling images container */}
         <div className="relative z-10 w-full flex items-center justify-center py-8">
           <div className="scroll-container w-full max-w-6xl">

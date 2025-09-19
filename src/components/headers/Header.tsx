@@ -5,7 +5,6 @@ import { useState } from 'react'
 import MegaMenu from './megamenu/MegaMenu'
 import type { MegaMenuItem } from './megamenu/MegaMenu'
 import { Button } from '@/components/ui/Button'
-import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { 
   Menu, 
   X, 
@@ -116,7 +115,6 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
-            <ThemeToggle />
             {authLinks.map((link) => (
               <Link
                 key={link.label}
@@ -124,7 +122,7 @@ export function Header() {
                 className={
                   link.isPrimary
                     ? "inline-flex items-center justify-center rounded-sm border border-transparent px-6 py-2 text-base font-medium text-white shadow-sm transition-all duration-200 hover:shadow-lg transform hover:scale-105 drop-shadow-lg"
-                    : "text-sm font-medium text-white/70 hover:text-white transition-colors drop-shadow-md"
+                    : "inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white/90 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md transition-all duration-300 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 drop-shadow-md"
                 }
                 style={link.isPrimary ? { backgroundColor: '#FF335C' } : undefined}
               >
@@ -202,10 +200,6 @@ export function Header() {
               ))}
               <div className="pt-4 border-t border-white/10">
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between px-3 py-2">
-                    <span className="text-base font-medium text-white/70 mega-menu-text">Theme</span>
-                    <ThemeToggle />
-                  </div>
                   {authLinks.map((link) => (
                     <Link
                       key={link.label}
@@ -213,7 +207,7 @@ export function Header() {
                       className={
                         link.isPrimary
                           ? "block w-full bg-rose-600 hover:bg-rose-700 text-white border-0 rounded-full px-4 py-2 text-center font-medium transition-colors"
-                          : "block px-3 py-2 text-base font-medium text-white/70 hover:text-white hover:bg-white/10 rounded-md mega-menu-text"
+                          : "block w-full px-4 py-2 text-base font-medium text-white/90 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md transition-all duration-300 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 text-center"
                       }
                       onClick={() => setIsMobileMenuOpen(false)}
                     >

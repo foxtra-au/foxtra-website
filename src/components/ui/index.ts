@@ -54,5 +54,3 @@ export { PricingBanner } from './PricingBanner'
 export { default as MegaMenu } from './mega-menu'
 export type { MegaMenuItem, MegaMenuProps } from './mega-menu'
 
-// Theme Components
-export { ThemeToggle } from './ThemeToggle'

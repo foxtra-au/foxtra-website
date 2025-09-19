@@ -34,9 +34,9 @@ export function PortfolioShowcase() {
       variants={fadeUpVariants}
       initial="hidden"
       animate="visible"
-      className="mt-32 max-w-6xl mx-auto"
+      className="pt-24 max-w-6xl mx-auto"
     >
-      <div className="text-left mb-3 lg:mb-1">
+      <div className="text-left mb-6">
         <h2 className="text-3xl font-bold text-white mb-4">Our Portfolio</h2>
         <p className="text-white/60 text-lg">Showcasing innovative projects and successful implementations</p>
       </div>
@@ -45,7 +45,7 @@ export function PortfolioShowcase() {
           images={portfolioImages}
           duration={25}
           imageSize="md"
-          className="min-h-[80vh] [&>div:first-child]:py-2 lg:[&>div:first-child]:py-1"
+          className="[&>div:first-child]:py-2 lg:[&>div:first-child]:py-1"
         />
       </section>
     </motion.div>
