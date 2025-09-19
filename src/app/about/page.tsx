@@ -1,7 +1,8 @@
 import { Container } from '@/components/ui/Container'
-import { Card } from '@/components/ui/Card'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { CompanyBanner } from '@/components/ui/CompanyBanner'
+import Link from 'next/link'
 
 export default function About() {
   return (
@@ -33,16 +34,24 @@ export default function About() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card
-              title="Our Mission"
-              description="To create innovative AI solutions that empower businesses and individuals to achieve more."
-              icon="🚀"
-            />
-            <Card
-              title="Our Vision"
-              description="A world where AI seamlessly integrates with everyday applications to enhance productivity and creativity."
-              icon="🎯"
-            />
+            <Card>
+              <CardHeader>
+                <div className="text-4xl mb-2">🚀</div>
+                <CardTitle>Our Mission</CardTitle>
+                <CardDescription>
+                  To create innovative AI solutions that empower businesses and individuals to achieve more.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card>
+              <CardHeader>
+                <div className="text-4xl mb-2">🎯</div>
+                <CardTitle>Our Vision</CardTitle>
+                <CardDescription>
+                  A world where AI seamlessly integrates with everyday applications to enhance productivity and creativity.
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
@@ -73,9 +82,11 @@ export default function About() {
             <p className="text-xl text-gray-600 mb-8">
               Join us on this exciting journey and experience the power of modern web development.
             </p>
-            <Button href="/get-started" variant="primary" size="lg">
-              Start Building
-            </Button>
+            <Link href="/get-started">
+              <Button variant="default" size="lg">
+                Start Building
+              </Button>
+            </Link>
           </div>
         </div>
         </Container>

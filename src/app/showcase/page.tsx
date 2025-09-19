@@ -1,9 +1,10 @@
 import { Container } from '@/components/ui/Container'
-import { Card } from '@/components/ui/Card'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { Grid } from '@/components/ui/Grid'
 import { Stack } from '@/components/ui/Stack'
+import Link from 'next/link'
 
 export default function Showcase() {
   return (
@@ -19,76 +20,94 @@ export default function Showcase() {
         </div>
 
         <Grid cols={3} gap="lg" className="mb-16">
-          <Card
-            title="Layout Components"
-            description="Responsive containers, grids, and stacking utilities"
-            icon="📐"
-          >
-            <Stack spacing="sm">
-              <Badge>Container</Badge>
-              <Badge variant="secondary">Grid</Badge>
-              <Badge variant="outline">Stack</Badge>
-            </Stack>
+          <Card>
+            <CardHeader>
+              <div className="text-4xl mb-2">📐</div>
+              <CardTitle>Layout Components</CardTitle>
+              <CardDescription>Responsive containers, grids, and stacking utilities</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Stack spacing="sm">
+                <Badge>Container</Badge>
+                <Badge variant="secondary">Grid</Badge>
+                <Badge variant="outline">Stack</Badge>
+              </Stack>
+            </CardContent>
           </Card>
 
-          <Card
-            title="Navigation"
-            description="Headers, sidebars, and navigation elements"
-            icon="🧭"
-          >
-            <Stack spacing="sm">
-              <Badge>Navbar</Badge>
-              <Badge variant="secondary">Sidebar</Badge>
-              <Badge variant="outline">Breadcrumb</Badge>
-            </Stack>
+          <Card>
+            <CardHeader>
+              <div className="text-4xl mb-2">🧭</div>
+              <CardTitle>Navigation</CardTitle>
+              <CardDescription>Headers, sidebars, and navigation elements</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Stack spacing="sm">
+                <Badge>Navbar</Badge>
+                <Badge variant="secondary">Sidebar</Badge>
+                <Badge variant="outline">Breadcrumb</Badge>
+              </Stack>
+            </CardContent>
           </Card>
 
-          <Card
-            title="Forms"
-            description="Input fields, buttons, and form controls"
-            icon="📝"
-          >
-            <Stack spacing="sm">
-              <Badge>Input</Badge>
-              <Badge variant="secondary">Button</Badge>
-              <Badge variant="outline">Select</Badge>
-            </Stack>
+          <Card>
+            <CardHeader>
+              <div className="text-4xl mb-2">📝</div>
+              <CardTitle>Forms</CardTitle>
+              <CardDescription>Input fields, buttons, and form controls</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Stack spacing="sm">
+                <Badge>Input</Badge>
+                <Badge variant="secondary">Button</Badge>
+                <Badge variant="outline">Select</Badge>
+              </Stack>
+            </CardContent>
           </Card>
 
-          <Card
-            title="Data Display"
-            description="Tables, badges, avatars, and progress indicators"
-            icon="📊"
-          >
-            <Stack spacing="sm">
-              <Badge>Table</Badge>
-              <Badge variant="secondary">Badge</Badge>
-              <Badge variant="outline">Avatar</Badge>
-            </Stack>
+          <Card>
+            <CardHeader>
+              <div className="text-4xl mb-2">📊</div>
+              <CardTitle>Data Display</CardTitle>
+              <CardDescription>Tables, badges, avatars, and progress indicators</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Stack spacing="sm">
+                <Badge>Table</Badge>
+                <Badge variant="secondary">Badge</Badge>
+                <Badge variant="outline">Avatar</Badge>
+              </Stack>
+            </CardContent>
           </Card>
 
-          <Card
-            title="Feedback"
-            description="Modals, alerts, loading states, and toasts"
-            icon="💬"
-          >
-            <Stack spacing="sm">
-              <Badge>Modal</Badge>
-              <Badge variant="secondary">Alert</Badge>
-              <Badge variant="outline">Loading</Badge>
-            </Stack>
+          <Card>
+            <CardHeader>
+              <div className="text-4xl mb-2">💬</div>
+              <CardTitle>Feedback</CardTitle>
+              <CardDescription>Modals, alerts, loading states, and toasts</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Stack spacing="sm">
+                <Badge>Modal</Badge>
+                <Badge variant="secondary">Alert</Badge>
+                <Badge variant="outline">Loading</Badge>
+              </Stack>
+            </CardContent>
           </Card>
 
-          <Card
-            title="Advanced"
-            description="Search, file upload, and interactive components"
-            icon="⚡"
-          >
-            <Stack spacing="sm">
-              <Badge>Search</Badge>
-              <Badge variant="secondary">FileUpload</Badge>
-              <Badge variant="outline">Toast</Badge>
-            </Stack>
+          <Card>
+            <CardHeader>
+              <div className="text-4xl mb-2">⚡</div>
+              <CardTitle>Advanced</CardTitle>
+              <CardDescription>Search, file upload, and interactive components</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Stack spacing="sm">
+                <Badge>Search</Badge>
+                <Badge variant="secondary">FileUpload</Badge>
+                <Badge variant="outline">Toast</Badge>
+              </Stack>
+            </CardContent>
           </Card>
         </Grid>
 
@@ -98,12 +117,16 @@ export default function Showcase() {
             Check out our comprehensive component library and start building amazing interfaces.
           </p>
           <div className="flex gap-4 justify-center">
-            <Button href="/components" variant="primary" size="lg">
-              View All Components
-            </Button>
-            <Button href="/get-started" variant="outline" size="lg">
-              Get Started
-            </Button>
+            <Link href="/components">
+              <Button variant="default" size="lg">
+                View All Components
+              </Button>
+            </Link>
+            <Link href="/get-started">
+              <Button variant="outline" size="lg">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>
