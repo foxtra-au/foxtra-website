@@ -124,16 +124,16 @@ export function SocialAdsPricing() {
             <h3 className="text-xl font-semibold text-white mb-4 font-sans">
               What's Included in All Plans
             </h3>
-            <div className="grid md:grid-cols-3 gap-6 text-white/70 font-sans">
-              <div>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-white/70 font-sans">
                 <h4 className="font-semibold text-white mb-2">Setup & Launch</h4>
                 <p>Complete ad account setup and campaign launch</p>
               </div>
-              <div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-white/70 font-sans">
                 <h4 className="font-semibold text-white mb-2">Ongoing Management</h4>
                 <p>Daily monitoring and optimization of your campaigns</p>
               </div>
-              <div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-white/70 font-sans">
                 <h4 className="font-semibold text-white mb-2">Performance Reports</h4>
                 <p>Regular reports showing ROI and campaign performance</p>
               </div>

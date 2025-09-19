@@ -212,7 +212,7 @@ export const navigationConfig: NavItem[] = [
           {
             label: "Contact",
             description: "Get in touch with our team",
-            href: "/support/contact",
+            href: "/contact",
             iconName: "Headphones",
           },
         ],

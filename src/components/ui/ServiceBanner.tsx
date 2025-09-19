@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle, Zap, Target, Users, TrendingUp, ArrowRight } from "lucide-react";
+import { Circle, Zap, Target, Users, TrendingUp, ArrowRight, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedGroup } from "./AnimatedGroup";
 import Image from "next/image";
@@ -11,12 +11,13 @@ interface ServiceBannerProps {
     title: string;
     description: string;
     badge?: string;
-    features: string[];
+    features?: string[];
     bannerImage?: string;
     rightComponent?: React.ReactNode;
+    leftComponent?: React.ReactNode;
 }
 
-export function ServiceBanner({ title, description, badge, features, bannerImage, rightComponent }: ServiceBannerProps) {
+export function ServiceBanner({ title, description, badge, features, bannerImage, rightComponent, leftComponent }: ServiceBannerProps) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: (i: number) => ({
@@ -78,16 +79,28 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                             </p>
                         </motion.div>
 
+                        {/* Left Component */}
+                        {leftComponent && (
+                            <motion.div
+                                custom={3}
+                                variants={fadeUpVariants}
+                                initial="hidden"
+                                animate="visible"
+                            >
+                                {leftComponent}
+                            </motion.div>
+                        )}
+
                         <motion.div
-                            custom={3}
+                            custom={4}
                             variants={fadeUpVariants}
                             initial="hidden"
                             animate="visible"
                         >
                             <button className="group inline-flex items-center px-8 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1" style={{ backgroundColor: '#FF335C', boxShadow: '0 25px 50px -12px rgba(255, 51, 92, 0.25)' }}>
                                 <span className="relative z-10 flex items-center">
-                                    Get Started
-                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                    <Calendar className="mr-2 h-5 w-5" />
+                                    Book Appointment
                                 </span>
                             </button>
                         </motion.div>
@@ -96,14 +109,14 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                     {/* Right side - Custom Component, Features or Image */}
                     <div className="lg:text-left">
                         <motion.div
-                            custom={4}
+                            custom={5}
                             variants={fadeUpVariants}
                             initial="hidden"
                             animate="visible"
                         >
                             {rightComponent ? (
                                 rightComponent
-                            ) : bannerImage || features.length === 0 ? (
+                            ) : bannerImage || !features || features.length === 0 ? (
                                 <div className="flex justify-center relative">
                                     <Image
                                         src={bannerImage || "/services/custom-development.png"}
@@ -120,7 +133,7 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                                         className="space-y-4"
                                         preset="slide"
                                     >
-                                        {features.map((feature, index) => (
+                                        {features?.map((feature, index) => (
                                             <div key={index} className="flex items-center space-x-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
                                                 <div className="w-2 h-2 bg-rose-500 rounded-full"></div>
                                                 <span className="text-white/80 font-light tracking-wide">{feature}</span>

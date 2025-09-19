@@ -117,7 +117,7 @@ const Benefit = ({
       </div>
       
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/benefit:h-8 w-1 rounded-tr-full rounded-br-full bg-white/20 group-hover/benefit:bg-white/40 transition-all duration-200 origin-center" />
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/benefit:h-8 w-1 rounded-tr-full rounded-br-full bg-yellow-500 group-hover/benefit:bg-yellow-400 transition-all duration-200 origin-center" />
         <span className="group-hover/benefit:translate-x-2 transition duration-200 inline-block text-white">
           {title}
         </span>

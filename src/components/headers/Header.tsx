@@ -36,6 +36,7 @@ import {
   Shield,
   DollarSign,
   Globe,
+  Calendar,
 } from 'lucide-react'
 import { navigationConfig, authLinks, type AuthLink } from '@/config/nav'
 
@@ -128,6 +129,7 @@ export function Header() {
                 }
                 style={link.isPrimary ? { backgroundColor: '#FF335C' } : undefined}
               >
+                {link.isPrimary && <Calendar className="h-4 w-4 mr-2" />}
                 {link.label}
               </Link>
             ))}
@@ -208,11 +210,12 @@ export function Header() {
                       href={link.href}
                       className={
                         link.isPrimary
-                          ? "block w-full bg-rose-600 hover:bg-rose-700 text-white border-0 rounded-full px-4 py-2 text-center font-medium transition-colors"
+                          ? "block w-full bg-rose-600 hover:bg-rose-700 text-white border-0 rounded-full px-4 py-2 text-center font-medium transition-colors flex items-center justify-center"
                           : "block w-full px-4 py-2 text-base font-medium text-white/90 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md transition-all duration-300 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 text-center"
                       }
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
+                      {link.isPrimary && <Calendar className="h-4 w-4 mr-2" />}
                       {link.label}
                     </Link>
                   ))}
