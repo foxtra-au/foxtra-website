@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Circle, Zap, Target, Users, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
-import { AnimatedGroup } from "./animated-group";
+import { AnimatedGroup } from "./AnimatedGroup";
 
 function ElegantShape({
     className,

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { AnimatedTestimonials } from "@/components/ui/AnimatedTestimonials";
 
 export function TestimonialBlock() {
   const fadeUpVariants = {

@@ -1,7 +1,7 @@
 // demo.tsx
 import * as React from "react";
-import MegaMenu from "@/components/ui/mega-menu";
-import type { MegaMenuItem } from "@/components/ui/mega-menu";
+import MegaMenu from "@/components/ui/MegaMenu";
+import type { MegaMenuItem } from "@/components/ui/MegaMenu";
 import {
   Cpu,
   Globe,

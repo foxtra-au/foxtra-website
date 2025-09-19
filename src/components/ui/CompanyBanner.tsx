@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Circle, Star, Award, Users, Building } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { AnimatedGroup } from "./animated-group";
+import { AnimatedGroup } from "./AnimatedGroup";
 
 function ElegantShape({
     className,

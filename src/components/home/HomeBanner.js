@@ -1,4 +1,4 @@
-import { HeroGeometric } from '@/components/ui/shape-landing-hero'
+import { HeroGeometric } from '@/components/ui/ShapeLandingHero'
 
 export function HomeBanner() {
   return (

@@ -1,6 +1,6 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, AiVoiceAgentFeatures, AiVoiceBenefits } from '@/components/sections'
-import { FAQ } from '@/components/ui/faq-tabs'
+import { FAQ } from '@/components/ui/FaqTabs'
 import { AgentCards } from '@/components/ui/AgentCards'
 import { aiVoiceAgentFAQ } from '@/data/faq-data'
 import { Metadata } from 'next'

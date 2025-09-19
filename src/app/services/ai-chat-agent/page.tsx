@@ -1,7 +1,7 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, ChatDemo, AiChatAgentFeatures } from '@/components/sections'
 import { AiChatWindow } from '@/components/ui/AiChatWindow'
-import { FAQ } from '@/components/ui/faq-tabs'
+import { FAQ } from '@/components/ui/FaqTabs'
 import { aiChatAgentFAQ } from '@/data/faq-data'
 import { Metadata } from 'next'
 

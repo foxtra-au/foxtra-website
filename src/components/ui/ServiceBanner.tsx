@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Circle, Zap, Target, Users, TrendingUp, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { AnimatedGroup } from "./animated-group";
+import { AnimatedGroup } from "./AnimatedGroup";
 
 
 interface ServiceBannerProps {

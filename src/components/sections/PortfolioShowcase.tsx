@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { ImageAutoSlider } from '@/components/ui/image-auto-slider';
+import { ImageAutoSlider } from '@/components/ui/ImageAutoSlider';
 
 export function PortfolioShowcase() {
   const fadeUpVariants = {

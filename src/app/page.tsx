@@ -1,5 +1,5 @@
 import { HomeBanner } from '@/components/home'
-import { Case } from '@/components/ui/cases-with-infinite-scroll'
+import { Case } from '@/components/ui/CasesWithInfiniteScroll'
 import { HomeFeatures, HomePageWrapper, TestimonialBlock } from '@/components/sections'
 
 export default function Home() {

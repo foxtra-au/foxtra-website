@@ -1,7 +1,7 @@
 "use client"
 
-import { WebGLShader } from "@/components/ui/web-gl-shader";
-import { LiquidButton } from '@/components/ui/liquid-glass-button' 
+import { WebGLShader } from "@/components/ui/WebGLShader";
+import { LiquidButton } from '@/components/ui/LiquidGlassButton' 
 
 export function DesignShowcase() {
   return (

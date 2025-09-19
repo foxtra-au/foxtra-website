@@ -32,25 +32,25 @@ export { ToastContainer, useToast } from './Toast'
 // Advanced Components
 export { Search } from './Search'
 export { FileUpload } from './FileUpload'
-export { AnimatedGroup } from './animated-group'
+export { AnimatedGroup } from './AnimatedGroup'
 
 // Shadcn Components
 export { ShadcnButton } from './ShadcnButton'
 export { ShadcnCard, ShadcnCardHeader, ShadcnCardFooter, ShadcnCardTitle, ShadcnCardDescription, ShadcnCardContent } from './ShadcnCard'
-export { PricingCard } from './dark-gradient-pricing'
+export { PricingCard } from './DarkGradientPricing'
 
 // Animation Components
-export { Marquee } from './marquee'
+export { Marquee } from './Marquee'
 export { MarqueeDemo } from './MarqueeDemo'
 
 // Hero Components
-export { HeroGeometric } from './shape-landing-hero'
+export { HeroGeometric } from './ShapeLandingHero'
 export { PageBanner } from './PageBanner'
 export { ServiceBanner } from './ServiceBanner'
 export { CompanyBanner } from './CompanyBanner'
 export { PricingBanner } from './PricingBanner'
 
 // Navigation Components (Advanced)
-export { default as MegaMenu } from './mega-menu'
-export type { MegaMenuItem, MegaMenuProps } from './mega-menu'
+export { default as MegaMenu } from './MegaMenu'
+export type { MegaMenuItem, MegaMenuProps } from './MegaMenu'
 

@@ -1,7 +1,7 @@
 // This is file with demos of your component
 // Each export is one usecase for your component
 
-import { ImageAutoSlider } from "@/components/ui/image-auto-slider";
+import { ImageAutoSlider } from "@/components/ui/ImageAutoSlider";
 
 const DemoOne = () => {
   return <ImageAutoSlider />;

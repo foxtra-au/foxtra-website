@@ -1,6 +1,6 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
-import { FAQ } from '@/components/ui/faq-tabs'
+import { FAQ } from '@/components/ui/FaqTabs'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

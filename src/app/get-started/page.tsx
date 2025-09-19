@@ -2,7 +2,7 @@ import { Container } from '@/components/ui/Container'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
-import { DesignShowcase } from '@/components/ui/design-showcase'
+import { DesignShowcase } from '@/components/ui/DesignShowcase'
 
 export default function GetStarted() {
   return (
