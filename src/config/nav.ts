@@ -69,6 +69,12 @@ export const navigationConfig: NavItem[] = [
             iconName: "Cloud",
           },
           {
+            label: "AI Websites",
+            description: "Smart websites built in 4 hours",
+            href: "/services/ai-websites",
+            iconName: "Globe",
+          },
+          {
             label: "Pricing",
             description: "Transparent pricing for all services",
             href: "/pricing",
@@ -85,12 +91,6 @@ export const navigationConfig: NavItem[] = [
       {
         title: "Digital Marketing",
         items: [
-          {
-            label: "AI Websites",
-            description: "Smart websites built in 4 hours",
-            href: "/services/ai-websites",
-            iconName: "Globe",
-          },
           {
             label: "AI SEO",
             description: "Technical fixes and content at scale",
@@ -114,6 +114,35 @@ export const navigationConfig: NavItem[] = [
             description: "Paid social that finds your audience",
             href: "/services/social-media-ads",
             iconName: "TrendingUp",
+          },
+        ],
+      },
+      {
+        title: "Marketing Channels",
+        items: [
+          {
+            label: "Video Marketing",
+            description: "Engaging video content and campaigns",
+            href: "/services/video-marketing",
+            iconName: "Video",
+          },
+          {
+            label: "Email Marketing",
+            description: "Targeted email campaigns and automation",
+            href: "/services/email-marketing",
+            iconName: "Mail",
+          },
+          {
+            label: "SMS Marketing",
+            description: "Direct SMS campaigns and notifications",
+            href: "/services/sms-marketing",
+            iconName: "MessageSquare",
+          },
+          {
+            label: "Blog & Article Writing",
+            description: "SEO-driven, authority-building content",
+            href: "/services/blog-article-writing",
+            iconName: "FileText",
           },
         ],
       },
@@ -198,12 +227,6 @@ export const navigationConfig: NavItem[] = [
             iconName: "Building",
           },
           {
-            label: "Team",
-            description: "Meet our amazing team",
-            href: "/company/team",
-            iconName: "Users",
-          },
-          {
             label: "Careers",
             description: "Join our growing team",
             href: "/company/careers",
@@ -220,18 +243,6 @@ export const navigationConfig: NavItem[] = [
       {
         title: "Resources",
         items: [
-          {
-            label: "Documentation",
-            description: "Complete guides and references",
-            href: "/resources/docs",
-            iconName: "BookOpen",
-          },
-          {
-            label: "Tutorials",
-            description: "Step-by-step learning resources",
-            href: "/resources/tutorials",
-            iconName: "GraduationCap",
-          },
           {
             label: "Blog",
             description: "Latest insights and industry trends",

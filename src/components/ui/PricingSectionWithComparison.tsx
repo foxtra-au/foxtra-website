@@ -1,6 +1,7 @@
 import React from "react";
 import { Check, Minus, MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { SeoPricingIcon } from "@/components/ui/SeoPricingIcon";
 
 function Pricing() {
   // Helper function to determine if a row should have glossy background
@@ -35,9 +36,14 @@ function Pricing() {
     <div className="w-full py-20 lg:py-40">
       <div className="max-w-6xl mx-auto">
         <div className="text-left mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4 font-sans">
-            SEO Plans That Scale
-          </h2>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg flex items-center justify-center">
+              <SeoPricingIcon className="w-6 h-6 text-yellow-500" />
+            </div>
+            <h2 className="text-3xl font-bold text-white font-sans">
+              SEO Plans That Scale
+            </h2>
+          </div>
           <p className="text-lg text-white/70 max-w-3xl font-sans">
             Choose the perfect SEO plan for your business growth.
           </p>
@@ -50,7 +56,7 @@ function Pricing() {
               Perfect for small businesses and startups looking to establish their online presence with essential SEO fundamentals.
             </p>
             <p className="flex flex-col lg:flex-row lg:items-center gap-2 text-xl mt-8">
-              <span className="text-4xl text-white">$349</span>
+              <span className="text-4xl text-white font-bold">$349</span>
               <span className="text-sm text-white/70"> / month</span>
             </p>
             <Button className="gap-4 mt-8 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 transition-all duration-300 drop-shadow-md">
@@ -66,7 +72,7 @@ function Pricing() {
               Comprehensive SEO solution for growing businesses that need advanced optimization, content strategy, and detailed reporting.
             </p>
             <p className="flex flex-col lg:flex-row lg:items-center gap-2 text-xl mt-8">
-              <span className="text-4xl text-white">$649</span>
+              <span className="text-4xl text-white font-bold">$649</span>
               <span className="text-sm text-white/70"> / month</span>
             </p>
             <Button className="gap-4 mt-8 bg-rose-600 hover:bg-rose-700 text-white">
@@ -79,7 +85,7 @@ function Pricing() {
               Full-scale SEO strategy for large businesses with complex requirements, multiple locations, and enterprise-level support.
             </p>
             <p className="flex flex-col lg:flex-row lg:items-center gap-2 text-xl mt-8">
-              <span className="text-4xl text-white">$1049</span>
+              <span className="text-4xl text-white font-bold">$1049</span>
               <span className="text-sm text-white/70"> / month</span>
             </p>
             <Button className="gap-4 mt-8 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 transition-all duration-300 drop-shadow-md">

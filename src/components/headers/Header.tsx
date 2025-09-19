@@ -37,6 +37,7 @@ import {
   DollarSign,
   Globe,
   Calendar,
+  Video,
 } from 'lucide-react'
 import { navigationConfig, authLinks, type AuthLink } from '@/config/nav'
 
@@ -68,6 +69,7 @@ const iconMap = {
   Shield,
   DollarSign,
   Globe,
+  Video,
 }
 
 export function Header() {
