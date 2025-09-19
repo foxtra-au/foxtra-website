@@ -182,7 +182,21 @@ export default function BlogDetail({ params }: BlogDetailProps) {
                 <Tag className="w-4 h-4" />
                 <span className="text-sm">Category: {article.category}</span>
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-white/10 transition-all duration-300">
+              <button 
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: article.title,
+                      text: article.description,
+                      url: window.location.href,
+                    });
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Article link copied to clipboard!');
+                  }
+                }}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-yellow-500 hover:text-black hover:border-yellow-400 transition-all duration-300"
+              >
                 <Share2 className="w-4 h-4" />
                 Share Article
               </button>
