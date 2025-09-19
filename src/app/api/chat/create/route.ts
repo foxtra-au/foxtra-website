@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const RETELL_API_KEY = process.env.RETELL_API_KEY;
-const RETELL_AGENT_ID = process.env.RETELL_AGENT_ID;
+const RETELL_CHAT_AGENT_ID = process.env.RETELL_CHAT_AGENT_ID;
 const RETELL_API_BASE = process.env.RETELL_API_BASE || 'https://api.retellai.com/v2';
 
 export async function POST(request: NextRequest) {
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate required environment variables
-    if (!RETELL_AGENT_ID) {
+    if (!RETELL_CHAT_AGENT_ID) {
       return NextResponse.json(
         { error: 'Retell AI agent ID not configured' },
         { status: 500 }
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        agent_id: RETELL_AGENT_ID,
+        agent_id: RETELL_CHAT_AGENT_ID,
         metadata: {
           user_id: body.user_id || `user-${Date.now()}`,
           session_type: 'web_chat',
@@ -79,7 +79,7 @@ export async function POST(request: NextRequest) {
       access_token: data.access_token,
       status: 'active',
       created_at: new Date().toISOString(),
-      agent_id: RETELL_AGENT_ID,
+      agent_id: RETELL_CHAT_AGENT_ID,
       demo_mode: false
     });
 
