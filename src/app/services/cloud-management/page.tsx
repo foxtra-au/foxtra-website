@@ -1,5 +1,5 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
-import { ServiceSections, ServicePageWrapper } from '@/components/sections'
+import { ServicePageWrapper, CloudManagementFeatures, CloudDatabaseDemo } from '@/components/sections'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,20 +8,26 @@ export const metadata: Metadata = {
 }
 
 export default function CloudManagement() {
+  const cloudManagementFeatures = [
+    "Multi-Cloud Architecture",
+    "DevOps Automation",
+    "Security Compliance",
+    "Cost Optimization"
+  ];
+
   return (
     <ServicePageWrapper>
       <ServiceBanner
         title="Cloud Management"
         description="Architecture, DevOps, security, and cost optimization across AWS/Azure/GCP."
         badge="Foxtra • Development Services"
-        features={[
-          "Multi-cloud architecture",
-          "DevOps automation",
-          "Security compliance",
-          "Cost optimization"
-        ]}
+        features={[]}
+        rightComponent={<CloudDatabaseDemo />}
       />
-      <ServiceSections />
+      <CloudManagementFeatures 
+        features={cloudManagementFeatures}
+        className="mt-16"
+      />
     </ServicePageWrapper>
   )
 }

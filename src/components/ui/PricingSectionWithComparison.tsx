@@ -100,21 +100,21 @@ function Pricing() {
               </div>
               <div className={`px-3 py-1 md:px-6 md:py-4 flex justify-center ${getRowClass(feature.index)}`}>
                 {feature.isCheck ? (
-                  <Check className="w-4 h-4 text-green-400" />
+                  <Check className="w-4 h-4 text-yellow-500" />
                 ) : (
                   <p className="text-white/70 text-sm font-sans">{feature.starter}</p>
                 )}
               </div>
               <div className={`px-3 py-1 md:px-6 md:py-4 flex justify-center ${getRowClass(feature.index)}`}>
                 {feature.isCheck ? (
-                  <Check className="w-4 h-4 text-green-400" />
+                  <Check className="w-4 h-4 text-yellow-500" />
                 ) : (
                   <p className="text-white/70 text-sm font-sans">{feature.professional}</p>
                 )}
               </div>
               <div className={`px-3 py-1 md:px-6 md:py-4 flex justify-center ${getRowClass(feature.index)}`}>
                 {feature.isCheck ? (
-                  <Check className="w-4 h-4 text-green-400" />
+                  <Check className="w-4 h-4 text-yellow-500" />
                 ) : (
                   <p className="text-white/70 text-sm font-sans">{feature.enterprise}</p>
                 )}
