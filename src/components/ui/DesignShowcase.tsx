@@ -1,0 +1,37 @@
+"use client"
+
+import { WebGLShader } from "@/components/ui/WebGLShader";
+import { LiquidButton } from '@/components/ui/LiquidGlassButton' 
+
+export function DesignShowcase() {
+  return (
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden min-h-screen">
+      <WebGLShader/> 
+      <div className="relative z-10 max-w-6xl mx-auto text-center">
+        <div className="relative border border-[#27272a] p-2">
+            <main className="relative border border-[#27272a] py-10 overflow-hidden">
+              <h1 className="mb-3 text-white text-center text-7xl font-extrabold tracking-tighter md:text-[clamp(2rem,8vw,7rem)]">
+                Ready to Design Your Vision?
+              </h1>
+              <p className="text-white/60 px-6 text-center text-xs md:text-sm lg:text-lg">
+                Transform your ideas into reality with cutting-edge AI solutions, seamless integrations, and innovative technology.
+              </p>
+              <div className="my-8 flex items-center justify-center gap-1">
+                <span className="relative flex h-3 w-3 items-center justify-center">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                </span>
+                <p className="text-xs text-green-500">Ready to Build Your Project</p>
+              </div>
+              
+              <div className="flex justify-center"> 
+              <LiquidButton className="text-white border rounded-full" size={'xl'}>
+                Let&apos;s Get Started
+              </LiquidButton>
+              </div> 
+            </main>
+        </div>
+      </div>
+    </div>
+  )
+}

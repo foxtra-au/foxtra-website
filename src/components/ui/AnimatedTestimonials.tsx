@@ -1,0 +1,173 @@
+"use client";
+
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState, useCallback } from "react";
+import { cn } from "@/lib/utils";
+
+type Testimonial = {
+  quote: string;
+  name: string;
+  designation: string;
+  src: string;
+};
+
+export const AnimatedTestimonials = ({
+  testimonials,
+  autoplay = false,
+  className,
+}: {
+  testimonials: Testimonial[];
+  autoplay?: boolean;
+  className?: string;
+}) => {
+  const [active, setActive] = useState(0);
+  const [rotationValues, setRotationValues] = useState<number[]>([]);
+
+  const handleNext = useCallback(() => {
+    setActive((prev) => (prev + 1) % testimonials.length);
+  }, [testimonials.length]);
+
+  const handlePrev = () => {
+    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const isActive = (index: number) => {
+    return index === active;
+  };
+
+  useEffect(() => {
+    if (autoplay) {
+      const interval = setInterval(handleNext, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [autoplay, handleNext]);
+
+  // Generate stable rotation values on client side only
+  useEffect(() => {
+    const rotations = testimonials.map(() => Math.floor(Math.random() * 21) - 10);
+    setRotationValues(rotations);
+  }, [testimonials]);
+
+  return (
+    <div className={cn("max-w-6xl mx-auto px-2.5 py-10", className)}>
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
+        <div className="flex justify-center">
+          <div className="relative w-1/2 aspect-square">
+            <AnimatePresence>
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.src}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.9,
+                    z: -100,
+                    rotate: rotationValues[index] || 0,
+                  }}
+                  animate={{
+                    opacity: isActive(index) ? 1 : 0.7,
+                    scale: isActive(index) ? 1 : 0.95,
+                    z: isActive(index) ? 0 : -100,
+                    rotate: isActive(index) ? 0 : rotationValues[index] || 0,
+                    zIndex: isActive(index)
+                      ? 999
+                      : testimonials.length + 2 - index,
+                    y: isActive(index) ? [0, -80, 0] : 0,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.9,
+                    z: 100,
+                    rotate: rotationValues[index] || 0,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 origin-bottom"
+                >
+                  <Image
+                    src={testimonial.src}
+                    alt={testimonial.name}
+                    width={500}
+                    height={500}
+                    draggable={false}
+                    className="h-full w-full rounded-3xl object-cover object-center"
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+        <div className="flex justify-between flex-col py-4">
+          <motion.div
+            key={active}
+            initial={{
+              y: 20,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+            }}
+            exit={{
+              y: -20,
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.2,
+              ease: "easeInOut",
+            }}
+          >
+            <h3 className="text-2xl font-bold text-white">
+              {testimonials[active].name}
+            </h3>
+            <p className="text-sm text-white/60">
+              {testimonials[active].designation}
+            </p>
+            <motion.p className="text-lg text-white/70 mt-8">
+              {testimonials[active].quote.split(" ").map((word, index) => (
+                <motion.span
+                  key={index}
+                  initial={{
+                    filter: "blur(10px)",
+                    opacity: 0,
+                    y: 5,
+                  }}
+                  animate={{
+                    filter: "blur(0px)",
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                    ease: "easeInOut",
+                    delay: 0.02 * index,
+                  }}
+                  className="inline-block"
+                >
+                  {word}&nbsp;
+                </motion.span>
+              ))}
+            </motion.p>
+          </motion.div>
+          <div className="flex gap-4 pt-12 md:pt-10">
+            <button
+              onClick={handlePrev}
+              className="h-8 w-8 rounded-full bg-rose-600 backdrop-blur-sm border border-white/20 flex items-center justify-center group/button hover:bg-white/20 transition-all duration-300"
+            >
+              <IconArrowLeft className="h-4 w-4 text-white/80 group-hover/button:rotate-12 transition-transform duration-300" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="h-8 w-8 rounded-full bg-rose-600 backdrop-blur-sm border border-white/20 flex items-center justify-center group/button hover:bg-white/20 transition-all duration-300"
+            >
+              <IconArrowRight className="h-4 w-4 text-white/80 group-hover/button:-rotate-12 transition-transform duration-300" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

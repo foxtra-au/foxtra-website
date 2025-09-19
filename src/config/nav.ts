@@ -86,6 +86,12 @@ export const navigationConfig: NavItem[] = [
         title: "Digital Marketing",
         items: [
           {
+            label: "AI Websites",
+            description: "Smart websites built in 4 hours",
+            href: "/services/ai-websites",
+            iconName: "Globe",
+          },
+          {
             label: "AI SEO",
             description: "Technical fixes and content at scale",
             href: "/services/ai-seo",

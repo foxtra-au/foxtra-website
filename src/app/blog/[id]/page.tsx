@@ -6,29 +6,38 @@ import { ArrowLeft, Calendar, Tag, Clock, Share2, MessageCircle, Mic, Search, Co
 import { articles } from '@/data/articles-data';
 import { ArticleCard } from '@/components/ui/ArticleCard';
 import Link from 'next/link';
+import Image from 'next/image';
+
+export const dynamic = 'force-dynamic';
 
 interface BlogDetailProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
+
 
 export default function BlogDetail({ params }: BlogDetailProps) {
   const [article, setArticle] = useState<any>(null);
   const [relatedArticles, setRelatedArticles] = useState<any[]>([]);
 
   useEffect(() => {
-    const foundArticle = articles.find(a => a.id === params.id);
-    setArticle(foundArticle);
+    const loadArticle = async () => {
+      const resolvedParams = await params;
+      const foundArticle = articles.find(a => a.id === resolvedParams.id);
+      setArticle(foundArticle);
 
-    if (foundArticle) {
-      // Get 3 related articles from the same category
-      const related = articles
-        .filter(a => a.category === foundArticle.category && a.id !== foundArticle.id)
-        .slice(0, 3);
-      setRelatedArticles(related);
-    }
-  }, [params.id]);
+      if (foundArticle) {
+        // Get 3 related articles from the same category
+        const related = articles
+          .filter(a => a.category === foundArticle.category && a.id !== foundArticle.id)
+          .slice(0, 3);
+        setRelatedArticles(related);
+      }
+    };
+
+    loadArticle();
+  }, [params]);
 
   if (!article) {
     return (
@@ -118,10 +127,11 @@ export default function BlogDetail({ params }: BlogDetailProps) {
             className="mb-12"
           >
             <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <img
+              <Image
                 src={article.imageUrl}
                 alt={article.imageAlt}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
