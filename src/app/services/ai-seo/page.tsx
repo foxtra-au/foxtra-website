@@ -1,5 +1,5 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
-import { ServicePageWrapper, AiSeoFeatures, AiSeoBenefits } from '@/components/sections'
+import { ServicePageWrapper, AiSeoFeatures, AiSeoBenefits, SeoTools } from '@/components/sections'
 import { Pricing } from '@/components/ui/PricingSectionWithComparison'
 import { Metadata } from 'next'
 
@@ -30,6 +30,7 @@ export default function AiSeo() {
       />
       <AiSeoBenefits />
       <Pricing />
+      <SeoTools />
     </ServicePageWrapper>
   )
 }
