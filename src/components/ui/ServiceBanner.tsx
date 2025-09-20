@@ -122,8 +122,8 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                                         src={bannerImage || "/services/custom-development.png"}
                                         alt="Service illustration"
                                         width={600}
-                                        height={400}
-                                        className="max-w-full h-auto rounded-xl shadow-2xl"
+                                        height={280}
+                                        className="max-w-full h-[28rem] rounded-xl shadow-2xl object-contain"
                                     />
                                 </div>
                             ) : (

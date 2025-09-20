@@ -1,5 +1,5 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
-import { ServicePageWrapper, AIWebsitesFeatures, AIWebsitesBenefits } from '@/components/sections'
+import { ServicePageWrapper, AIWebsitesFeatures, AIWebsitesBenefits, PortfolioShowcase } from '@/components/sections'
 import AIWebsitesPricingNew from '@/components/ui/AIWebsitesPricingNew'
 import { AIWebsitesProcess } from '@/components/sections/AIWebsitesProcess'
 import { SocialMediaBannerImage } from '@/components/ui/SocialMediaBannerImage'
@@ -33,6 +33,8 @@ export default function AIWebsites() {
       <AIWebsitesBenefits />
       
       <AIWebsitesProcess />
+      
+      <PortfolioShowcase />
       
       <AIWebsitesPricingNew />
       

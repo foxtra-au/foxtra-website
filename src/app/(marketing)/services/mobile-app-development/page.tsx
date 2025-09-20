@@ -24,6 +24,7 @@ export default function MobileAppDevelopment() {
         description="Native and cross-platform mobile solutions that deliver exceptional user experiences across iOS and Android."
         badge="Foxtra • Development Services"
         features={[]}
+        bannerImage="/services/mobile-app-development.webp"
       />
       <MobileAppFeatures 
         features={mobileAppFeatures}

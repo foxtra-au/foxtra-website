@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ImageAutoSlider } from '@/components/ui/ImageAutoSlider';
+import Image from 'next/image';
 
 export function MobileAppShowcase() {
   const fadeUpVariants = {
@@ -17,16 +18,31 @@ export function MobileAppShowcase() {
     }),
   };
 
-  const mobileAppImages = [
-    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2340&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=2340&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2126&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2340&auto=format&fit=crop"
+  const mobileApps = [
+    {
+      image: "/services/mobile-app/little-steps.png",
+      name: "Little Steps"
+    },
+    {
+      image: "/services/mobile-app/localfpx-partner.png", 
+      name: "Local Fox"
+    },
+    {
+      image: "/services/mobile-app/localfpx-customer.png",
+      name: "Local Fox"
+    },
+    {
+      image: "/services/mobile-app/zingo-customer.png",
+      name: "Zingo"
+    },
+    {
+      image: "/services/mobile-app/Business-card-app.png",
+      name: "Spotcard"
+    }
   ];
+
+  // Duplicate for seamless scrolling
+  const mobileAppImages = [...mobileApps, ...mobileApps].map(app => app.image);
 
   return (
     <motion.div
@@ -37,19 +53,50 @@ export function MobileAppShowcase() {
       className="pt-24 max-w-6xl mx-auto"
     >
       {/* Title Section at Bottom */}
-      <div className="text-center mb-6">
+      <div className="text-left mb-6">
         <h2 className="text-3xl font-bold text-white mb-4">Our Mobile Apps</h2>
         <p className="text-white/60 text-lg">Showcasing innovative mobile applications across different industries</p>
       </div>
       
       {/* Scrolling Images */}
       <section className="relative">
-        <ImageAutoSlider 
-          images={mobileAppImages}
-          duration={25}
-          imageSize="md"
-          className="[&>div:first-child]:py-2 lg:[&>div:first-child]:py-1"
-        />
+        <div className="w-full relative overflow-hidden flex items-center justify-center">
+          <div className="relative z-10 w-full flex items-center justify-center py-8">
+            <div 
+              className="w-full max-w-6xl overflow-hidden"
+              style={{
+                maskImage: 'linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%)'
+              }}
+            >
+              <div 
+                className="flex gap-6 w-max"
+                style={{
+                  animation: 'scroll-right 25s linear infinite'
+                }}
+              >
+                {[...mobileApps, ...mobileApps].map((app, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 rounded-xl overflow-hidden shadow-2xl relative transition-transform duration-300 hover:scale-105 hover:brightness-110 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80"
+                  >
+                    <Image
+                      src={app.image}
+                      alt={`${app.name} mobile app`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+                    />
+                    {/* App Name Label */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm p-2">
+                      <p className="text-white text-sm font-medium text-center">{app.name}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </motion.div>
   );

@@ -62,17 +62,19 @@ export const ImageAutoSlider = ({
               <div
                 key={index}
                 className={cn(
-                  "flex-shrink-0 rounded-xl overflow-hidden shadow-2xl relative transition-transform duration-300 hover:scale-105 hover:brightness-110",
+                  "flex-shrink-0 rounded-xl shadow-2xl relative transition-transform duration-300 hover:scale-105 hover:brightness-110 p-4 bg-white/5 backdrop-blur-sm border border-white/10",
                   sizeClasses[imageSize]
                 )}
               >
-                <Image
-                  src={image}
-                  alt={`Gallery image ${(index % images.length) + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
-                />
+                <div className="relative w-full h-full rounded-lg overflow-hidden">
+                  <Image
+                    src={image}
+                    alt={`Gallery image ${(index % images.length) + 1}`}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+                  />
+                </div>
               </div>
             ))}
           </div>

@@ -83,10 +83,10 @@ export const FAQ: React.FC<FAQProps> = ({
 
 const FAQHeader: React.FC<FAQHeaderProps> = ({ title, subtitle }) => (
   <div className="relative z-10 flex flex-col items-center justify-center">
-    <span className="mb-8 font-medium" style={{ color: '#FF335C' }}>
+    <h2 className="mb-4 text-5xl font-bold text-white">{title}</h2>
+    <p className="mb-8 text-lg text-white/60 font-medium">
       {subtitle}
-    </span>
-    <h2 className="mb-8 text-5xl font-bold text-white">{title}</h2>
+    </p>
     <span className="absolute -top-[350px] left-[50%] z-0 h-[500px] w-[600px] -translate-x-[50%] rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/5 blur-3xl" />
   </div>
 );
