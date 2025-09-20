@@ -276,11 +276,7 @@ export interface AuthLink {
 export const authLinks: AuthLink[] = [
   {
     label: "Sign in",
-    href: "/signin",
-  },
-  {
-    label: "Console",
-    href: "/dashboard",
+    href: "/login",
   },
   {
     label: "Get Started",
