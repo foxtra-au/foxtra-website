@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Eye, EyeOff } from 'lucide-react';
+import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 interface FormData {
   email: string;
@@ -9,6 +10,7 @@ interface FormData {
 }
 
 export default function LoginScreen() {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState<FormData>({
@@ -39,10 +41,21 @@ export default function LoginScreen() {
     setShowPassword(false); // Reset password visibility when switching modes
   };
 
+  const handleBack = () => {
+    router.back();
+  };
+
   return (
     <div className="w-full min-h-screen flex bg-[#030303]">
       {/* Left side - Hero section with home page background */}
       <div className="flex-1 relative flex items-center justify-center p-12 overflow-hidden">
+        {/* Back Button */}
+        <button
+          onClick={handleBack}
+          className="absolute top-12 left-12 z-50 flex items-center justify-center w-10 h-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg hover:bg-rose-600 hover:border-rose-600 transition-all duration-200 group"
+        >
+          <ArrowLeft className="w-5 h-5 text-white group-hover:text-white" />
+        </button>
         {/* Home page background */}
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
         
