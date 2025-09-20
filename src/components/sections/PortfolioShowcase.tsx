@@ -28,6 +28,7 @@ export function PortfolioShowcase() {
     "/services/custom-development/localfox-web.png",
     "/services/custom-development/ozkindy.png",
     "/services/custom-development/pacta-realestate.png",
+    "/services/custom-development/realnest.png",
     "/services/custom-development/recruitement.png",
     "/services/custom-development/redcart.png"
   ];
