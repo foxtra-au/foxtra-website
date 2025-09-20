@@ -48,7 +48,7 @@ export const navigationConfig: NavItem[] = [
     label: "Development",
     subMenus: [
       {
-        title: "Custom Development",
+        title: "Core Development",
         items: [
           {
             label: "Custom Development",
@@ -57,11 +57,22 @@ export const navigationConfig: NavItem[] = [
             iconName: "Code",
           },
           {
+            label: "Mobile App Development",
+            description: "Native and cross-platform mobile solutions",
+            href: "/services/mobile-app-development",
+            iconName: "Smartphone",
+          },
+          {
             label: "API Development",
             description: "Design-first REST/GraphQL APIs",
             href: "/services/api-development",
             iconName: "Database",
           },
+        ],
+      },
+      {
+        title: "Infrastructure & Solutions",
+        items: [
           {
             label: "Cloud Management",
             description: "Architecture and DevOps optimization",
@@ -271,6 +282,10 @@ export const authLinks: AuthLink[] = [
   {
     label: "Sign in",
     href: "/signin",
+  },
+  {
+    label: "Console",
+    href: "/dashboard",
   },
   {
     label: "Get Started",

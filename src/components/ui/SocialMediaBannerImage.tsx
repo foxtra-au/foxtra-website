@@ -10,7 +10,7 @@ export function SocialMediaBannerImage() {
           src="/services/custom-development.png"
           alt="Social Media Management Dashboard"
           width={600}
-          height={400}
+          height={300}
           className="max-w-full h-auto rounded-lg"
           priority
         />

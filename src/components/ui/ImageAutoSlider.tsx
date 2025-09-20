@@ -42,73 +42,42 @@ export const ImageAutoSlider = ({
   };
 
   return (
-    <>
-      <style jsx>{`
-        @keyframes scroll-right {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .infinite-scroll {
-          animation: scroll-right ${duration}s linear infinite;
-        }
-
-        .scroll-container {
-          mask: linear-gradient(
-            90deg,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%
-          );
-          -webkit-mask: linear-gradient(
-            90deg,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%
-          );
-        }
-
-        .image-item {
-          transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .image-item:hover {
-          transform: scale(1.05);
-          filter: brightness(1.1);
-        }
-      `}</style>
-      
-      <div className={cn("w-full relative overflow-hidden flex items-center justify-center", className)}>
-        {/* Scrolling images container */}
-        <div className="relative z-10 w-full flex items-center justify-center py-8">
-          <div className="scroll-container w-full max-w-6xl">
-            <div className="infinite-scroll flex gap-6 w-max">
-              {duplicatedImages.map((image, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    "image-item flex-shrink-0 rounded-xl overflow-hidden shadow-2xl",
-                    sizeClasses[imageSize]
-                  )}
-                >
-                  <Image
-                    src={image}
-                    alt={`Gallery image ${(index % images.length) + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+    <div className={cn("w-full relative overflow-hidden flex items-center justify-center", className)}>
+      {/* Scrolling images container */}
+      <div className="relative z-10 w-full flex items-center justify-center py-8">
+        <div 
+          className="w-full max-w-6xl overflow-hidden"
+          style={{
+            maskImage: 'linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%)'
+          }}
+        >
+          <div 
+            className="flex gap-6 w-max"
+            style={{
+              animation: `scroll-right ${duration}s linear infinite`
+            }}
+          >
+            {duplicatedImages.map((image, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "flex-shrink-0 rounded-xl overflow-hidden shadow-2xl relative transition-transform duration-300 hover:scale-105 hover:brightness-110",
+                  sizeClasses[imageSize]
+                )}
+              >
+                <Image
+                  src={image}
+                  alt={`Gallery image ${(index % images.length) + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
