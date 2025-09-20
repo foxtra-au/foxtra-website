@@ -215,6 +215,12 @@ export const navigationConfig: NavItem[] = [
             iconName: "Car",
           },
           {
+            label: "Car Mechanic",
+            description: "AI solutions for auto repair services",
+            href: "/solutions/car-mechanic",
+            iconName: "Wrench",
+          },
+          {
             label: "Pest Control",
             description: "AI solutions for pest control services",
             href: "/solutions/pest-control",
@@ -229,7 +235,7 @@ export const navigationConfig: NavItem[] = [
     label: "Company",
     subMenus: [
       {
-        title: "About",
+        title: "Company",
         items: [
           {
             label: "Our Story",
@@ -244,27 +250,16 @@ export const navigationConfig: NavItem[] = [
             iconName: "Briefcase",
           },
           {
-            label: "Contact",
-            description: "Get in touch with our team",
-            href: "/contact",
-            iconName: "Headphones",
-          },
-        ],
-      },
-      {
-        title: "Resources",
-        items: [
-          {
             label: "Blog",
             description: "Latest insights and industry trends",
             href: "/blog",
             iconName: "FileText",
           },
           {
-            label: "Case Studies",
-            description: "Success stories from our clients",
-            href: "/resources/case-studies",
-            iconName: "Award",
+            label: "Contact",
+            description: "Get in touch with our team",
+            href: "/contact",
+            iconName: "Headphones",
           },
         ],
       },
