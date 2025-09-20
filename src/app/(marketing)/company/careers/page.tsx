@@ -1,21 +1,87 @@
+'use client';
+
 import { ServicePageWrapper } from '@/components/sections';
 import { ServiceBanner } from '@/components/ui/ServiceBanner';
-import { Briefcase, Users, Zap, Award, Globe, Heart } from 'lucide-react';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Careers | Foxtra',
-  description: 'Join our growing team and help shape the future of AI technology. Explore career opportunities at Foxtra.',
-}
+import { Briefcase, Users, Zap, Award, Globe, Heart, Circle, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Careers() {
+  const fadeUpVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        delay: 0.5 + i * 0.2,
+        ease: [0.25, 0.4, 0.25, 1],
+      },
+    }),
+  };
+
   return (
     <ServicePageWrapper>
-      <ServiceBanner
-        title="Join Our Team"
-        description="Be part of the AI revolution. We're looking for passionate individuals to help us build the future of technology."
-        badge="Foxtra • Careers"
-      />
+      {/* Custom Single Column Centered Banner */}
+      <section className="relative w-full pt-48 pb-10">
+        <div className="relative z-10 container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Badge */}
+            <motion.div
+              custom={0}
+              variants={fadeUpVariants}
+              initial="hidden"
+              animate="visible"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8"
+            >
+              <Circle className="h-2 w-2 fill-rose-500/80" />
+              <span className="text-sm text-white/60 tracking-wide">
+                Foxtra • Careers
+              </span>
+            </motion.div>
+
+            {/* Title */}
+            <motion.div
+              custom={1}
+              variants={fadeUpVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+                  Join Our Team
+                </span>
+              </h1>
+            </motion.div>
+
+            {/* Description */}
+            <motion.div
+              custom={2}
+              variants={fadeUpVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <p className="text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-3xl mx-auto">
+                Be part of the AI revolution. We're looking for passionate individuals to help us build the future of technology.
+              </p>
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              custom={3}
+              variants={fadeUpVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <button className="group inline-flex items-center px-8 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1" style={{ backgroundColor: '#FF335C', boxShadow: '0 25px 50px -12px rgba(255, 51, 92, 0.25)' }}>
+                <span className="relative z-10 flex items-center">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Appointment
+                </span>
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
       
       <div className="py-16">
         <div className="max-w-6xl mx-auto px-4 md:px-6">
