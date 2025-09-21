@@ -1,8 +1,6 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 interface HomePageWrapperProps {
   children: ReactNode;
@@ -24,34 +22,16 @@ function ElegantShape({
     gradient?: string;
 }) {
     return (
-        <motion.div
-            initial={{
-                opacity: 0,
-                y: -150,
-                rotate: rotate - 15,
-            }}
-            animate={{
+        <div
+            className={`absolute ${className}`}
+            style={{
                 opacity: 1,
-                y: 0,
-                rotate: rotate,
+                transform: 'translateY(0) rotate(0deg)',
+                animation: 'float 12s ease-in-out infinite',
+                animationDelay: `${delay}s`
             }}
-            transition={{
-                duration: 2.4,
-                delay,
-                ease: [0.23, 0.86, 0.39, 0.96],
-                opacity: { duration: 1.2 },
-            }}
-            className={cn("absolute", className)}
         >
-            <motion.div
-                animate={{
-                    y: [0, 15, 0],
-                }}
-                transition={{
-                    duration: 12,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                }}
+            <div
                 className="relative"
                 style={{
                     width,
@@ -68,18 +48,23 @@ function ElegantShape({
                         after:absolute after:inset-0 after:rounded-full
                         after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]
                     `}
+                    style={{
+                        transform: `rotate(${rotate}deg)`
+                    }}
                 />
-            </motion.div>
-        </motion.div>
+            </div>
+        </div>
     );
 }
 
 export function HomePageWrapper({ children }: HomePageWrapperProps) {
   return (
-    <div className="relative w-full overflow-hidden bg-[#030303]">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+    <div className="relative min-h-screen w-full overflow-hidden bg-[#030303]">
+      {/* Background gradient */}
+      <div className="fixed inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Floating shapes */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <ElegantShape
             delay={0.3}
             width={600}
@@ -114,9 +99,24 @@ export function HomePageWrapper({ children }: HomePageWrapperProps) {
         />
       </div>
 
+      {/* Content */}
       <div className="relative z-10 pb-6">
         {children}
       </div>
+
+      {/* Bottom gradient overlay */}
+      <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#030303] to-transparent pointer-events-none" />
+      
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0) rotate(0deg);
+          }
+          50% {
+            transform: translateY(15px) rotate(5deg);
+          }
+        }
+      `}</style>
     </div>
   );
 }
