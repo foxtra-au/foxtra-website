@@ -275,7 +275,7 @@ export function PricingModelDetail({ model }: PricingModelDetailProps) {
               className="mt-12"
             >
               <Link 
-                href="/contact"
+                href="/bookings"
                 className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-medium py-4 px-8 rounded-lg transition-colors duration-300"
               >
                 <ArrowRight className="w-5 h-5" />

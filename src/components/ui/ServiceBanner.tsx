@@ -97,12 +97,16 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                             initial="hidden"
                             animate="visible"
                         >
-                            <button className="group inline-flex items-center px-8 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1" style={{ backgroundColor: '#FF335C', boxShadow: '0 25px 50px -12px rgba(255, 51, 92, 0.25)' }}>
+                            <a 
+                                href="/bookings" 
+                                className="group inline-flex items-center px-8 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1" 
+                                style={{ backgroundColor: '#FF335C', boxShadow: '0 25px 50px -12px rgba(255, 51, 92, 0.25)' }}
+                            >
                                 <span className="relative z-10 flex items-center">
                                     <Calendar className="mr-2 h-5 w-5" />
                                     Book Appointment
                                 </span>
-                            </button>
+                            </a>
                         </motion.div>
                     </div>
 

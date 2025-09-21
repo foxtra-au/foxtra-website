@@ -279,8 +279,8 @@ export const authLinks: AuthLink[] = [
     href: "/login",
   },
   {
-    label: "Get Started",
-    href: "/get-started",
+    label: "Book Meeting",
+    href: "/bookings",
     isPrimary: true,
   },
 ]

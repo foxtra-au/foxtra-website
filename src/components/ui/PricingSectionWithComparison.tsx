@@ -59,8 +59,10 @@ function Pricing() {
               <span className="text-4xl text-white font-bold">$349</span>
               <span className="text-sm text-white/70"> / month</span>
             </p>
-            <Button className="gap-4 mt-8 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 transition-all duration-300 drop-shadow-md">
-              Get Started <MoveRight className="w-4 h-4" />
+            <Button asChild className="gap-4 mt-8 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 transition-all duration-300 drop-shadow-md">
+              <a href="/bookings">
+                Get Started <MoveRight className="w-4 h-4" />
+              </a>
             </Button>
           </div>
           <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col border-2 border-yellow-500 rounded-lg relative">
@@ -75,8 +77,10 @@ function Pricing() {
               <span className="text-4xl text-white font-bold">$649</span>
               <span className="text-sm text-white/70"> / month</span>
             </p>
-            <Button className="gap-4 mt-8 bg-rose-600 hover:bg-rose-700 text-white">
-              Get Started <MoveRight className="w-4 h-4" />
+            <Button asChild className="gap-4 mt-8 bg-rose-600 hover:bg-rose-700 text-white">
+              <a href="/bookings">
+                Get Started <MoveRight className="w-4 h-4" />
+              </a>
             </Button>
           </div>
           <div className="px-3 py-1 md:px-6 md:py-4 gap-2 flex flex-col">
@@ -88,8 +92,10 @@ function Pricing() {
               <span className="text-4xl text-white font-bold">$1049</span>
               <span className="text-sm text-white/70"> / month</span>
             </p>
-            <Button className="gap-4 mt-8 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 transition-all duration-300 drop-shadow-md">
-              Contact us <PhoneCall className="w-4 h-4" />
+            <Button asChild className="gap-4 mt-8 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 hover:bg-yellow-500 hover:text-black hover:border-yellow-400 transition-all duration-300 drop-shadow-md">
+              <a href="/bookings">
+                Contact us <PhoneCall className="w-4 h-4" />
+              </a>
             </Button>
           </div>
           <div className="px-3 lg:px-6 col-span-3 lg:col-span-1 py-4">
