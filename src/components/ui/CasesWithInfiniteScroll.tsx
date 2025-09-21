@@ -43,7 +43,7 @@ function Case() {
   }, [api, current]);
 
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full py-24">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         <div className="flex flex-col gap-10">
           <div className="text-left">

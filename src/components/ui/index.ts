@@ -68,6 +68,6 @@ export { SeoPricingIcon } from './SeoPricingIcon'
 
 // Footer Components
 export { default as Footer } from './Footer'
-export { FooterColumn } from './FooterColumn'
-export { FooterNewsletter } from './FooterNewsletter'
+export { default as FooterColumn } from './FooterColumn'
+export { default as FooterNewsletter } from './FooterNewsletter'
 
