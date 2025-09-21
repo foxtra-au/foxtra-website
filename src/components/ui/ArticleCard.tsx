@@ -6,6 +6,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils"; // Your shadcn/ui utility for merging classes
 
 // Define the types for the component props for type-safety and clarity
@@ -91,13 +92,19 @@ const ArticleCard = React.forwardRef<HTMLDivElement, ArticleCardProps>(
 
         {/* Image section with location overlay */}
         <div className="relative mx-6 mb-6 aspect-[16/10] overflow-hidden rounded-lg">
-          <motion.img
-            src={imageUrl}
-            alt={imageAlt}
-            className="h-full w-full object-cover"
+          <motion.div
+            className="h-full w-full"
             variants={imageVariants}
             transition={{ duration: 0.4, ease: "easeOut" }}
-          />
+          >
+            <Image
+              src={imageUrl}
+              alt={imageAlt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           
           {showLocation ? (

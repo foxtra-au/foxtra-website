@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   Carousel,
   CarouselApi,
@@ -8,23 +9,15 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 
-// Sample company logos with Lucide icons for now
-const sampleLogos = [
-  { name: "TechCorp", icon: "🚀" },
-  { name: "InnovateLab", icon: "⚡" },
-  { name: "DataFlow", icon: "📊" },
-  { name: "CloudSync", icon: "☁️" },
-  { name: "AI Solutions", icon: "🤖" },
-  { name: "WebForge", icon: "🔧" },
-  { name: "AppCraft", icon: "📱" },
-  { name: "CodeBase", icon: "💻" },
-  { name: "DevStudio", icon: "🎨" },
-  { name: "TechFlow", icon: "🌊" },
-  { name: "ByteWorks", icon: "⚙️" },
-  { name: "PixelPro", icon: "🎯" },
-  { name: "NetCore", icon: "🌐" },
-  { name: "DataVault", icon: "🔒" },
-  { name: "SyncLabs", icon: "🔄" },
+// Client logos from public/clients directory
+const clientLogos = [
+  { name: "A2Z Accountants", src: "/clients/a2z-accountants-logo.png", alt: "A2Z Accountants Logo" },
+  { name: "AID Foundation", src: "/clients/aid-foundation-logo.jpg", alt: "AID Foundation Logo" },
+  { name: "All Smiles BDS", src: "/clients/allsmilebds-logo.png", alt: "All Smiles BDS Logo" },
+  { name: "Dream Rise", src: "/clients/dream-rise-logo.png", alt: "Dream Rise Logo" },
+  { name: "FTM", src: "/clients/ftm-logo.png", alt: "FTM Logo" },
+  { name: "Pacta Real Estate", src: "/clients/pactare-logo.webp", alt: "Pacta Real Estate Logo" },
+  { name: "RealNest", src: "/clients/realnest-logo.png", alt: "RealNest Logo" },
 ];
 
 function Case() {
@@ -63,11 +56,19 @@ function Case() {
           </div>
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
-              {sampleLogos.map((logo, index) => (
+              {clientLogos.map((logo, index) => (
                 <CarouselItem className="basis-1/4 lg:basis-1/6" key={index}>
                   <div className="flex rounded-md aspect-square bg-white/5 backdrop-blur-sm border border-white/10 items-center justify-center p-6 hover:bg-white/10 transition-all duration-300">
                     <div className="text-center">
-                      <div className="text-2xl mb-2">{logo.icon}</div>
+                      <div className="relative w-16 h-16 mb-2 mx-auto">
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 64px, 64px"
+                        />
+                      </div>
                       <span className="text-sm text-white/80 font-medium">{logo.name}</span>
                     </div>
                   </div>
