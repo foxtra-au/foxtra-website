@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 
+# Updated: 2024-12-19
+
 # Sitemap
 Sitemap: https://foxtra.ai/sitemap.xml
 
