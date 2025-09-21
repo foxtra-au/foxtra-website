@@ -8,7 +8,7 @@ export default function LittleStepsCaseStudy() {
     { label: 'Duration', value: '5 months', icon: Clock },
     { label: 'Team Size', value: '7 members', icon: Users },
     { label: 'Platform', value: 'Mobile App', icon: Target },
-    { metric: 'Active Users', value: '10,000+', icon: Award }
+    { label: 'Active Users', value: '10,000+', icon: Award }
   ];
 
   const overview = {

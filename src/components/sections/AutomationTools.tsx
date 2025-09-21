@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export function AutomationTools() {
   const tools = [
@@ -54,12 +55,13 @@ export function AutomationTools() {
               key={index}
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 opacity-60 hover:opacity-100"
             >
-              <img
+              <Image
                 src={tool.logo}
                 alt={tool.name}
                 width={144}
                 height={58}
                 className="w-full h-auto max-h-14 object-contain"
+                unoptimized
               />
             </div>
           ))}

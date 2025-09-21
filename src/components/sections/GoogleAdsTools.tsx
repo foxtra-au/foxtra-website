@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function GoogleAdsTools() {
   const googleAdsTools = [
     {
@@ -49,12 +51,13 @@ export default function GoogleAdsTools() {
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {googleAdsTools.map((tool, index) => (
             <div key={tool.name} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 flex items-center justify-center">
-              <img
+              <Image
                 alt={tool.name}
                 src={tool.logo}
                 width={144}
                 height={58}
                 className="max-h-14 w-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                unoptimized
               />
             </div>
           ))}
