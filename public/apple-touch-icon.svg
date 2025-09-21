@@ -1,0 +1,10 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="180" height="180" rx="40" fill="#0a0a0a"/>
+  
+  <!-- Letter F - Rose 600, larger for apple touch icon -->
+  <text x="35" y="125" font-family="system-ui, -apple-system, sans-serif" font-size="100" font-weight="700" fill="#e11d48">F</text>
+  
+  <!-- Yellow dot (full stop) - baseline aligned with F, 50% smaller -->
+  <circle cx="135" cy="125" r="10" fill="#facc15"/>
+</svg>

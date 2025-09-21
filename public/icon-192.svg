@@ -1,0 +1,10 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="192" height="192" rx="42" fill="#0a0a0a"/>
+  
+  <!-- Letter F - Rose 600 -->
+  <text x="37" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="108" font-weight="700" fill="#e11d48">F</text>
+  
+  <!-- Yellow dot (full stop) - baseline aligned with F, 50% smaller -->
+  <circle cx="150" cy="132" r="12.5" fill="#facc15"/>
+</svg>

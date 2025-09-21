@@ -1,16 +1,10 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="16" cy="16" r="16" fill="#030303"/>
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
   
-  <!-- Main F icon -->
-  <path d="M8 6h12c2 0 3.5 1.5 3.5 3.5v2c0 1.5-1 2.5-2 3l3 6h-3l-2.5-5h-3v5H8V6zm4 4h6c.5 0 1-.5 1-1v-1c0-.5-.5-1-1-1h-6v2z" fill="#FFCC02"/>
+  <!-- Letter F - Rose 600 -->
+  <text x="6" y="22" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#e11d48">F</text>
   
-  <!-- AI circuit pattern -->
-  <path d="M20 22h2v2h-2zM24 22h2v2h-2zM22 20h2v2h-2zM22 24h2v2h-2z" fill="#F43F5E" opacity="0.8"/>
-  
-  <!-- Connection dots -->
-  <circle cx="19" cy="23" r="0.5" fill="#FFCC02"/>
-  <circle cx="25" cy="23" r="0.5" fill="#FFCC02"/>
-  <circle cx="23" cy="21" r="0.5" fill="#FFCC02"/>
-  <circle cx="23" cy="25" r="0.5" fill="#FFCC02"/>
+  <!-- Yellow dot (full stop) - baseline aligned with F, 50% smaller -->
+  <circle cx="22" cy="22" r="1.5" fill="#facc15"/>
 </svg>
