@@ -66,3 +66,8 @@ export { VideoTemplateDemo } from './VideoTemplateDemo'
 export { BlogArticleDemo } from './BlogArticleDemo'
 export { SeoPricingIcon } from './SeoPricingIcon'
 
+// Footer Components
+export { default as Footer } from './Footer'
+export { FooterColumn } from './FooterColumn'
+export { FooterNewsletter } from './FooterNewsletter'
+
