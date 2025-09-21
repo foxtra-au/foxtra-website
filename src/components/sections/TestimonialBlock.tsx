@@ -19,28 +19,28 @@ export function TestimonialBlock() {
 
   const testimonials = [
     {
-      quote: "Foxtra's AI agents have revolutionized our customer service. We're now handling 3x more inquiries with better satisfaction rates.",
-      name: "Sarah Chen",
-      designation: "CEO at TechFlow Solutions",
-      src: "/testimonials/person-1.jpg",
+      quote: "Foxtra AI has transformed our business operations completely. Their AI solutions have streamlined our processes and significantly improved our efficiency. The team's expertise and dedication to delivering quality results is outstanding.",
+      name: "Lokesh M",
+      designation: "CEO of Living Cluster",
+      src: "/testimonials/Lokesh-lotez.png",
     },
     {
-      quote: "The custom development team built exactly what we envisioned. Their AI-first approach resulted in a platform that's both powerful and intuitive.",
-      name: "Michael Rodriguez", 
-      designation: "CTO at InnovateSphere",
-      src: "/testimonials/person-2.jpg",
+      quote: "Working with Foxtra has been a game-changer for Realnest. Their innovative AI technology and custom development solutions have helped us scale our business and serve our clients better than ever before.",
+      name: "Sid Gandhi", 
+      designation: "CEO of Realnest",
+      src: "/testimonials/sid_realnest.png",
     },
     {
-      quote: "AI-powered marketing campaigns increased our lead generation by 400%. Their data-driven approach has been game-changing for our growth.",
-      name: "Emily Watson",
-      designation: "Marketing Director at CloudScale", 
-      src: "/testimonials/person-3.jpg",
+      quote: "Foxtra's AI-powered solutions have revolutionized how we operate at VHT Tech. Their expertise in automation and intelligent systems has helped us achieve remarkable growth and efficiency improvements.",
+      name: "Ramesh V",
+      designation: "MD of VHT Tech", 
+      src: "/testimonials/vunnam-vht.png",
     },
     {
-      quote: "Working with Foxtra has been transformative. Their expertise helped us automate workflows and improve efficiency by 60%.",
-      name: "James Kim",
-      designation: "Operations Manager at DataPro",
-      src: "/testimonials/person-4.jpg",
+      quote: "Foxtra AI has been instrumental in helping Dreamrise Homes grow our business. Their AI solutions have improved our customer engagement and streamlined our operations significantly.",
+      name: "Jith Singh",
+      designation: "CEO of Dreamrise Homes",
+      src: "/testimonials/jith-dreamrise.png",
     },
   ];
 
