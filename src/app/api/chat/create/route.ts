@@ -33,8 +33,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Production mode - actual Retell AI API call
-    const retellResponse = await fetch(`${RETELL_API_BASE}/create-web-call`, {
+    // Production mode - actual Retell AI API call for web chat
+    const retellResponse = await fetch(`${RETELL_API_BASE}/create-chat-session`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${RETELL_API_KEY}`,
@@ -75,7 +75,7 @@ export async function POST(request: NextRequest) {
     const data = await retellResponse.json();
     
     return NextResponse.json({
-      chat_id: data.call_id,
+      chat_id: data.session_id || data.chat_id || data.call_id,
       access_token: data.access_token,
       status: 'active',
       created_at: new Date().toISOString(),

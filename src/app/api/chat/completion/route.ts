@@ -62,25 +62,20 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Production mode - For Retell AI web calls, we typically don't send individual messages
-    // Instead, the conversation happens through the WebRTC connection
-    // This endpoint can be used for text-based fallback or logging
-    
-    // If you need to send a message to an ongoing call, use the appropriate Retell AI endpoint
-    const retellResponse = await fetch(`${RETELL_API_BASE}/update-call`, {
+    // Production mode - Send message to Retell AI web chat session
+    const retellResponse = await fetch(`${RETELL_API_BASE}/send-chat-message`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${RETELL_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        call_id: chat_id,
-        actions: [
-          {
-            type: 'message',
-            content: message
-          }
-        ]
+        session_id: chat_id,
+        message: message,
+        metadata: {
+          timestamp: new Date().toISOString(),
+          source: 'foxtra_website'
+        }
       }),
     });
 
