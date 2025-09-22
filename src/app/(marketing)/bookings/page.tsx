@@ -74,6 +74,9 @@ export default function BookingsPage() {
             animate="visible"
             className="text-center mb-12"
           >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/80 text-sm font-medium mb-6">
+              <span>Foxtra • Book a Meeting</span>
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Book Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-rose-400">Consultation</span>
             </h1>

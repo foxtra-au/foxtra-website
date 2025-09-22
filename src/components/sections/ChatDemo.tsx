@@ -114,12 +114,12 @@ export function ChatDemo() {
                     
                     {/* Right side - CTA */}
                     <div className="flex-shrink-0">
-                        <button className="group inline-flex items-center px-6 py-3 text-white rounded-lg font-semibold shadow-lg transition-all duration-300 transform hover:scale-105" style={{ backgroundColor: '#FF335C', boxShadow: '0 10px 15px -3px rgba(255, 51, 92, 0.25)' }}>
+                        <a href="/bookings" className="group inline-flex items-center px-6 py-3 text-white rounded-lg font-semibold shadow-lg transition-all duration-300 transform hover:scale-105" style={{ backgroundColor: '#FF335C', boxShadow: '0 10px 15px -3px rgba(255, 51, 92, 0.25)' }}>
                             <span className="relative z-10 flex items-center">
                                 Book Demo
                                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                             </span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </motion.div>
