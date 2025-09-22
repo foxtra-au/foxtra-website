@@ -6,12 +6,19 @@ import { cn } from "@/lib/utils";
 import {
     SendIcon,
     LoaderIcon,
-    Calendar,
     User,
     Bot,
+    Calendar,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as React from "react"
+
+interface ChatMessage {
+    id: string;
+    text: string;
+    isUser: boolean;
+    timestamp?: string;
+}
 
 interface UseAutoResizeTextareaProps {
     minHeight: number;
@@ -110,22 +117,16 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
 )
 Textarea.displayName = "Textarea"
 
-interface ChatSession {
-    chat_id: string;
-    access_token?: string;
-    status: string;
-    demo_mode?: boolean;
-}
-
 export function AiChatWindow() {
     const [value, setValue] = useState("");
     const [isTyping, setIsTyping] = useState(false);
     const [isPending, startTransition] = useTransition();
     const [inputFocused, setInputFocused] = useState(false);
-    const [messages, setMessages] = useState<Array<{id: string, text: string, isUser: boolean, timestamp?: string}>>([]);
-    const [chatSession, setChatSession] = useState<ChatSession | null>(null);
+    const [messages, setMessages] = useState<ChatMessage[]>([]);
+    const [chatId, setChatId] = useState<string | null>(null);
     const [isInitializing, setIsInitializing] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [chatStarted, setChatStarted] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     
     const { textareaRef, adjustHeight } = useAutoResizeTextarea({
@@ -133,55 +134,60 @@ export function AiChatWindow() {
         maxHeight: 120,
     });
 
-
-    // Initialize chat session
-    const initializeChatSession = useCallback(async () => {
-        if (isInitializing || chatSession) return;
+    // Start Chat function
+    const startChat = useCallback(async () => {
+        if (isInitializing || chatId) return;
         
         setIsInitializing(true);
         setError(null);
         
         try {
-            const response = await fetch('/api/chat/create', {
+            const response = await fetch('/api/create-chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    user_id: `user-${Date.now()}`,
-                    user_name: 'Website Visitor'
-                }),
             });
 
             if (!response.ok) {
-                throw new Error(`Failed to create chat session: ${response.status}`);
+                throw new Error(`Failed to create chat: ${response.status}`);
             }
 
-            const sessionData = await response.json();
-            setChatSession(sessionData);
+            const data = await response.json();
             
-            // Add welcome message
-            if (sessionData.demo_mode) {
-                setMessages([{
-                    id: 'welcome',
-                    text: "👋 Hi there! I'm Foxtra's AI assistant. I'm here to help you learn about our AI services. What would you like to know?",
+            // Set the chat ID from the API response
+            setChatId(data.chatId);
+            setChatStarted(true);
+            
+            // Add the intro message from Retell if available
+            if (data.introMessage) {
+                const introResponse: ChatMessage = {
+                    id: `intro-${Date.now()}`,
+                    text: data.introMessage,
                     isUser: false,
-                    timestamp: new Date().toISOString()
-                }]);
+                    timestamp: data.created_at || new Date().toISOString()
+                };
+                setMessages([introResponse]);
+            } else {
+                setMessages([]);
             }
             
         } catch (err) {
-            console.error('Failed to initialize chat:', err);
-            setError(err instanceof Error ? err.message : 'Failed to initialize chat');
+            console.error('Failed to start chat:', err);
+            setError('Failed to start chat. Please try again.');
         } finally {
             setIsInitializing(false);
         }
-    }, [isInitializing, chatSession]);
+    }, [isInitializing, chatId]);
 
-    // Initialize chat session on component mount
+    // Auto-start chat on component mount
     useEffect(() => {
-        initializeChatSession();
-    }, [initializeChatSession]);
+        // Only initialize on client-side to avoid SSR issues
+        if (typeof window !== 'undefined' && !chatStarted && !isInitializing) {
+            startChat();
+        }
+    }, []);
+
 
     // Auto-scroll to bottom when messages change
     const scrollToBottom = () => {
@@ -208,10 +214,10 @@ export function AiChatWindow() {
 
     const handleSendMessage = async (customMessage?: string) => {
         const messageText = customMessage || value.trim();
-        if (!messageText || isTyping || !chatSession) return;
+        if (!messageText || isTyping || !chatId) return;
         
         // Add user message immediately
-        const userMessage = {
+        const userMessage: ChatMessage = {
             id: Date.now().toString(),
             text: messageText,
             isUser: true,
@@ -227,25 +233,26 @@ export function AiChatWindow() {
         setIsTyping(true);
         
         try {
-            const response = await fetch('/api/chat/completion', {
+            const response = await fetch('/api/send-message', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    chat_id: chatSession.chat_id,
-                    message: messageText,
-                    access_token: chatSession.access_token
+                    chatId: chatId,
+                    message: messageText
                 }),
             });
 
             if (!response.ok) {
+                console.error('API response not OK:', response.status, response.statusText);
                 throw new Error(`Failed to get AI response: ${response.status}`);
             }
 
             const data = await response.json();
+            console.log('API response data:', data);
             
-            const aiResponse = {
+            const aiResponse: ChatMessage = {
                 id: data.message_id || `ai-${Date.now()}`,
                 text: data.response,
                 isUser: false,
@@ -259,7 +266,7 @@ export function AiChatWindow() {
             setError('Failed to send message. Please try again.');
             
             // Add fallback error message
-            const errorResponse = {
+            const errorResponse: ChatMessage = {
                 id: `error-${Date.now()}`,
                 text: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
                 isUser: false,
@@ -272,32 +279,7 @@ export function AiChatWindow() {
         }
     };
 
-    // Cleanup function to end chat session
-    const endChatSession = useCallback(async () => {
-        if (!chatSession) return;
-        
-        try {
-            await fetch('/api/chat/end', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chat_id: chatSession.chat_id,
-                    access_token: chatSession.access_token
-                }),
-            });
-        } catch (err) {
-            console.error('Failed to end chat session:', err);
-        }
-    }, [chatSession]);
-
-    // Cleanup on unmount
-    useEffect(() => {
-        return () => {
-            endChatSession();
-        };
-    }, [endChatSession]);
+    // No cleanup needed for simplified API
     
 
     return (
@@ -333,9 +315,9 @@ export function AiChatWindow() {
                             transition={{ delay: 0.3 }}
                         >
                             {isInitializing ? "Setting up your chat session..." : 
-                             error ? "Connection error - trying demo mode" : 
-                             chatSession?.demo_mode ? "Demo mode - Ask me anything!" :
-                             "Connected to Retell AI - Ask me anything!"}
+                             error ? "Connection error - Please try again" : 
+                             chatStarted ? "Ready to chat - Ask me anything!" :
+                             "Click 'Start Chat' to begin"}
                         </motion.p>
                         
                         {error && (
@@ -447,47 +429,47 @@ export function AiChatWindow() {
                         </div>
 
                         <div className="p-3 border-t border-white/[0.1] flex items-center justify-between">
-                            <motion.button
-                                type="button"
-                                onClick={() => handleSendMessage("Schedule a demo")}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                disabled={isTyping || !chatSession || isInitializing}
-                                className={cn(
-                                    "flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all",
-                                    (chatSession && !isInitializing)
-                                        ? "bg-white/[0.03] hover:bg-white/[0.08] text-white/70 hover:text-white/90"
-                                        : "bg-white/[0.02] text-white/40 cursor-not-allowed"
-                                )}
-                            >
-                                <div className="text-white/60">
-                                    <Calendar className="w-4 h-4" />
+                            {isInitializing ? (
+                                <div className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white/70">
+                                    <LoaderIcon className="h-4 w-4 animate-spin" />
+                                    Starting Chat...
                                 </div>
-                                <span>Schedule a demo</span>
-                            </motion.button>
+                            ) : chatStarted ? (
+                                <motion.a
+                                    href="/bookings"
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 hover:bg-yellow-500/30"
+                                >
+                                    <Calendar className="h-4 w-4" />
+                                    Schedule Demo
+                                </motion.a>
+                            ) : null}
                             
-                            <motion.button
-                                type="button"
-                                onClick={() => handleSendMessage()}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                disabled={isTyping || !value.trim() || !chatSession || isInitializing}
-                                className={cn(
-                                    "px-4 py-2 rounded-lg text-sm font-medium transition-all",
-                                    "flex items-center gap-2",
-                                    (value.trim() && chatSession && !isInitializing)
-                                        ? "text-black shadow-lg"
+                            {chatStarted && (
+                                <motion.button
+                                    type="button"
+                                    onClick={() => handleSendMessage()}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    disabled={isTyping || !value.trim() || !chatId}
+                                    className={cn(
+                                        "px-4 py-2 rounded-lg text-sm font-medium transition-all",
+                                        "flex items-center gap-2",
+                                        (value.trim() && chatId && !isTyping)
+                                            ? "text-black shadow-lg"
                                         : "bg-white/[0.05] text-white/40"
-                                )}
-                                style={(value.trim() && chatSession && !isInitializing) ? { backgroundColor: '#FFCC02' } : {}}
-                            >
-                                {isTyping ? (
+                                    )}
+                                    style={(value.trim() && chatId && !isTyping) ? { backgroundColor: '#FFCC02' } : {}}
+                                >
+                                    {isTyping ? (
                                     <LoaderIcon className="w-4 h-4 animate-spin" />
                                 ) : (
                                     <SendIcon className="w-4 h-4" />
-                                )}
-                                <span>Send</span>
-                            </motion.button>
+                                    )}
+                                    <span>Send</span>
+                                </motion.button>
+                            )}
                         </div>
                     </motion.div>
 
