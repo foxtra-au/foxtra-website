@@ -86,6 +86,12 @@ export const navigationConfig: NavItem[] = [
             iconName: "Globe",
           },
           {
+            label: "Lead Magnet",
+            description: "Lead capture plugin for accountants",
+            href: "/solutions/lead-magnet",
+            iconName: "Target",
+          },
+          {
             label: "Pricing",
             description: "Transparent pricing for all services",
             href: "/pricing",
