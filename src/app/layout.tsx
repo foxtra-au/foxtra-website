@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Script from 'next/script'
 import './globals.css'
 import { ConditionalLayout } from '@/components/layout'
+import { HubspotTracking } from '@/components/ui/HubspotTracking'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,12 +32,7 @@ export default function RootLayout({
         <ConditionalLayout>
           {children}
         </ConditionalLayout>
-        {/* HubSpot Live Chat */}
-        <Script
-          id="hubspot-script"
-          src="//js-ap1.hs-scripts.com/442243679.js"
-          strategy="afterInteractive"
-        />
+        <HubspotTracking />
       </body>
     </html>
   )
