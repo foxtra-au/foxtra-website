@@ -81,7 +81,13 @@ export function LeadMagnetHero({ title, description, badge, features, rightCompo
                                 animate="visible"
                                 className="mb-8"
                             >
-                                <AnimatedGroup items={features} />
+                                <AnimatedGroup preset="slide">
+                                    {features.map((feature, index) => (
+                                        <div key={index} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 mr-2 mb-2">
+                                            <span>{feature}</span>
+                                        </div>
+                                    ))}
+                                </AnimatedGroup>
                             </motion.div>
                         )}
 
