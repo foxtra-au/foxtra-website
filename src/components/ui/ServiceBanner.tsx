@@ -96,27 +96,15 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                             variants={fadeUpVariants}
                             initial="hidden"
                             animate="visible"
-                            className="flex flex-row gap-4 items-center w-full"
                         >
                             <a 
-                                href="#" 
-                                className="group flex-1 flex items-center justify-center px-4 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1" 
+                                href="/bookings" 
+                                className="group inline-flex items-center px-8 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1" 
                                 style={{ backgroundColor: '#FF335C', boxShadow: '0 25px 50px -12px rgba(255, 51, 92, 0.25)' }}
                             >
                                 <span className="relative z-10 flex items-center">
-                                    <ArrowRight className="mr-2 h-5 w-5" />
-                                    <span className="hidden sm:inline">Buy now</span>
-                                    <span className="sm:hidden">Buy</span>
-                                </span>
-                            </a>
-                            <a 
-                                href="#" 
-                                className="group flex-1 flex items-center justify-center px-4 py-4 text-white rounded-sm font-semibold text-lg bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover:bg-white/20"
-                            >
-                                <span className="relative z-10 flex items-center">
-                                    <Target className="mr-2 h-5 w-5" />
-                                    <span className="hidden sm:inline">View demo</span>
-                                    <span className="sm:hidden">Demo</span>
+                                    <Calendar className="mr-2 h-5 w-5" />
+                                    Book Appointment
                                 </span>
                             </a>
                         </motion.div>

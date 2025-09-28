@@ -1,6 +1,6 @@
-import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
 import { LeadMagnetFeatures, LeadMagnetBenefits, LeadMagnetProcess } from '@/components/sections'
+import { LeadMagnetHero } from '@/components/sections/LeadMagnetHero'
 import { SocialMediaBannerImage } from '@/components/ui/SocialMediaBannerImage'
 import LeadMagnetPricing from '@/components/ui/LeadMagnetPricing'
 import { Metadata } from 'next'
@@ -20,7 +20,7 @@ export default function LeadMagnet() {
 
   return (
     <ServicePageWrapper>
-      <ServiceBanner
+      <LeadMagnetHero
         title="Instantly Activate Your Lead Magnet for Accountants"
         description="Capture Leads. Build Trust. Onboard Faster."
         badge="Foxtra • Lead Capture Solutions"
