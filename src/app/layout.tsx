@@ -4,6 +4,7 @@ import './globals.css'
 import { ConditionalLayout } from '@/components/layout'
 import { HubspotTracking } from '@/components/ui/HubspotTracking'
 import { GoogleAnalyticsScript } from '@/components/ui/GoogleAnalyticsScript'
+import { ClickRankVerificationScript } from '@/components/ui/ClickRankVerificationScript'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GoogleAnalyticsScript />
+        <ClickRankVerificationScript />
       </head>
       <body className={inter.className}>
         <ConditionalLayout>
