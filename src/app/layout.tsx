@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ConditionalLayout } from '@/components/layout'
 import { HubspotTracking } from '@/components/ui/HubspotTracking'
+import { GoogleAnalyticsScript } from '@/components/ui/GoogleAnalyticsScript'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,6 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalyticsScript />
+      </head>
       <body className={inter.className}>
         <ConditionalLayout>
           {children}
