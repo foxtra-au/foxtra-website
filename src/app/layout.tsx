@@ -5,6 +5,7 @@ import { ConditionalLayout } from '@/components/layout'
 import { HubspotTracking } from '@/components/ui/HubspotTracking'
 import { GoogleAnalyticsScript } from '@/components/ui/GoogleAnalyticsScript'
 import { ClickRankVerificationScript } from '@/components/ui/ClickRankVerificationScript'
+import { PersistentVoiceAgent } from '@/components/ui/PersistentVoiceAgent'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,6 +39,7 @@ export default function RootLayout({
         <ConditionalLayout>
           {children}
         </ConditionalLayout>
+        <PersistentVoiceAgent />
         <HubspotTracking />
       </body>
     </html>
