@@ -1,5 +1,5 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
-import { ServicePageWrapper, VideoMarketingFeatures } from '@/components/sections'
+import { ServicePageWrapper, VideoMarketingFeatures, UltraRealisticAIVideos } from '@/components/sections'
 import { VideoTemplateDemo } from '@/components/ui/VideoTemplateDemo'
 import { Metadata } from 'next'
 
@@ -29,6 +29,8 @@ export default function VideoMarketing() {
         features={videoMarketingFeatures}
         className="mt-16"
       />
+      
+      <UltraRealisticAIVideos />
     </ServicePageWrapper>
   )
 }
