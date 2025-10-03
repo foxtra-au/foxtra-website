@@ -1,76 +1,111 @@
 'use client';
 
+import { useState } from 'react';
+import { Play, Pause } from 'lucide-react';
+
 export function VideoTemplateDemo() {
-  const videoReels = [
-    {
-      id: 1,
-      title: "Social Media Reel",
-      type: "Instagram",
-      gradientClass: "bg-gradient-to-br from-yellow-400/20 to-rose-600/20",
-      duration: "15s"
-    },
-    {
-      id: 2,
-      title: "Brand Story",
-      type: "TikTok",
-      gradientClass: "bg-gradient-to-br from-rose-600/20 to-yellow-400/20",
-      duration: "30s"
-    },
-    {
-      id: 3,
-      title: "Product Demo",
-      type: "YouTube",
-      gradientClass: "bg-gradient-to-br from-blue-400/20 to-purple-600/20",
-      duration: "45s"
-    },
-    {
-      id: 4,
-      title: "Behind Scenes",
-      type: "Instagram",
-      gradientClass: "bg-gradient-to-br from-green-400/20 to-blue-600/20",
-      duration: "20s"
-    },
-    {
-      id: 5,
-      title: "Tutorial",
-      type: "TikTok",
-      gradientClass: "bg-gradient-to-br from-purple-400/20 to-pink-600/20",
-      duration: "25s"
-    },
-    {
-      id: 6,
-      title: "Testimonial",
-      type: "YouTube",
-      gradientClass: "bg-gradient-to-br from-orange-400/20 to-red-600/20",
-      duration: "35s"
-    }
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  
+  const videoUrls = [
+    'https://foxtra-ai-website-videos.s3.ap-southeast-2.amazonaws.com/Foxtra-videos-project.mp4',
+    'https://foxtra-ai-website-videos.s3.ap-southeast-2.amazonaws.com/dental-prabin.mp4'
   ];
 
-  // Duplicate reels for seamless scrolling
-  const duplicatedReels = [...videoReels, ...videoReels];
+  const toggleVideo = (index: number) => {
+    if (playingVideo === index) {
+      setPlayingVideo(null);
+    } else {
+      setPlayingVideo(index);
+    }
+  };
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 max-w-full">
-        {/* Two Reels Side by Side */}
-        <div className="flex gap-4">
-          {videoReels.slice(0, 2).map((reel) => (
-            <div
-              key={reel.id}
-              className={`w-[200px] h-[300px] rounded-xl p-6 flex flex-col items-center justify-center ${reel.gradientClass}`}
-            >
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
+      <div className="flex gap-2 w-full max-w-lg">
+        {/* First Video Section */}
+        <div className="bg-white/5 backdrop-blur-sm border border-white/5 rounded-xl p-3 w-1/2">
+          <div className="w-full aspect-[9/16] rounded-xl overflow-hidden bg-gray-900/50 relative">
+          {playingVideo === 0 ? (
+            <video
+              src={videoUrls[0]}
+              autoPlay
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+              onEnded={() => setPlayingVideo(null)}
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-900/50 flex items-center justify-center cursor-pointer" onClick={() => toggleVideo(0)}>
+              <video
+                src={videoUrls[0]}
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+                onLoadedData={(e) => {
+                  e.currentTarget.currentTime = 1;
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex items-center justify-center w-16 h-16 bg-rose-600 border border-rose-600 rounded-full shadow-lg hover:bg-rose-500 hover:border-rose-500 hover:shadow-xl transition-all duration-300">
+                  <Play className="w-6 h-6 text-white ml-1" />
                 </div>
-                <p className="text-white/90 text-sm font-semibold mb-2">{reel.title}</p>
-                <p className="text-white/70 text-xs mb-1">{reel.type}</p>
-                <p className="text-white/60 text-[10px]">{reel.duration}</p>
               </div>
             </div>
-          ))}
+          )}
+          {playingVideo === 0 && (
+            <div className="absolute bottom-4 right-4">
+              <button
+                onClick={() => toggleVideo(0)}
+                className="flex items-center justify-center w-8 h-8 bg-rose-600 border border-rose-600 rounded-full shadow-lg hover:bg-rose-500 hover:border-rose-500 hover:shadow-xl transition-all duration-300"
+              >
+                <Pause className="w-3 h-3 text-white" />
+              </button>
+            </div>
+          )}
+          </div>
+        </div>
+
+        {/* Second Video Section */}
+        <div className="bg-white/5 backdrop-blur-sm border border-white/5 rounded-xl p-3 w-1/2">
+          <div className="w-full aspect-[9/16] rounded-xl overflow-hidden bg-gray-900/50 relative">
+          {playingVideo === 1 ? (
+            <video
+              src={videoUrls[1]}
+              autoPlay
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+              onEnded={() => setPlayingVideo(null)}
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-900/50 flex items-center justify-center cursor-pointer" onClick={() => toggleVideo(1)}>
+              <video
+                src={videoUrls[1]}
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+                onLoadedData={(e) => {
+                  e.currentTarget.currentTime = 1;
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex items-center justify-center w-16 h-16 bg-rose-600 border border-rose-600 rounded-full shadow-lg hover:bg-rose-500 hover:border-rose-500 hover:shadow-xl transition-all duration-300">
+                  <Play className="w-6 h-6 text-white ml-1" />
+                </div>
+              </div>
+            </div>
+          )}
+          {playingVideo === 1 && (
+            <div className="absolute bottom-4 right-4">
+              <button
+                onClick={() => toggleVideo(1)}
+                className="flex items-center justify-center w-8 h-8 bg-rose-600 border border-rose-600 rounded-full shadow-lg hover:bg-rose-500 hover:border-rose-500 hover:shadow-xl transition-all duration-300"
+              >
+                <Pause className="w-3 h-3 text-white" />
+              </button>
+            </div>
+          )}
+          </div>
         </div>
       </div>
     </div>
