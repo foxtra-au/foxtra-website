@@ -15,7 +15,8 @@ export default function LeadMagnet() {
     "Instant Setup",
     "Smart Form Experience", 
     "Verified Leads",
-    "Enhanced Client Confidence"
+    "Enhanced Client Confidence",
+    "24/7 Lead Capture"
   ];
 
   return (

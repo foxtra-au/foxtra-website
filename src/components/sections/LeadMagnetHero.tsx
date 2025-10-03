@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle, Zap, Target, Users, TrendingUp, ArrowRight, Calendar } from "lucide-react";
+import { Circle, Zap, Target, Users, TrendingUp, ArrowRight, Calendar, Settings, CheckCircle, Shield, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedGroup } from "@/components/ui/AnimatedGroup";
 import Image from "next/image";
@@ -81,13 +81,28 @@ export function LeadMagnetHero({ title, description, badge, features, rightCompo
                                 animate="visible"
                                 className="mb-8"
                             >
-                                <AnimatedGroup preset="slide">
-                                    {features.map((feature, index) => (
-                                        <div key={index} className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 mr-2 mb-2">
-                                            <span>{feature}</span>
-                                        </div>
-                                    ))}
-                                </AnimatedGroup>
+                                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                                    {features.map((feature, index) => {
+                                        // Map features to appropriate icons
+                                        const getFeatureIcon = (featureText: string) => {
+                                            if (featureText.toLowerCase().includes('instant setup')) return Settings;
+                                            if (featureText.toLowerCase().includes('smart form')) return Zap;
+                                            if (featureText.toLowerCase().includes('verified')) return CheckCircle;
+                                            if (featureText.toLowerCase().includes('enhanced client') || featureText.toLowerCase().includes('confidence')) return Shield;
+                                            if (featureText.toLowerCase().includes('24/7') || featureText.toLowerCase().includes('lead capture')) return Clock;
+                                            return Target; // Default icon
+                                        };
+                                        
+                                        const IconComponent = getFeatureIcon(feature);
+                                        
+                                        return (
+                                            <div key={index} className="inline-flex items-center px-3 py-1.5 rounded-sm text-sm font-medium bg-white/10 backdrop-blur-sm border border-yellow-500/30 text-white/70 hover:bg-white/15 transition-all duration-300">
+                                                <IconComponent className="w-4 h-4 text-yellow-400 mr-2 flex-shrink-0" />
+                                                <span>{feature}</span>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </motion.div>
                         )}
 
