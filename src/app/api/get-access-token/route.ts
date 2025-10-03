@@ -3,19 +3,25 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const agent_id = process.env.RETELL_WEBCALL_AGENT_ID;
+    const api_key = process.env.RETELL_API_KEY;
+
+    console.log('API endpoint called - checking environment variables:');
+    console.log('Agent ID exists:', !!agent_id);
+    console.log('API Key exists:', !!api_key);
+    console.log('Agent ID value:', agent_id);
 
     if (!agent_id) {
       console.error('Voice service configuration error: Agent ID not found');
       return NextResponse.json(
-        { error: 'Voice service configuration error' },
+        { error: 'Voice service configuration error: Agent ID not found' },
         { status: 500 }
       );
     }
 
-    if (!process.env.RETELL_API_KEY) {
+    if (!api_key) {
       console.error('Voice service configuration error: API key not found');
       return NextResponse.json(
-        { error: 'Voice service configuration error' },
+        { error: 'Voice service configuration error: API key not found' },
         { status: 500 }
       );
     }

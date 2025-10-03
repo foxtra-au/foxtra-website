@@ -93,6 +93,10 @@ export function SimplifiedVoiceAgent({ className = '' }: SimplifiedVoiceAgentPro
       }
     });
 
+    client.on('metadata', (metadata) => {
+      console.log('📊 Metadata Event:', metadata);
+    });
+
     client.on('error', (error) => {
       console.error('An error occurred:', error);
       setError('Voice service error. Please try again.');
@@ -149,6 +153,9 @@ export function SimplifiedVoiceAgent({ className = '' }: SimplifiedVoiceAgentPro
       setIsMicrophoneReady(true);
       setHasRequestedPermission(true);
       console.log('🎤 Microphone permission granted and audio analysis set up');
+      
+      // Return true to indicate success
+      return true;
     } catch (error) {
       console.error('Microphone access denied:', error);
       throw new Error('Microphone access denied. Please allow microphone access to use voice features.');
@@ -194,29 +201,43 @@ export function SimplifiedVoiceAgent({ className = '' }: SimplifiedVoiceAgentPro
   };
 
   const startCall = async () => {
+    console.log('🎤 startCall called');
+    
     if (!retellWebClientRef.current) {
+      console.error('❌ Retell client not ready');
       setError('Voice client not ready. Please refresh the page.');
       return;
     }
 
+    console.log('✅ Retell client is ready');
     setError(null);
 
     try {
+      let microphoneReady = isMicrophoneReady;
+      
       // Request microphone permission on first click if not already done
       if (!hasRequestedPermission) {
+        console.log('🎤 Requesting microphone permission...');
         setIsConnecting(true);
         await requestMicrophonePermission();
+        console.log('✅ Microphone permission granted');
+        microphoneReady = true; // We know it's ready since the function succeeded
         setIsConnecting(false);
       }
 
-      if (!isMicrophoneReady) {
+      // Check if microphone is ready
+      if (!microphoneReady) {
+        console.error('❌ Microphone not ready');
         setError('Microphone not ready. Please try again.');
+        setIsConnecting(false);
         return;
       }
 
+      console.log('✅ Microphone is ready');
+
       // Get access token from our API
       setIsConnecting(true);
-      console.log('Getting access token from API...');
+      console.log('🌐 Getting access token from API...');
       
       const response = await fetch('/api/get-access-token', {
         method: 'POST',
@@ -225,30 +246,40 @@ export function SimplifiedVoiceAgent({ className = '' }: SimplifiedVoiceAgentPro
         },
       });
 
+      console.log('📡 API response status:', response.status);
+      console.log('📡 API response ok:', response.ok);
+
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to get access token');
+        console.error('❌ API error response:', errorData);
+        throw new Error(errorData.error || `API request failed with status ${response.status}`);
       }
 
-      const { access_token } = await response.json();
+      const responseData = await response.json();
+      console.log('📡 API response data received:', { hasAccessToken: !!responseData.access_token });
+      
+      const { access_token } = responseData;
       
       if (!access_token) {
+        console.error('❌ No access token in response:', responseData);
         throw new Error('No access token received from server');
       }
       
-      console.log('Starting call with access token from API');
+      console.log('✅ Access token received, starting call...');
 
-      // Start the call using Retell Web SDK
+      // Start the call using Retell Web SDK (following official documentation)
       await retellWebClientRef.current.startCall({
         accessToken: access_token,
-        sampleRate: 24000,
-        captureDeviceId: 'default',
-        playbackDeviceId: 'default',
-        emitRawAudioSamples: true,
+        sampleRate: 24000, // (Optional) set sample rate of the audio capture and playback
+        captureDeviceId: 'default', // (Optional) device id of the mic
+        playbackDeviceId: 'default', // (Optional) device id of the speaker
+        emitRawAudioSamples: true, // (Optional) Whether to emit "audio" events that contain raw pcm audio bytes
       });
 
+      console.log('✅ Call started successfully');
+
     } catch (error) {
-      console.error('Failed to start call:', error);
+      console.error('❌ Failed to start call:', error);
       setError(`Failed to start voice call: ${(error as Error).message}`);
       setIsConnecting(false);
     }
@@ -346,7 +377,7 @@ export function SimplifiedVoiceAgent({ className = '' }: SimplifiedVoiceAgentPro
             className={`
               relative flex items-center justify-center gap-2 px-4 py-3 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95
               ${!isCallActive 
-                ? 'bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20' 
+                ? 'bg-green-600 backdrop-blur-sm border border-green-400 hover:bg-green-600' 
                 : 'bg-red-600/90 backdrop-blur-sm border border-red-500/50 hover:bg-red-700/90'
               }
               ${isConnecting ? 'animate-pulse' : ''}
