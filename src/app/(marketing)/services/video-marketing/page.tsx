@@ -1,6 +1,7 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, VideoMarketingFeatures, UltraRealisticAIVideos } from '@/components/sections'
 import { VideoTemplateDemo } from '@/components/ui/VideoTemplateDemo'
+import { VideoIndustries } from '@/components/ui/VideoIndustries'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -31,6 +32,8 @@ export default function VideoMarketing() {
       />
       
       <UltraRealisticAIVideos />
+      
+      <VideoIndustries />
     </ServicePageWrapper>
   )
 }
