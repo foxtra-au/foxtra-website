@@ -26,23 +26,23 @@ export function HomeFeatures() {
   const features: Feature[] = [
     {
       icon: Bot,
-      title: "AI Agents",
-      description: "Intelligent voice and chat agents that handle customer interactions 24/7"
+      title: "AI Voice Agents",
+      description: "Intelligent voice chatbots and AI agents that handle customer service automation 24/7 for Australian businesses"
     },
     {
       icon: Code,
-      title: "Development",
-      description: "Custom web and mobile applications built with cutting-edge technology"
+      title: "Business Automation",
+      description: "Custom AI automation solutions and smart applications that streamline your business operations"
     },
     {
       icon: TrendingUp,
-      title: "Marketing",
-      description: "AI-powered SEO, social media, and advertising campaigns that drive growth"
+      title: "Marketing Automation",
+      description: "AI-powered marketing automation, SEO, and advertising campaigns that drive business growth"
     },
     {
       icon: Users,
-      title: "Consultations",
-      description: "Expert guidance and strategic planning for your digital transformation"
+      title: "AI Consultations",
+      description: "Expert AI strategy guidance and automation planning for your business transformation in Australia"
     }
   ];
 

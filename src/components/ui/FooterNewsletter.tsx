@@ -1,6 +1,6 @@
 'use client';
 
-import { Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Youtube, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -50,10 +50,10 @@ const legalLinks = [
 ];
 
 const socialIcons = [
-  { icon: <Instagram className="h-5 w-5" />, href: 'https://instagram.com/foxtraai' },
-  { icon: <Twitter className="h-5 w-5" />, href: 'https://twitter.com/foxtraai' },
-  { icon: <Linkedin className="h-5 w-5" />, href: 'https://linkedin.com/company/foxtra-ai' },
-  { icon: <Youtube className="h-5 w-5" />, href: 'https://youtube.com/@foxtraai' },
+  { icon: <Youtube className="h-5 w-5" />, href: 'https://www.youtube.com/@foxtra-ai' },
+  { icon: <Instagram className="h-5 w-5" />, href: 'https://www.instagram.com/foxtra.ai/' },
+  { icon: <Facebook className="h-5 w-5" />, href: 'https://www.facebook.com/foxtraai' },
+  { icon: <Linkedin className="h-5 w-5" />, href: 'https://www.linkedin.com/company/foxtra-ai' },
 ];
 
 export default function FooterNewsletter() {

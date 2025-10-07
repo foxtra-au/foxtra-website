@@ -10,8 +10,40 @@ import { PersistentVoiceAgent } from '@/components/ui/PersistentVoiceAgent'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Foxtra AI Website',
-  description: 'Modern AI-powered website built with Next.js 14',
+  title: 'Foxtra AI — AI Agents & Automation for Businesses',
+  description: 'Foxtra AI helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing. Transform your business with AI automation in Australia.',
+  keywords: ['AI agents', 'business automation', 'voice chatbots', 'chat automation', 'customer service AI', 'sales automation', 'marketing automation', 'Australia AI', 'AI voice agents', 'business AI solutions'],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: 'Foxtra AI — AI Agents & Automation for Businesses',
+    description: 'Foxtra AI helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
+    type: 'website',
+    locale: 'en_AU',
+    siteName: 'Foxtra AI',
+    url: 'https://foxtra.ai',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Foxtra AI — AI Agents & Automation for Businesses',
+    description: 'Foxtra AI helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
+    site: '@foxtraai',
+  },
+  other: {
+    'youtube:channel': 'https://www.youtube.com/@foxtra-ai',
+    'instagram:site': 'https://www.instagram.com/foxtra.ai/',
+    'facebook:app_id': 'foxtraai',
+    'linkedin:company': 'https://www.linkedin.com/company/foxtra-ai',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -32,6 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="robots" content="index, follow" />
         <GoogleAnalyticsScript />
         <ClickRankVerificationScript />
       </head>

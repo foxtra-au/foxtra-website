@@ -5,10 +5,10 @@ export function HomeBanner() {
     <div className="relative pt-20 pb-10">
       <HeroGeometric 
         badge="Foxtra AI"
-        title1="Build the Future"
-        title2="AI Power"
-        description="Transform your ideas into reality with cutting-edge AI technology. Build, deploy, and scale intelligent applications faster than ever before."
-        tagline=""
+        title1="AI Agents &"
+        title2="Business Automation"
+        description="Transform your business with intelligent AI agents for voice chatbots, customer service automation, and sales automation. Leading AI solutions for Australian businesses."
+        tagline="Smart AI automation that works 24/7"
       />
     </div>
   )

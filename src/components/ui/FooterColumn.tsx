@@ -1,22 +1,20 @@
 import {
-  Dribbble,
   Facebook,
-  Github,
   Instagram,
+  Youtube,
+  Linkedin,
   Mail,
   MapPin,
   Phone,
-  Twitter,
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const data = {
-  facebookLink: 'https://facebook.com/foxtraai',
-  instaLink: 'https://instagram.com/foxtraai',
-  twitterLink: 'https://twitter.com/foxtraai',
-  githubLink: 'https://github.com/foxtra-ai',
-  dribbbleLink: 'https://dribbble.com/foxtraai',
+  facebookLink: 'https://www.facebook.com/foxtraai',
+  instaLink: 'https://www.instagram.com/foxtra.ai/',
+  youtubeLink: 'https://www.youtube.com/@foxtra-ai',
+  linkedinLink: 'https://www.linkedin.com/company/foxtra-ai',
   services: {
     webdev: '/services/custom-development',
     webdesign: '/services/ai-websites',
@@ -48,11 +46,10 @@ const data = {
 };
 
 const socialLinks = [
-  { icon: Facebook, label: 'Facebook', href: data.facebookLink },
+  { icon: Youtube, label: 'YouTube', href: data.youtubeLink },
   { icon: Instagram, label: 'Instagram', href: data.instaLink },
-  { icon: Twitter, label: 'Twitter', href: data.twitterLink },
-  { icon: Github, label: 'GitHub', href: data.githubLink },
-  { icon: Dribbble, label: 'Dribbble', href: data.dribbbleLink },
+  { icon: Facebook, label: 'Facebook', href: data.facebookLink },
+  { icon: Linkedin, label: 'LinkedIn', href: data.linkedinLink },
 ];
 
 const aboutLinks = [
