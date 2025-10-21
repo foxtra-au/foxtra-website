@@ -9,13 +9,6 @@ Foxtra AI is a modern AI-powered web development company founded in 2019. We spe
 - Team Members: 10+
 - Success Rate: 99%
 
-## Technology Stack
-- **Framework**: Next.js 14 with App Router and Server Components
-- **Styling**: Tailwind CSS (utility-first CSS framework)
-- **Database**: MongoDB with Mongoose ODM
-- **Language**: TypeScript
-- **Additional**: React, Framer Motion, Three.js, Retell AI SDK
-
 ## Services Offered
 
 ### AI Services
