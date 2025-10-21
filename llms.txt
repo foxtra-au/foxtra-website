@@ -1,0 +1,147 @@
+# Foxtra AI Website - llms.txt
+
+## About Foxtra AI
+Foxtra AI is a modern AI-powered web development company founded in 2019. We specialize in building cutting-edge AI solutions that empower businesses and individuals to achieve more. Our mission is to create innovative AI solutions, and our vision is a world where AI seamlessly integrates with everyday applications to enhance productivity and creativity.
+
+## Company Stats
+- Founded: 2025
+- Happy Clients: 100+
+- Team Members: 10+
+- Success Rate: 99%
+
+## Technology Stack
+- **Framework**: Next.js 14 with App Router and Server Components
+- **Styling**: Tailwind CSS (utility-first CSS framework)
+- **Database**: MongoDB with Mongoose ODM
+- **Language**: TypeScript
+- **Additional**: React, Framer Motion, Three.js, Retell AI SDK
+
+## Services Offered
+
+### AI Services
+- AI Chat Agent Development
+- AI SEO Solutions
+- AI Voice Agent Development
+- AI Website Development
+- Blog Article Writing (AI-powered)
+
+### Development Services
+- Custom Web Development
+- Mobile App Development
+- API Development
+- Cloud Management
+- Automations (using n8n)
+
+### Marketing Services
+- Email Marketing
+- SMS Marketing
+- Video Marketing
+- Social Media Management
+- Social Media Ads
+- Google Ads
+
+## Industry Solutions
+We provide specialized solutions for various industries:
+- Accountants
+- Car Mechanics
+- Car Wash Services
+- Childcare
+- Electricians
+- Lawyers
+- Medical Practices
+- Pest Control
+- Plumbers
+- Real Estate
+
+## Website Structure
+
+### Main Pages
+- Home (/)
+- About (/about)
+- Services (/services)
+- Pricing (/pricing)
+- Case Studies (/case-studies)
+- Blog (/blog)
+- Contact (/contact)
+- Showcase (/showcase)
+
+### Service Pages
+- AI Chat Agent (/services/ai-chat-agent)
+- AI SEO (/services/ai-seo)
+- AI Voice Agent (/services/ai-voice-agent)
+- AI Websites (/services/ai-websites)
+- API Development (/services/api-development)
+- Automations (/services/automations)
+- Blog Article Writing (/services/blog-article-writing)
+- Cloud Management (/services/cloud-management)
+- Custom Development (/services/custom-development)
+- Email Marketing (/services/email-marketing)
+- Google Ads (/services/google-ads)
+- Mobile App Development (/services/mobile-app-development)
+- SMS Marketing (/services/sms-marketing)
+- Social Media Ads (/services/social-media-ads)
+- Social Media Management (/services/social-media-management)
+- Video Marketing (/services/video-marketing)
+
+### Pricing Models
+- Fixed Price (/pricing/fixed-price)
+- Fixed Budget (/pricing/fixed-budget)
+- Time & Material (/pricing/time-material)
+- Dedicated Team (/pricing/dedicated-team)
+
+### Case Studies
+- Little Steps (/case-studies/little-steps)
+- Local Fox (/case-studies/local-fox)
+- Spotcard (/case-studies/spotcard)
+
+### Company Pages
+- Our Story (/company/our-story)
+- Team (/company/team)
+- Careers (/company/careers)
+
+### Legal Pages
+- Privacy Policy (/privacy)
+- Terms of Service (/terms)
+- Cookie Policy (/cookies)
+- Accessibility (/accessibility)
+
+
+## Key Features
+- Modern React-based UI with TypeScript
+- Responsive design with Tailwind CSS
+- AI-powered chat functionality
+- Case study showcases
+- Client testimonials
+- Interactive demos and showcases
+- WebGL demonstrations
+- Blog with article management
+- Contact and booking systems
+
+## Client Testimonials
+The website includes testimonials from various clients including:
+- Jith from Dreamrise
+- Lokesh from Lotez
+- Sid from Realnest
+- Vunnam from VHT
+
+## Resources
+- Documentation (/resources/docs)
+- Tutorials (/resources/tutorials)
+- Case Studies (/resources/case-studies)
+- Support Contact (/support/contact)
+
+## Contact Information
+- Main Contact: /contact
+- Support: /support/contact
+- Bookings: /bookings
+- Get Started: /get-started
+
+
+## Content Management
+- Blog articles with dynamic routing
+- Case studies with detailed project information
+- Service pages with comprehensive descriptions
+- Interactive demos and showcases
+- Client portfolio and testimonials
+
+This website serves as a comprehensive platform for Foxtra AI's services, showcasing their expertise in AI development, web development, and digital marketing solutions across various industries.
