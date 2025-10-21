@@ -1,18 +1,38 @@
 User-agent: *
 Allow: /
 
-# Updated: 2024-11-18
+# Updated: 2024-12-19
 
 # Sitemap
 Sitemap: https://foxtra.ai/sitemap.xml
 
-# Disallow admin and private areas
+# Allow all static assets for proper rendering
+Allow: /_next/static/
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /apple-touch-icon.svg
+Allow: /icon-192.svg
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Allow all public assets
+Allow: /clients/
+Allow: /testimonials/
+Allow: /services/
+Allow: /industies/
+Allow: /seo-tools/
+Allow: /videos/
+Allow: /images/
+Allow: /agents/
+
+# Disallow admin and private areas only
 Disallow: /api/
 Disallow: /login/
-Disallow: /_next/
 Disallow: /admin/
+Disallow: /_next/static/chunks/pages/
+Disallow: /_next/static/chunks/pages/api/
 
-# Allow important pages
+# Allow all important pages
 Allow: /
 Allow: /about
 Allow: /services/
@@ -21,6 +41,13 @@ Allow: /case-studies/
 Allow: /pricing/
 Allow: /contact
 Allow: /blog/
+Allow: /bookings
+Allow: /cookies
+Allow: /get-started
+Allow: /showcase
+Allow: /company/
+Allow: /resources/
+Allow: /support/
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
