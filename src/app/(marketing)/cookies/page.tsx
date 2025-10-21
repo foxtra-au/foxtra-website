@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Metadata } from 'next'
 
 export default function CookieSettings() {
   const [cookiePreferences, setCookiePreferences] = useState({

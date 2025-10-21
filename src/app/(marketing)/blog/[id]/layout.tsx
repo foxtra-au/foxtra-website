@@ -1,0 +1,41 @@
+import { Metadata } from 'next';
+import { articles } from '@/data/articles-data';
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const article = articles.find(a => a.id === resolvedParams.id);
+  
+  if (!article) {
+    return {
+      title: 'Article Not Found | Foxtra AI',
+      description: 'The requested article could not be found.',
+    };
+  }
+
+  return {
+    title: `${article.title} | Foxtra AI Blog`,
+    description: article.description,
+    keywords: [article.tag, article.category, 'AI', 'automation', 'business'],
+    openGraph: {
+      title: `${article.title} | Foxtra AI Blog`,
+      description: article.description,
+      type: 'article',
+      publishedTime: `2024-${article.date.month}-${article.date.day}`,
+      authors: ['Foxtra AI'],
+      tags: [article.tag, article.category],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${article.title} | Foxtra AI Blog`,
+      description: article.description,
+    },
+  };
+}
+
+export default function BlogLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
+}
