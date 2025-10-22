@@ -128,7 +128,7 @@ export const articles: Article[] = [
     date: { month: "APR", day: 2 },
     title: "Natural Conversations with AI Voice Agents",
     description: "Creating human-like voice interactions that feel natural and engaging.",
-    imageUrl: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=500&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop",
     imageAlt: "Natural Language",
     location: { city: "Portland", country: "Oregon, USA" }
   },
@@ -352,7 +352,7 @@ export const articles: Article[] = [
     date: { month: "AUG", day: 21 },
     title: "Automated Testing in Custom Development",
     description: "Implementing comprehensive testing strategies for reliable software delivery.",
-    imageUrl: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=500&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
     imageAlt: "Automated Testing",
     location: { city: "Baltimore", country: "Maryland, USA" }
   },

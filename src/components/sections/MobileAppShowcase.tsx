@@ -36,7 +36,7 @@ export function MobileAppShowcase() {
       name: "Zingo"
     },
     {
-      image: "/services/mobile-app/Business-card-app.png",
+      image: "/services/mobile-app/business-card-app.png",
       name: "Spotcard"
     }
   ];
