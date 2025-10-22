@@ -77,6 +77,22 @@ export default function About() {
             </div>
           </div>
 
+          <div className="bg-gray-50 rounded-lg p-8 mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+              Learn from Our Experts
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 text-center max-w-2xl mx-auto">
+              Stay updated with the latest AI automation insights, best practices, and industry trends from our team of experts.
+            </p>
+            <div className="text-center">
+              <Link href="/blog">
+                <Button variant="outline" size="lg">
+                  Read Our Blog
+                </Button>
+              </Link>
+            </div>
+          </div>
+
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
             <p className="text-xl text-gray-600 mb-8">

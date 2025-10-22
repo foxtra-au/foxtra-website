@@ -132,7 +132,7 @@ export function BlogClient() {
 
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-sans">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/80">
-                Latest Insights
+                AI Automation Blog & Latest Insights
               </span>
             </h1>
             <p className="text-xl text-white/70 max-w-3xl mx-auto font-sans">

@@ -40,7 +40,7 @@ export function TestimonialBlock() {
       quote: "Foxtra AI has been instrumental in helping Dreamrise Homes grow our business. Their AI solutions have improved our customer engagement and streamlined our operations significantly.",
       name: "Jith Singh",
       designation: "CEO of Dreamrise Homes",
-      src: "/testimonials/jith-dreamrise.png",
+      src: "/testimonials/Jith-Dreamrise.png",
     },
   ];
 
