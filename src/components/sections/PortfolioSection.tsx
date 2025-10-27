@@ -154,7 +154,7 @@ export function PortfolioSection() {
       variants={fadeUpVariants}
       initial="hidden"
       animate="visible"
-      className="max-w-7xl mx-auto mt-20"
+      className="max-w-6xl mx-auto mt-20"
     >
       {/* Section Header */}
       <div className="flex items-center justify-between mb-8 pt-6">
