@@ -1,6 +1,6 @@
 import { HomeBanner } from '@/components/home'
 import { Case } from '@/components/ui/CasesWithInfiniteScroll'
-import { HomeFeatures, HomePageWrapper, TestimonialBlock, HomeBlogSection } from '@/components/sections'
+import { HomeFeatures, HomePageWrapper, TestimonialBlock, HomeBlogSection, PortfolioSection } from '@/components/sections'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -28,6 +28,7 @@ export default function Home() {
     <HomePageWrapper>
       <HomeBanner />
       <HomeFeatures />
+      <PortfolioSection />
       <TestimonialBlock />
       <HomeBlogSection />
       <Case />
