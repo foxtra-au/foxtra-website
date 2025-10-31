@@ -250,6 +250,12 @@ export const navigationConfig: NavItem[] = [
             iconName: "Building",
           },
           {
+            label: "Our Team",
+            description: "Meet our talented team members",
+            href: "/company/team",
+            iconName: "Users",
+          },
+          {
             label: "Careers",
             description: "Join our growing team",
             href: "/company/careers",
