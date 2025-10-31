@@ -54,60 +54,35 @@ export function OurTeamClient() {
       <div className="relative z-10">
         {/* CEO Banner Section */}
         <section className="relative w-full pt-32 pb-20">
-          <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Small Title and CEO Message */}
+          <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+            {/* Small Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8"
+            >
+              <Circle className="h-2 w-2 fill-rose-500/80" />
+              <span className="text-sm text-white/60 tracking-wide">
+                Our Team
+              </span>
+            </motion.div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-8 font-sans leading-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/80">
+                Meet Our Team
+              </span>
+            </h1>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+              {/* Left Side - CEO Photo (30%) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
+                className="relative w-full lg:w-[30%] flex-shrink-0 min-h-[200px] lg:min-h-[250px] flex items-center"
               >
-                {/* Small Title */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8"
-                >
-                  <Circle className="h-2 w-2 fill-rose-500/80" />
-                  <span className="text-sm text-white/60 tracking-wide">
-                    Our Team
-                  </span>
-                </motion.div>
-
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-sans leading-tight">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white/90 to-white/80">
-                    Meet Our Team
-                  </span>
-                </h1>
-
-                {/* CEO Message */}
-                <div className="space-y-6">
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8">
-                    <p className="text-white/80 text-lg leading-relaxed font-light italic mb-4">
-                      "At Foxtra, we believe that innovation happens when talented individuals come together with a shared vision. Our team is the heart of everything we do, and each member brings unique expertise, passion, and dedication to delivering exceptional AI solutions."
-                    </p>
-                    <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-bold text-lg">
-                        CEO
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold">CEO & Founder</p>
-                        <p className="text-white/60 text-sm">Foxtra AI</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Right Side - CEO Photo */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
-              >
-                <div className="relative aspect-square max-w-md mx-auto">
+                <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-white/10 rounded-2xl backdrop-blur-xl border border-white/30 p-2 shadow-2xl">
                     <div className="relative w-full h-full rounded-xl overflow-hidden">
                       <Image
@@ -117,7 +92,7 @@ export function OurTeamClient() {
                         className="object-cover blur-[0.5px]"
                         quality={95}
                         priority
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 30vw, 30vw"
                       />
                       {/* Subtle glass overlay - no blur on image */}
                       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none" />
@@ -126,6 +101,30 @@ export function OurTeamClient() {
                   {/* Decorative elements */}
                   <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-500/20 rounded-full blur-2xl" />
                   <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-rose-500/20 rounded-full blur-2xl" />
+                </div>
+              </motion.div>
+
+              {/* Right Side - CEO Message (70%) */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex items-center justify-center h-full w-full lg:w-[70%] flex-shrink-0 min-h-[200px] lg:min-h-[250px]"
+              >
+                {/* CEO Message */}
+                <div className="flex flex-col justify-center w-full">
+                  <p className="text-white/80 text-lg leading-relaxed font-light italic mb-4">
+                    "At Foxtra, we believe that innovation happens when talented individuals come together with a shared vision. Our team is the heart of everything we do, and each member brings unique expertise, passion, and dedication to delivering exceptional AI solutions."
+                  </p>
+                  <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-bold text-lg">
+                      CEO
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold">CEO & Founder</p>
+                      <p className="text-white/60 text-sm">Foxtra AI</p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
