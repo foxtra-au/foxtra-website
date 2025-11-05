@@ -4,6 +4,7 @@ import AIWebsitesPricingNew from '@/components/ui/AIWebsitesPricingNew'
 import { AIWebsitesProcess } from '@/components/sections/AIWebsitesProcess'
 import { SocialMediaBannerImage } from '@/components/ui/SocialMediaBannerImage'
 import { Metadata } from 'next'
+import { ShoppingCart } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'AI Websites | Foxtra',
@@ -26,6 +27,10 @@ export default function AIWebsites() {
         badge="Foxtra • Marketing Services"
         features={aiWebsiteFeatures}
         rightComponent={<SocialMediaBannerImage />}
+        buttonText="Buy now"
+        buttonLink="https://payments-ap1.hubspot.com/payments/DJfPv6nGF7?referrer=PAYMENT_LINK"
+        buttonIcon={<ShoppingCart className="mr-2 h-5 w-5" />}
+        buttonTarget="_blank"
       />
       
       <AIWebsitesFeatures />

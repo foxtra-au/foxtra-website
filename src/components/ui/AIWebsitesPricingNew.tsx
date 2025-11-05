@@ -50,7 +50,9 @@ export default function AIWebsitesPricingNew() {
                   </p>
                   <p className="mt-2 text-sm text-white/60 font-sans">+ $45/month maintenance</p>
                   <a
-                    href="#"
+                    href="https://payments-ap1.hubspot.com/payments/DJfPv6nGF7?referrer=PAYMENT_LINK"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-10 block w-full rounded-md bg-rose-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600 font-sans"
                   >
                     Buy now

@@ -15,9 +15,13 @@ interface ServiceBannerProps {
     bannerImage?: string;
     rightComponent?: React.ReactNode;
     leftComponent?: React.ReactNode;
+    buttonText?: string;
+    buttonLink?: string;
+    buttonIcon?: React.ReactNode;
+    buttonTarget?: string;
 }
 
-export function ServiceBanner({ title, description, badge, features, bannerImage, rightComponent, leftComponent }: ServiceBannerProps) {
+export function ServiceBanner({ title, description, badge, features, bannerImage, rightComponent, leftComponent, buttonText = "Book Appointment", buttonLink = "/bookings", buttonIcon = <Calendar className="mr-2 h-5 w-5" />, buttonTarget = "_self" }: ServiceBannerProps) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: (i: number) => ({
@@ -98,13 +102,15 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                             animate="visible"
                         >
                             <a 
-                                href="/bookings" 
+                                href={buttonLink}
+                                target={buttonTarget}
+                                rel={buttonTarget === "_blank" ? "noopener noreferrer" : undefined}
                                 className="group inline-flex items-center px-8 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1" 
                                 style={{ backgroundColor: '#FF335C', boxShadow: '0 25px 50px -12px rgba(255, 51, 92, 0.25)' }}
                             >
                                 <span className="relative z-10 flex items-center">
-                                    <Calendar className="mr-2 h-5 w-5" />
-                                    Book Appointment
+                                    {buttonIcon}
+                                    {buttonText}
                                 </span>
                             </a>
                         </motion.div>
