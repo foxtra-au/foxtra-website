@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Briefcase, Code, Smartphone, Search, Target, Share2, Cloud, Wrench } from "lucide-react";
+import { Briefcase, Code, Smartphone, Search, Target, Share2, Cloud, Brain } from "lucide-react";
 import Link from "next/link";
 
 interface Feature {
@@ -69,10 +69,10 @@ export function HomeFeatures() {
       href: "/services/cloud-management"
     },
     {
-      icon: Wrench,
-      title: "Industry Solutions",
-      description: "Tailored AI solutions for plumbers, accountants, lawyers, and more",
-      href: "/solutions/plumbers"
+      icon: Brain,
+      title: "AI & Automation",
+      description: "Intelligent automation and AI agents to streamline business processes",
+      href: "/cto-services/ai-automation-strategy"
     }
   ];
 

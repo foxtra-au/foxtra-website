@@ -39,7 +39,7 @@ export default function CloudAdvisory() {
         description="Optimise cost, performance, and scalability on AWS/Azure. Expert guidance on cloud architecture, infrastructure automation, and DevOps practices that reduce operational overhead while improving reliability and speed."
         badge="Foxtra • CTO Services"
         features={[]}
-        bannerImage="/dev-ops-process.png"
+        bannerImage="/cto-services/dev-ops-process.png"
       />
       
       {/* Tiles Section */}

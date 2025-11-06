@@ -10,9 +10,9 @@ import { PersistentVoiceAgent } from '@/components/ui/PersistentVoiceAgent'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Foxtra — AI Agents & Automation for Businesses',
-  description: 'Foxtra helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing. Transform your business with AI automation in Australia.',
-  keywords: ['AI agents', 'business automation', 'voice chatbots', 'chat automation', 'customer service AI', 'sales automation', 'marketing automation', 'Australia AI', 'AI voice agents', 'business AI solutions'],
+  title: 'Foxtra — Technology Leadership & Development Services',
+  description: 'On-demand technology leadership, strategy, and development services for startups and SMEs. Expert guidance to align business goals with scalable architecture, custom development, and digital transformation.',
+  keywords: ['CTO services', 'technology leadership', 'custom development', 'tech strategy', 'system architecture', 'cloud advisory', 'devops', 'mobile app development', 'web development', 'Australia technology services'],
   robots: {
     index: true,
     follow: true,
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Foxtra — AI Agents & Automation for Businesses',
-    description: 'Foxtra helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
+    title: 'Foxtra — Technology Leadership & Development Services',
+    description: 'On-demand technology leadership, strategy, and development services for startups and SMEs. Expert guidance to align business goals with scalable architecture.',
     type: 'website',
     locale: 'en_AU',
     siteName: 'Foxtra',
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Foxtra — AI Agents & Automation for Businesses',
-    description: 'Foxtra helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
+    title: 'Foxtra — Technology Leadership & Development Services',
+    description: 'On-demand technology leadership, strategy, and development services for startups and SMEs. Expert guidance to align business goals with scalable architecture.',
     site: '@foxtraai',
   },
   other: {

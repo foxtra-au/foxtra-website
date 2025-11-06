@@ -39,7 +39,7 @@ export default function SystemArchitectureReview() {
         description="Comprehensive analysis of your technology infrastructure to identify bottlenecks, security vulnerabilities, and scalability challenges."
         badge="Foxtra • CTO Services"
         features={[]}
-        bannerImage="/architecture.webp"
+        bannerImage="/cto-services/architecture.webp"
       />
       
       {/* Tiles Section */}
