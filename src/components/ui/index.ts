@@ -63,7 +63,6 @@ export { default as AIWebsitesPricingNew } from './AIWebsitesPricingNew'
 export { EmailTemplateDemo } from './EmailTemplateDemo'
 export { SMSTemplateDemo } from './SMSTemplateDemo'
 export { VideoTemplateDemo } from './VideoTemplateDemo'
-export { VoiceAgent } from './VoiceAgent'
 export { BlogArticleDemo } from './BlogArticleDemo'
 export { SeoPricingIcon } from './SeoPricingIcon'
 

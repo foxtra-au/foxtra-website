@@ -29,7 +29,7 @@ export function HomeFeatures() {
     {
       icon: Briefcase,
       title: "CTO Services",
-      description: "On-demand technology leadership, strategy, and advisory services",
+      description: "Technology partnership for full-service tech solutions",
       href: "/cto-services"
     },
     {
