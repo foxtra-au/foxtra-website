@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Contact Us | Foxtra - Get in Touch',
   description: 'Reach out to Foxtra for AI automation solutions. Get technical support, sales inquiries, partnerships, and general questions answered by our expert team in Australia.',
-  keywords: ['contact foxtra ai', 'ai automation support', 'business consultation', 'technical support', 'sales inquiry', 'australia ai support'],
+  keywords: ['contact foxtra', 'ai automation support', 'business consultation', 'technical support', 'sales inquiry', 'australia ai support'],
   openGraph: {
     title: 'Contact Us | Foxtra - Get in Touch',
     description: 'Reach out to Foxtra for AI automation solutions. Get technical support, sales inquiries, partnerships, and general questions answered by our expert team in Australia.',

@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Careers | Foxtra - Join Our AI Innovation Team',
   description: 'Launch your career in AI innovation with Foxtra. Join our team of engineers, designers, and marketers building cutting-edge AI automation solutions. Remote-friendly positions available for passionate tech professionals.',
-  keywords: ['careers', 'jobs', 'foxtra ai careers', 'AI jobs', 'tech careers', 'engineering jobs', 'AI innovation', 'startup careers', 'remote jobs'],
+  keywords: ['careers', 'jobs', 'foxtra careers', 'AI jobs', 'tech careers', 'engineering jobs', 'AI innovation', 'startup careers', 'remote jobs'],
   openGraph: {
     title: 'Careers | Foxtra - Join Our AI Innovation Team',
     description: 'Launch your career in AI innovation with Foxtra. Join our team of engineers, designers, and marketers building cutting-edge AI automation solutions.',
