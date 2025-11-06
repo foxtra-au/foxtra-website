@@ -8,7 +8,7 @@ export default function About() {
   return (
     <>
       <CompanyBanner
-        title="About Foxtra AI"
+        title="About Foxtra"
         description="We're building the future of AI-powered web applications with cutting-edge technology and modern development practices."
         badge="Foxtra • Company"
         stats={[
@@ -25,7 +25,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              About <span className="text-primary-600">Foxtra AI</span>
+              About <span className="text-primary-600">Foxtra</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We're building the future of AI-powered web applications with cutting-edge technology

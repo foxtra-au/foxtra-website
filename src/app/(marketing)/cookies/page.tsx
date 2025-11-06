@@ -138,7 +138,7 @@ export default function CookieSettings() {
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4">Cookie Settings</h1>
           <p className="text-white/60 text-lg">
-            Manage your cookie preferences for Foxtra AI services
+            Manage your cookie preferences for Foxtra services
           </p>
         </div>
 

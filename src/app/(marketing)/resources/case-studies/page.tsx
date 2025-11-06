@@ -25,7 +25,7 @@ export default function CaseStudies() {
       <Container className="py-16">
         <div className="prose max-w-none text-white">
           <h2 className="text-white">Client Success Stories</h2>
-          <p className="text-white/70">Discover how our clients have transformed their businesses with Foxtra AI solutions.</p>
+          <p className="text-white/70">Discover how our clients have transformed their businesses with Foxtra solutions.</p>
         </div>
       </Container>
     </ServicePageWrapper>

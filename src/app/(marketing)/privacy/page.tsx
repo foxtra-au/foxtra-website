@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Foxtra AI',
-  description: 'Privacy Policy for Foxtra AI - How we collect, use, and protect your personal information.',
+  title: 'Privacy Policy | Foxtra',
+  description: 'Privacy Policy for Foxtra - How we collect, use, and protect your personal information.',
 }
 
 export default function PrivacyPolicy() {

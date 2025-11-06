@@ -91,10 +91,10 @@ export default function FooterNewsletter() {
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div>
               <h3 className="mb-4 text-2xl font-bold md:text-3xl font-sans">
-                Stay ahead with Foxtra AI
+                Stay ahead with Foxtra
               </h3>
               <p className="text-white/70 mb-6 font-sans">
-                Join thousands of businesses who trust Foxtra AI for
+                Join thousands of businesses who trust Foxtra for
                 innovative AI solutions and digital transformation.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -113,7 +113,7 @@ export default function FooterNewsletter() {
                 <div className="bg-primary/20 absolute inset-0 rotate-6 rounded-xl" />
                 <Image
                   src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=240&q=80"
-                  alt="Foxtra AI team"
+                  alt="Foxtra team"
                   width={320}
                   height={240}
                   className="relative w-80 rounded-xl object-cover"
@@ -169,7 +169,7 @@ export default function FooterNewsletter() {
         </div>
         <div className="border-white/10 flex flex-col items-center justify-between border-t pt-8 md:flex-row">
           <p className="text-white/60 mb-4 text-sm md:mb-0 font-sans">
-            © 2025 Foxtra AI. All rights reserved.
+            © 2025 Foxtra. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
             {legalLinks.map((link) => (

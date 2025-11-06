@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement | Foxtra AI',
-  description: 'Foxtra AI is committed to making our website and services accessible to all users, including those with disabilities.',
+  title: 'Accessibility Statement | Foxtra',
+  description: 'Foxtra is committed to making our website and services accessible to all users, including those with disabilities.',
 }
 
 export default function Accessibility() {
@@ -283,7 +283,7 @@ export default function Accessibility() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Ongoing Commitment</h2>
             <p className="text-white/80 mb-4">
-              Accessibility is an ongoing commitment at Foxtra AI. We continuously work to:
+              Accessibility is an ongoing commitment at Foxtra. We continuously work to:
             </p>
             <ul className="list-disc pl-4 text-white/80 text-sm space-y-2 mb-4">
               <li>Monitor and improve accessibility compliance</li>

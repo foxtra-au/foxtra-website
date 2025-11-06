@@ -1,7 +1,7 @@
-# Foxtra AI Website - llms.txt
+# Foxtra Website - llms.txt
 
-## About Foxtra AI
-Foxtra AI is a modern AI-powered web development company founded in 2019. We specialize in building cutting-edge AI solutions that empower businesses and individuals to achieve more. Our mission is to create innovative AI solutions, and our vision is a world where AI seamlessly integrates with everyday applications to enhance productivity and creativity.
+## About Foxtra
+Foxtra is a modern AI-powered web development company founded in 2019. We specialize in building cutting-edge AI solutions that empower businesses and individuals to achieve more. Our mission is to create innovative AI solutions, and our vision is a world where AI seamlessly integrates with everyday applications to enhance productivity and creativity.
 
 ## Company Stats
 - Founded: 2025
@@ -137,4 +137,4 @@ The website includes testimonials from various clients including:
 - Interactive demos and showcases
 - Client portfolio and testimonials
 
-This website serves as a comprehensive platform for Foxtra AI's services, showcasing their expertise in AI development, web development, and digital marketing solutions across various industries.
+This website serves as a comprehensive platform for Foxtra's services, showcasing their expertise in AI development, web development, and digital marketing solutions across various industries.

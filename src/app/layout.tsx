@@ -10,8 +10,8 @@ import { PersistentVoiceAgent } from '@/components/ui/PersistentVoiceAgent'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Foxtra AI — AI Agents & Automation for Businesses',
-  description: 'Foxtra AI helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing. Transform your business with AI automation in Australia.',
+  title: 'Foxtra — AI Agents & Automation for Businesses',
+  description: 'Foxtra helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing. Transform your business with AI automation in Australia.',
   keywords: ['AI agents', 'business automation', 'voice chatbots', 'chat automation', 'customer service AI', 'sales automation', 'marketing automation', 'Australia AI', 'AI voice agents', 'business AI solutions'],
   robots: {
     index: true,
@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Foxtra AI — AI Agents & Automation for Businesses',
-    description: 'Foxtra AI helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
+    title: 'Foxtra — AI Agents & Automation for Businesses',
+    description: 'Foxtra helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
     type: 'website',
     locale: 'en_AU',
-    siteName: 'Foxtra AI',
+    siteName: 'Foxtra',
     url: 'https://foxtra.ai',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Foxtra AI — AI Agents & Automation for Businesses',
-    description: 'Foxtra AI helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
+    title: 'Foxtra — AI Agents & Automation for Businesses',
+    description: 'Foxtra helps businesses automate voice and chat using smart AI agents for customer service, sales, and marketing.',
     site: '@foxtraai',
   },
   other: {

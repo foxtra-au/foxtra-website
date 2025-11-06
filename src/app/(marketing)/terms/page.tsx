@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Foxtra AI',
-  description: 'Terms of Service for Foxtra AI - AI-powered business solutions and digital transformation services.',
+  title: 'Terms of Service | Foxtra',
+  description: 'Terms of Service for Foxtra - AI-powered business solutions and digital transformation services.',
 }
 
 export default function TermsOfService() {

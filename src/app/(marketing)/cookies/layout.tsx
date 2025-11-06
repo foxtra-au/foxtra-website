@@ -1,18 +1,18 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cookie Settings | Foxtra AI - Manage Your Privacy',
-  description: 'Control your privacy settings with Foxtra AI cookie preferences. Manage essential, analytics, functional, and marketing cookies to personalize your browsing experience and data protection.',
+  title: 'Cookie Settings | Foxtra - Manage Your Privacy',
+  description: 'Control your privacy settings with Foxtra cookie preferences. Manage essential, analytics, functional, and marketing cookies to personalize your browsing experience and data protection.',
   keywords: ['cookie settings', 'privacy preferences', 'data protection', 'foxtra ai cookies', 'privacy management', 'gdpr compliance'],
   openGraph: {
-    title: 'Cookie Settings | Foxtra AI - Manage Your Privacy',
-    description: 'Control your privacy settings with Foxtra AI cookie preferences. Manage essential, analytics, functional, and marketing cookies.',
+    title: 'Cookie Settings | Foxtra - Manage Your Privacy',
+    description: 'Control your privacy settings with Foxtra cookie preferences. Manage essential, analytics, functional, and marketing cookies.',
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Cookie Settings | Foxtra AI - Manage Your Privacy',
-    description: 'Control your privacy settings with Foxtra AI cookie preferences.',
+    title: 'Cookie Settings | Foxtra - Manage Your Privacy',
+    description: 'Control your privacy settings with Foxtra cookie preferences.',
   },
 };
 

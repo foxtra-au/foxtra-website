@@ -19,7 +19,7 @@ export function TestimonialBlock() {
 
   const testimonials = [
     {
-      quote: "Foxtra AI has transformed our business operations completely. Their AI solutions have streamlined our processes and significantly improved our efficiency. The team's expertise and dedication to delivering quality results is outstanding.",
+      quote: "Foxtra has transformed our business operations completely. Their AI solutions have streamlined our processes and significantly improved our efficiency. The team's expertise and dedication to delivering quality results is outstanding.",
       name: "Lokesh M",
       designation: "CEO of Living Cluster",
       src: "/testimonials/Lokesh-lotez.png",
@@ -37,7 +37,7 @@ export function TestimonialBlock() {
       src: "/testimonials/vunnam-vht.png",
     },
     {
-      quote: "Foxtra AI has been instrumental in helping Dreamrise Homes grow our business. Their AI solutions have improved our customer engagement and streamlined our operations significantly.",
+      quote: "Foxtra has been instrumental in helping Dreamrise Homes grow our business. Their AI solutions have improved our customer engagement and streamlined our operations significantly.",
       name: "Jith Singh",
       designation: "CEO of Dreamrise Homes",
       src: "/testimonials/Jith-Dreamrise.png",

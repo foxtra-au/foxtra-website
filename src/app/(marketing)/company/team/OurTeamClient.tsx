@@ -122,7 +122,7 @@ export function OurTeamClient() {
                     </div>
                     <div>
                       <p className="text-white font-semibold">CEO & Founder</p>
-                      <p className="text-white/60 text-sm">Foxtra AI</p>
+                      <p className="text-white/60 text-sm">Foxtra</p>
                     </div>
                   </div>
                 </div>

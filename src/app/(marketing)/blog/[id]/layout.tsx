@@ -7,26 +7,26 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   
   if (!article) {
     return {
-      title: 'Article Not Found | Foxtra AI',
+      title: 'Article Not Found | Foxtra',
       description: 'The requested article could not be found.',
     };
   }
 
   return {
-    title: `${article.title} | Foxtra AI Blog`,
+    title: `${article.title} | Foxtra Blog`,
     description: article.description,
     keywords: [article.tag, article.category, 'AI', 'automation', 'business'],
     openGraph: {
-      title: `${article.title} | Foxtra AI Blog`,
+      title: `${article.title} | Foxtra Blog`,
       description: article.description,
       type: 'article',
       publishedTime: `2024-${article.date.month}-${article.date.day}`,
-      authors: ['Foxtra AI'],
+      authors: ['Foxtra'],
       tags: [article.tag, article.category],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article.title} | Foxtra AI Blog`,
+      title: `${article.title} | Foxtra Blog`,
       description: article.description,
     },
   };
