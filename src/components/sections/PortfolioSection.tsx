@@ -185,35 +185,21 @@ export function PortfolioSection() {
             variants={fadeUpVariants}
             initial="hidden"
             animate="visible"
-            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-md border border-white/20 hover:bg-gradient-to-br hover:from-white/15 hover:via-white/8 hover:to-white/15 hover:border-white/30 transition-all duration-300 shadow-2xl shadow-black/20"
+            className="group relative overflow-hidden rounded-md aspect-square border border-white/20 hover:border-white/30 transition-all duration-300"
           >
-            <div className="p-4">
-              <div className="aspect-[4/3] relative overflow-hidden rounded-lg mb-4">
+            <div className="w-full h-full bg-black flex items-center justify-center p-4">
+              <div className="relative w-full h-full max-w-[95%] max-h-[95%]">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="object-contain"
+                  sizes="(max-width: 768px) 300px, 400px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Category Badge */}
-                <div className="absolute top-2 left-2">
-                  <span className={`px-2 py-1 rounded-sm text-xs font-medium backdrop-blur-sm ${
-                    item.category === 'Web Development' 
-                      ? 'bg-blue-500/30 text-blue-200 border border-blue-400/50' 
-                      : 'bg-green-500/30 text-green-200 border border-green-400/50'
-                  }`}>
-                    {item.category}
-                  </span>
-                </div>
               </div>
-              
-              <div className="text-center py-4">
-                <h3 className="text-lg font-semibold text-white group-hover:text-white/90 transition-colors">
-                  {item.title}
-                </h3>
-              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center p-3 bg-black/60 backdrop-blur-sm">
+              <span className="text-sm text-white font-medium">{item.title}</span>
             </div>
           </motion.div>
         ))}
