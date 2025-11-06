@@ -44,7 +44,7 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
             onMouseEnter={() => handleHover(navItem.label)}
             onMouseLeave={() => handleHover(null)}
           >
-            {navItem.link ? (
+            {navItem.link && !navItem.subMenus ? (
               <a
                 href={navItem.link}
                 className="relative flex cursor-pointer items-center justify-center gap-1 py-1.5 px-4 text-sm text-white/70 transition-colors duration-300 group drop-shadow-md mega-menu-text mega-menu-item"
@@ -93,13 +93,14 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                   >
                     <div className="flex w-fit shrink-0 space-x-12 overflow-hidden">
                       {navItem.subMenus.map((sub) => (
-                        <motion.div layout className={`w-full ${sub.title.toLowerCase() === 'industries' ? 'min-w-[400px]' : 'min-w-[200px]'}`} key={sub.title}>
+                        <motion.div layout className={`w-full ${sub.title.toLowerCase() === 'industries' ? 'min-w-[400px]' : sub.title.toLowerCase() === 'cto services' ? 'min-w-[448px]' : 'min-w-[200px]'}`} key={sub.title}>
                           <h3 className="mb-4 text-sm capitalize text-white/50 mega-menu-text">
                             {sub.title}
                           </h3>
-                          {/* Check if this is the Industries section and has many items */}
-                          {sub.title.toLowerCase() === 'industries' && sub.items.length > 6 ? (
-                            <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                          {/* Check if this is the Industries section and has many items, or CTO Services section */}
+                          {(sub.title.toLowerCase() === 'industries' && sub.items.length > 6) || 
+                           (sub.title.toLowerCase() === 'cto services' && sub.items.length > 3) ? (
+                            <div className="grid grid-cols-2 gap-x-8 gap-y-8">
                               {sub.items.map((item) => {
                                 const Icon = item.icon;
                                 return (

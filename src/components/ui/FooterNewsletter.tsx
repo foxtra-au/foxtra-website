@@ -6,11 +6,14 @@ import Image from 'next/image';
 
 const footerColumns = [
   {
-    title: 'AI Agents',
+    title: 'CTO Services',
     links: [
-      { text: 'AI Chat Agent', href: '/services/ai-chat-agent' },
-      { text: 'AI Voice Agent', href: '/services/ai-voice-agent' },
-      { text: 'Automations', href: '/services/automations' },
+      { text: 'Virtual CTO', href: '/cto-services/virtual-cto' },
+      { text: 'Tech Strategy & Roadmap', href: '/cto-services/tech-strategy' },
+      { text: 'System Architecture Review', href: '/cto-services/system-architecture-review' },
+      { text: 'Team Mentoring & Leadership', href: '/cto-services/team-mentoring' },
+      { text: 'Cloud & DevOps Advisory', href: '/cto-services/cloud-advisory' },
+      { text: 'AI & Automation Strategy', href: '/cto-services/ai-automation-strategy' },
     ],
   },
   {

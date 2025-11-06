@@ -1,12 +1,14 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Bot, Settings, TrendingUp, Users } from "lucide-react";
+import { Briefcase, Code, Smartphone, Search, Target, Share2, Cloud, Wrench } from "lucide-react";
+import Link from "next/link";
 
 interface Feature {
   icon: React.ElementType;
   title: string;
   description: string;
+  href: string;
 }
 
 export function HomeFeatures() {
@@ -25,24 +27,52 @@ export function HomeFeatures() {
 
   const features: Feature[] = [
     {
-      icon: Bot,
-      title: "AI Voice Agents",
-      description: "Intelligent voice chatbots and AI agents that handle customer service automation 24/7 for Australian businesses"
+      icon: Briefcase,
+      title: "CTO Services",
+      description: "On-demand technology leadership, strategy, and advisory services",
+      href: "/cto-services"
     },
     {
-      icon: Settings,
-      title: "Business Automation",
-      description: "Custom AI automation solutions and smart applications that streamline your business operations"
+      icon: Code,
+      title: "Custom Development",
+      description: "Custom apps that fit your workflows and business needs",
+      href: "/services/custom-development"
     },
     {
-      icon: TrendingUp,
-      title: "Marketing Automation",
-      description: "AI-powered marketing automation, SEO, and advertising campaigns that drive business growth"
+      icon: Smartphone,
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile solutions",
+      href: "/services/mobile-app-development"
     },
     {
-      icon: Users,
-      title: "AI Consultations",
-      description: "Expert AI strategy guidance and automation planning for your business transformation in Australia"
+      icon: Search,
+      title: "AI SEO",
+      description: "Technical fixes and content at scale for better rankings",
+      href: "/services/ai-seo"
+    },
+    {
+      icon: Target,
+      title: "Google Ads",
+      description: "High-intent campaigns with smart bidding strategies",
+      href: "/services/google-ads"
+    },
+    {
+      icon: Share2,
+      title: "Social Media Management",
+      description: "Calendar, creation, and community management",
+      href: "/services/social-media-management"
+    },
+    {
+      icon: Cloud,
+      title: "Cloud Management",
+      description: "Architecture and DevOps optimization across AWS/Azure/GCP",
+      href: "/services/cloud-management"
+    },
+    {
+      icon: Wrench,
+      title: "Industry Solutions",
+      description: "Tailored AI solutions for plumbers, accountants, lawyers, and more",
+      href: "/solutions/plumbers"
     }
   ];
 
@@ -58,29 +88,30 @@ export function HomeFeatures() {
         {features.map((feature, index) => {
           const IconComponent = feature.icon;
           return (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 + index * 0.1 }}
-              className="flex flex-col items-center text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group"
-              onMouseEnter={(e) => {
-                const iconDiv = e.currentTarget.querySelector('div[data-icon]') as HTMLElement;
-                if (iconDiv) iconDiv.style.backgroundColor = '#FFCC02';
-              }}
-              onMouseLeave={(e) => {
-                const iconDiv = e.currentTarget.querySelector('div[data-icon]') as HTMLElement;
-                if (iconDiv) iconDiv.style.backgroundColor = 'transparent';
-              }}
-            >
-              <div data-icon className="flex size-12 shrink-0 items-center justify-center rounded-md border border-white/20 text-white/60 transition-all duration-300 group-hover:text-black group-hover:border-white mb-4" onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#FFCC02'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
-                <IconComponent className="h-6 w-6 flex-none" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-white/90 font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
-              </div>
-            </motion.div>
+            <Link key={index} href={feature.href} className="h-full">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 + index * 0.1 }}
+                className="flex flex-col items-center text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group cursor-pointer h-full min-h-[200px]"
+                onMouseEnter={(e) => {
+                  const iconDiv = e.currentTarget.querySelector('div[data-icon]') as HTMLElement;
+                  if (iconDiv) iconDiv.style.backgroundColor = '#FFCC02';
+                }}
+                onMouseLeave={(e) => {
+                  const iconDiv = e.currentTarget.querySelector('div[data-icon]') as HTMLElement;
+                  if (iconDiv) iconDiv.style.backgroundColor = 'transparent';
+                }}
+              >
+                <div data-icon className="flex size-12 shrink-0 items-center justify-center rounded-md border border-white/20 text-white/60 transition-all duration-300 group-hover:text-black group-hover:border-white mb-4" onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#FFCC02'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>
+                  <IconComponent className="h-6 w-6 flex-none" />
+                </div>
+                <div className="flex-1 flex flex-col justify-center">
+                  <h3 className="text-white/90 font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">{feature.description}</p>
+                </div>
+              </motion.div>
+            </Link>
           );
         })}
       </div>

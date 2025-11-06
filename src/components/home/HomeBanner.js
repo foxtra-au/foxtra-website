@@ -2,13 +2,13 @@ import { HeroGeometric } from '@/components/ui/ShapeLandingHero'
 
 export function HomeBanner() {
   return (
-    <div className="relative pt-20 pb-10">
+    <div className="relative pt-28 pb-10">
       <HeroGeometric 
-        badge="Foxtra AI"
-        title1="AI Agents."
-        title2="Automated."
-        description="Transform your business with intelligent AI agents for voice chatbots, customer service automation, and sales automation. Leading AI solutions for Australian businesses."
-        tagline="Smart AI automation that works 24/7"
+        badge="Foxtra"
+        title1=""
+        title2="Technology Leadership."
+        description="On-demand technology leadership, strategy, and advisory services for startups and SMEs. Expert guidance to align business goals with scalable architecture."
+        tagline="Strategic technology leadership that scales with your business"
       />
     </div>
   )

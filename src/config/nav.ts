@@ -16,28 +16,47 @@ export interface NavItem {
 export const navigationConfig: NavItem[] = [
   {
     id: 1,
-    label: "AI Agents",
+    label: "CTO Services",
+    href: "/cto-services",
     subMenus: [
       {
-        title: "Conversational AI",
+        title: "CTO Services",
         items: [
           {
-            label: "AI Chat Agent",
-            description: "Website and in-app chat solutions",
-            href: "/services/ai-chat-agent",
-            iconName: "MessageSquare",
+            label: "Virtual CTO",
+            description: "On-demand technology leadership",
+            href: "/cto-services/virtual-cto",
+            iconName: "Briefcase",
           },
           {
-            label: "AI Voice Agent",
-            description: "Phone agents for sales and support",
-            href: "/services/ai-voice-agent",
-            iconName: "Phone",
+            label: "Tech Strategy & Roadmap",
+            description: "Align goals with scalable architecture",
+            href: "/cto-services/tech-strategy",
+            iconName: "Target",
           },
           {
-            label: "Automations",
-            description: "Trigger-based workflow automation",
-            href: "/services/automations",
-            iconName: "Zap",
+            label: "System Architecture Review",
+            description: "Audit stack, design future-ready solutions",
+            href: "/cto-services/system-architecture-review",
+            iconName: "Layers",
+          },
+          {
+            label: "Team Mentoring & Leadership",
+            description: "Guidance for dev and product teams",
+            href: "/cto-services/team-mentoring",
+            iconName: "Users",
+          },
+          {
+            label: "Cloud & DevOps Advisory",
+            description: "Optimise cost and performance on AWS/Azure",
+            href: "/cto-services/cloud-advisory",
+            iconName: "Cloud",
+          },
+          {
+            label: "AI & Automation Strategy",
+            description: "Integrate AI agents and automation",
+            href: "/cto-services/ai-automation-strategy",
+            iconName: "Brain",
           },
         ],
       },

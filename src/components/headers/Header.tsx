@@ -40,6 +40,8 @@ import {
   Video,
   Smartphone,
   Layout,
+  Brain,
+  Layers,
 } from 'lucide-react'
 import { navigationConfig, authLinks, type AuthLink } from '@/config/nav'
 
@@ -74,6 +76,8 @@ const iconMap = {
   Video,
   Smartphone,
   Layout,
+  Brain,
+  Layers,
 }
 
 export function Header() {

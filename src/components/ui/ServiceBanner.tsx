@@ -127,14 +127,23 @@ export function ServiceBanner({ title, description, badge, features, bannerImage
                             {rightComponent ? (
                                 rightComponent
                             ) : bannerImage || !features || features.length === 0 ? (
-                                <div className="flex justify-center relative">
-                                    <Image
-                                        src={bannerImage || "/services/custom-development.png"}
-                                        alt="Service illustration"
-                                        width={600}
-                                        height={280}
-                                        className="max-w-full h-[28rem] rounded-xl shadow-2xl object-contain"
-                                    />
+                                <div className="flex justify-center items-center relative">
+                                    <div 
+                                        className="rounded-xl border border-white/[0.2] backdrop-blur-xl shadow-2xl max-w-md"
+                                        style={{
+                                            padding: '1rem',
+                                            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%)',
+                                            boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 2px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 1px 0 rgba(255, 255, 255, 0.1)',
+                                        }}
+                                    >
+                                        <Image
+                                            src={bannerImage || "/services/custom-development.png"}
+                                            alt="Service illustration"
+                                            width={600}
+                                            height={280}
+                                            className="max-w-full h-[28rem] rounded-lg shadow-2xl object-contain"
+                                        />
+                                    </div>
                                 </div>
                             ) : (
                                 <>

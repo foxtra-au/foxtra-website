@@ -32,6 +32,12 @@ Disallow: /admin/
 Disallow: /_next/static/chunks/pages/
 Disallow: /_next/static/chunks/pages/api/
 
+# Disallow AI service pages
+Disallow: /services/ai-chat-agent
+Disallow: /services/ai-websites
+Disallow: /services/ai-voice-agent
+Disallow: /services/ai-seo
+
 # Allow all important pages
 Allow: /
 Allow: /about
@@ -48,6 +54,15 @@ Allow: /showcase
 Allow: /company/
 Allow: /resources/
 Allow: /support/
+
+# Allow CTO services pages for indexing
+Allow: /cto-services
+Allow: /cto-services/virtual-cto
+Allow: /cto-services/tech-strategy
+Allow: /cto-services/system-architecture-review
+Allow: /cto-services/team-mentoring
+Allow: /cto-services/cloud-advisory
+Allow: /cto-services/ai-automation-strategy
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

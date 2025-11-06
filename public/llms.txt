@@ -11,12 +11,13 @@ Foxtra AI is a modern AI-powered web development company founded in 2019. We spe
 
 ## Services Offered
 
-### AI Services
-- AI Chat Agent Development
-- AI SEO Solutions
-- AI Voice Agent Development
-- AI Website Development
-- Blog Article Writing (AI-powered)
+### CTO Services
+- Virtual CTO - On-demand technology leadership for startups and SMEs
+- Tech Strategy & Roadmap - Align business goals with scalable architecture
+- System Architecture Review - Comprehensive analysis of technology infrastructure
+- Team Mentoring & Leadership - Guidance for in-house dev and product teams
+- Cloud & DevOps Advisory - Optimise cost, performance, and scalability on AWS/Azure
+- AI & Automation Strategy - Integrate AI agents, automation, and analytics
 
 ### Development Services
 - Custom Web Development
@@ -58,11 +59,16 @@ We provide specialized solutions for various industries:
 - Contact (/contact)
 - Showcase (/showcase)
 
+### CTO Services Pages
+- CTO Services Overview (/cto-services)
+- Virtual CTO (/cto-services/virtual-cto)
+- Tech Strategy & Roadmap (/cto-services/tech-strategy)
+- System Architecture Review (/cto-services/system-architecture-review)
+- Team Mentoring & Leadership (/cto-services/team-mentoring)
+- Cloud & DevOps Advisory (/cto-services/cloud-advisory)
+- AI & Automation Strategy (/cto-services/ai-automation-strategy)
+
 ### Service Pages
-- AI Chat Agent (/services/ai-chat-agent)
-- AI SEO (/services/ai-seo)
-- AI Voice Agent (/services/ai-voice-agent)
-- AI Websites (/services/ai-websites)
 - API Development (/services/api-development)
 - Automations (/services/automations)
 - Blog Article Writing (/services/blog-article-writing)
