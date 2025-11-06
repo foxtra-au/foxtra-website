@@ -14,6 +14,9 @@ const footerColumns = [
       { text: 'Team Mentoring & Leadership', href: '/cto-services/team-mentoring' },
       { text: 'Cloud & DevOps Advisory', href: '/cto-services/cloud-advisory' },
       { text: 'AI & Automation Strategy', href: '/cto-services/ai-automation-strategy' },
+      { text: 'Process Setup', href: '/cto-services/process-setup' },
+      { text: 'CRM Setup', href: '/cto-services/crm-setup' },
+      { text: 'Operations Support', href: '/cto-services/operations-support' },
     ],
   },
   {

@@ -42,6 +42,10 @@ import {
   Layout,
   Brain,
   Layers,
+  Settings,
+  FileCheck,
+  GitBranch,
+  Cog,
 } from 'lucide-react'
 import { navigationConfig, authLinks, type AuthLink } from '@/config/nav'
 
@@ -78,6 +82,10 @@ const iconMap = {
   Layout,
   Brain,
   Layers,
+  Settings,
+  FileCheck,
+  GitBranch,
+  Cog,
 }
 
 export function Header() {

@@ -60,6 +60,29 @@ export const navigationConfig: NavItem[] = [
           },
         ],
       },
+      {
+        title: "Process & Operations",
+        items: [
+          {
+            label: "Process Setup",
+            description: "Streamline workflows and operations",
+            href: "/cto-services/process-setup",
+            iconName: "Settings",
+          },
+          {
+            label: "CRM Setup",
+            description: "Configure and optimize CRM systems",
+            href: "/cto-services/crm-setup",
+            iconName: "FileCheck",
+          },
+          {
+            label: "Operations Support",
+            description: "Ongoing operational support and maintenance",
+            href: "/cto-services/operations-support",
+            iconName: "Headphones",
+          },
+        ],
+      },
     ],
   },
   {

@@ -93,7 +93,7 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                   >
                     <div className="flex w-fit shrink-0 space-x-12 overflow-hidden">
                       {navItem.subMenus.map((sub) => (
-                        <motion.div layout className={`w-full ${sub.title.toLowerCase() === 'industries' ? 'min-w-[400px]' : sub.title.toLowerCase() === 'cto services' ? 'min-w-[448px]' : 'min-w-[200px]'}`} key={sub.title}>
+                        <motion.div layout className={`w-full ${sub.title.toLowerCase() === 'industries' ? 'min-w-[400px]' : sub.title.toLowerCase() === 'cto services' ? 'min-w-[448px]' : sub.title.toLowerCase() === 'process & operations' ? 'min-w-[448px]' : 'min-w-[200px]'}`} key={sub.title}>
                           <h3 className="mb-4 text-sm capitalize text-white/50 mega-menu-text">
                             {sub.title}
                           </h3>
@@ -134,7 +134,7 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                               })}
                             </div>
                           ) : (
-                            <ul className="space-y-8">
+                            <ul className={sub.title.toLowerCase() === 'process & operations' ? 'space-y-12' : 'space-y-8'}>
                               {sub.items.map((item) => {
                                 const Icon = item.icon;
                                 return (
