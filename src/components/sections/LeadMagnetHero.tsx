@@ -125,7 +125,9 @@ export function LeadMagnetHero({ title, description, badge, features, rightCompo
                                 </span>
                             </a>
                             <a 
-                                href="#" 
+                                href="https://leadmagent-demo.foxtra.com.au" 
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="group flex-1 flex items-center justify-center px-4 py-4 text-white rounded-sm font-semibold text-lg bg-white/10 backdrop-blur-sm border border-white/20 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 hover:bg-white/20"
                             >
                                 <span className="relative z-10 flex items-center">

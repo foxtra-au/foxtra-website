@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Updated: 2024-12-19
+# Updated: 2025-11-11
 
 # Sitemap
 Sitemap: https://foxtra.ai/sitemap.xml
@@ -32,7 +32,7 @@ Disallow: /admin/
 Disallow: /_next/static/chunks/pages/
 Disallow: /_next/static/chunks/pages/api/
 
-# Disallow AI service pages
+# Disallow AI-specific service pages for now
 Disallow: /services/ai-chat-agent
 Disallow: /services/ai-websites
 Disallow: /services/ai-voice-agent
@@ -54,6 +54,9 @@ Allow: /showcase
 Allow: /company/
 Allow: /resources/
 Allow: /support/
+Allow: /privacy
+Allow: /terms
+Allow: /accessibility
 
 # Allow CTO services pages for indexing
 Allow: /cto-services
@@ -63,6 +66,9 @@ Allow: /cto-services/system-architecture-review
 Allow: /cto-services/team-mentoring
 Allow: /cto-services/cloud-advisory
 Allow: /cto-services/ai-automation-strategy
+Allow: /cto-services/process-setup
+Allow: /cto-services/crm-setup
+Allow: /cto-services/operations-support
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
