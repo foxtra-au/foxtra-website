@@ -41,7 +41,7 @@ const data = {
     name: 'Foxtra',
     description:
       'Building the future with AI technology. We help businesses transform their digital presence with cutting-edge AI solutions.',
-    logo: '/favicon.svg',
+    logo: '/favicon/favicon-32x32.png',
   },
 };
 
