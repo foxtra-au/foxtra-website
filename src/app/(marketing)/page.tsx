@@ -29,7 +29,9 @@ export default function Home() {
       <HomeBanner />
       <HomeFeatures />
       <PortfolioSection />
-      <TestimonialBlock />
+      <div className="hidden">
+        <TestimonialBlock />
+      </div>
       <HomeBlogSection />
       <Case />
     </HomePageWrapper>
