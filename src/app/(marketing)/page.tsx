@@ -28,12 +28,12 @@ export default function Home() {
     <HomePageWrapper>
       <HomeBanner />
       <HomeFeatures />
+      <Case />
       <PortfolioSection />
       <div className="hidden">
         <TestimonialBlock />
       </div>
       <HomeBlogSection />
-      <Case />
     </HomePageWrapper>
   )
 }
