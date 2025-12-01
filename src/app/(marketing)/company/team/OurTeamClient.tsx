@@ -45,6 +45,11 @@ export function OurTeamClient() {
       videoUrl: "https://foxtra-ai-website-videos.s3.ap-southeast-2.amazonaws.com/digital-marketing-executive.mp4",
       imageUrl: "/team/preethi.png",
     },
+    {
+      name: "Nurul T",
+      title: "Full Stack Developer",
+      imageUrl: "/team/Nurul.png",
+    },
   ];
 
   return (

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Play, Pause } from 'lucide-react';
 import { useState, useRef } from 'react';
 
 interface TeamMemberProps {
@@ -73,29 +72,6 @@ export function TeamMember({ name, title, videoUrl, imageUrl }: TeamMemberProps)
                 onPause={handlePause}
                 preload="metadata"
               />
-              {/* Play/Pause Button Overlay */}
-              {!isPlaying && (
-                <div className="absolute bottom-4 right-4">
-                  <button
-                    onClick={handlePlayPause}
-                    className="flex items-center justify-center w-16 h-16 bg-rose-600 border border-rose-600 rounded-full shadow-lg hover:bg-rose-500 hover:border-rose-500 hover:shadow-xl transition-all duration-300 cursor-pointer z-10"
-                    aria-label="Play video"
-                  >
-                    <Play className="w-6 h-6 text-white ml-1" />
-                  </button>
-                </div>
-              )}
-              {isPlaying && (
-                <div className="absolute bottom-6 right-6 z-10">
-                  <button
-                    onClick={handlePlayPause}
-                    className="flex items-center justify-center w-8 h-8 bg-rose-600 border border-rose-600 rounded-full shadow-lg hover:bg-rose-500 hover:border-rose-500 hover:shadow-xl transition-all duration-300 cursor-pointer"
-                    aria-label="Pause video"
-                  >
-                    <Pause className="w-3 h-3 text-white" />
-                  </button>
-                </div>
-              )}
             </div>
           </>
         ) : imageUrl ? (
