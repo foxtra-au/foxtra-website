@@ -57,8 +57,8 @@ export function OurTeamClient() {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
       <div className="relative z-10">
-        {/* CEO Banner Section */}
-        <section className="hidden relative w-full pt-32 pb-20">
+        {/* Title Section */}
+        <section className="relative w-full pt-32 pb-20">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             {/* Small Title */}
             <motion.div
@@ -79,7 +79,8 @@ export function OurTeamClient() {
               </span>
             </h1>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+            {/* CEO Banner Section - Hidden */}
+            <div className="hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
               {/* Left Side - CEO Photo (30%) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
