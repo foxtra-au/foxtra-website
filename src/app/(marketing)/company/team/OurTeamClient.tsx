@@ -58,7 +58,7 @@ export function OurTeamClient() {
 
       <div className="relative z-10">
         {/* CEO Banner Section */}
-        <section className="relative w-full pt-32 pb-20">
+        <section className="hidden relative w-full pt-32 pb-20">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             {/* Small Title */}
             <motion.div
