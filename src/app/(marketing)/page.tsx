@@ -2,6 +2,7 @@ import { HomeBanner } from '@/components/home'
 import { Case } from '@/components/ui/CasesWithInfiniteScroll'
 import { HomeFeatures, HomePageWrapper, TestimonialBlock, HomeBlogSection, PortfolioSection } from '@/components/sections'
 import { Metadata } from 'next'
+import { getBaseUrl } from '@/lib/site-config'
 
 export const metadata: Metadata = {
   title: 'Foxtra — Technology Leadership & Development Services',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_AU',
     siteName: 'Foxtra',
-    url: 'https://foxtra.ai',
+    url: getBaseUrl(),
   },
   twitter: {
     card: 'summary_large_image',

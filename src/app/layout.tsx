@@ -5,10 +5,12 @@ import { ConditionalLayout } from '@/components/layout'
 import { HubspotTracking } from '@/components/ui/HubspotTracking'
 import { GoogleAnalyticsScript } from '@/components/ui/GoogleAnalyticsScript'
 import { ClickRankVerificationScript } from '@/components/ui/ClickRankVerificationScript'
+import { getBaseUrl } from '@/lib/site-config'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(getBaseUrl()),
   title: 'Foxtra — Technology Leadership & Development Services',
   description: 'On-demand technology leadership, strategy, and development services for startups and SMEs. Expert guidance to align business goals with scalable architecture, custom development, and digital transformation.',
   keywords: ['CTO services', 'technology leadership', 'custom development', 'tech strategy', 'system architecture', 'cloud advisory', 'devops', 'mobile app development', 'web development', 'Australia technology services'],
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_AU',
     siteName: 'Foxtra',
-    url: 'https://foxtra.ai',
+    url: getBaseUrl(),
   },
   twitter: {
     card: 'summary_large_image',

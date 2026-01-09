@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { articles } from '@/data/articles-data';
+import { getCanonicalUrl } from '@/lib/site-config';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -12,14 +13,20 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     };
   }
 
+  const canonicalUrl = getCanonicalUrl(`/blog/${resolvedParams.id}`);
+
   return {
     title: `${article.title} | Foxtra Blog`,
     description: article.description,
     keywords: [article.tag, article.category, 'AI', 'automation', 'business'],
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: `${article.title} | Foxtra Blog`,
       description: article.description,
       type: 'article',
+      url: canonicalUrl,
       publishedTime: `2024-${article.date.month}-${article.date.day}`,
       authors: ['Foxtra'],
       tags: [article.tag, article.category],
