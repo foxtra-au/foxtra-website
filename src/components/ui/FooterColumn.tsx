@@ -33,7 +33,7 @@ const data = {
     livechat: '/contact',
   },
   contact: {
-    email: 'hello@foxtra.ai',
+    email: 'hello@foxtra.com.au',
     phone: '+61 123 456 789',
     address: 'Sydney, NSW, Australia',
   },

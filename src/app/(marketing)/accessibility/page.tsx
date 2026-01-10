@@ -228,12 +228,12 @@ export default function Accessibility() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <p className="text-white/80 mb-2"><strong>Accessibility Officer:</strong></p>
-                  <p className="text-white/80 mb-2">admin@foxtra.ai</p>
+                  <p className="text-white/80 mb-2">admin@foxtra.com.au</p>
                   <p className="text-white/80 mb-2">0422 222 444</p>
                 </div>
                 <div>
                   <p className="text-white/80 mb-2"><strong>Technical Support:</strong></p>
-                  <p className="text-white/80 mb-2">support@foxtra.ai</p>
+                  <p className="text-white/80 mb-2">support@foxtra.com.au</p>
                   <p className="text-white/80 mb-2">U217 14 Lexington Drive, Bella Vista, NSW 2153</p>
                 </div>
               </div>
@@ -260,7 +260,7 @@ export default function Accessibility() {
                 <h3 className="text-lg font-semibold mb-3">Communication</h3>
                 <ul className="list-disc pl-4 text-white/80 text-sm space-y-2">
                   <li>Phone support: 0422 222 444</li>
-                  <li>Email assistance: support@foxtra.ai</li>
+                  <li>Email assistance: support@foxtra.com.au</li>
                   <li>Live chat during business hours</li>
                   <li>Video calls with screen sharing</li>
                   <li>Alternative document formats</li>

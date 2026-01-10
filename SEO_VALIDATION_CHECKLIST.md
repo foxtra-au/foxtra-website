@@ -128,7 +128,8 @@ curl https://www.foxtra.com.au/sitemap.xml | grep -c "<loc>"
 
 ## 📝 Notes
 
-- Email addresses (`@foxtra.ai`) and social media links (`instagram.com/foxtra.ai`) are intentionally left unchanged as they are not domain URLs
+- All email addresses have been updated from `@foxtra.ai` to `@foxtra.com.au`
+- Social media links remain unchanged (they point to actual social media profiles)
 - The sitemap includes 32 blog posts from `articles-data.ts`
 - All canonical URLs are automatically generated using `getCanonicalUrl()` helper
 - Metadata uses `metadataBase` in root layout for automatic canonical URL generation

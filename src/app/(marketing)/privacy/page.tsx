@@ -140,7 +140,7 @@ export default function PrivacyPolicy() {
               <li><strong>Withdrawal:</strong> Withdraw consent where processing is based on consent</li>
             </ul>
             <p className="text-white/80 mb-4">
-              To exercise these rights, contact us at <a href="mailto:admin@foxtra.ai" className="text-rose-500 hover:text-rose-400">admin@foxtra.ai</a>
+              To exercise these rights, contact us at <a href="mailto:admin@foxtra.com.au" className="text-rose-500 hover:text-rose-400">admin@foxtra.com.au</a>
             </p>
           </section>
 
@@ -202,9 +202,9 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">12. Contact Information</h2>
             <div className="bg-white/5 rounded-lg p-6 mb-4">
-              <p className="text-white/80 mb-2"><strong>Privacy Officer:</strong> admin@foxtra.ai</p>
-              <p className="text-white/80 mb-2"><strong>General Questions:</strong> admin@foxtra.ai</p>
-              <p className="text-white/80 mb-2"><strong>Technical Support:</strong> support@foxtra.ai</p>
+              <p className="text-white/80 mb-2"><strong>Privacy Officer:</strong> admin@foxtra.com.au</p>
+              <p className="text-white/80 mb-2"><strong>General Questions:</strong> admin@foxtra.com.au</p>
+              <p className="text-white/80 mb-2"><strong>Technical Support:</strong> support@foxtra.com.au</p>
               <p className="text-white/80 mb-2"><strong>Phone:</strong> 0422 222 444</p>
               <p className="text-white/80"><strong>Address:</strong> U217 14 Lexington Drive, Bella Vista, NSW 2153</p>
             </div>
@@ -222,8 +222,8 @@ export default function PrivacyPolicy() {
           <div className="border-t border-white/10 pt-8 mt-12">
             <p className="text-white/60 text-sm">
               If you have any questions about this Privacy Policy or our data practices, please contact us at 
-              <a href="mailto:admin@foxtra.ai" className="text-rose-500 hover:text-rose-400 ml-1">
-                admin@foxtra.ai
+              <a href="mailto:admin@foxtra.com.au" className="text-rose-500 hover:text-rose-400 ml-1">
+                admin@foxtra.com.au
               </a>
             </p>
           </div>

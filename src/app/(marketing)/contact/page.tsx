@@ -79,8 +79,8 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-white mb-2 font-sans">
                 Technical Support
               </h3>
-              <a href="mailto:support@foxtra.ai" className="text-white/70 font-sans hover:text-white transition-colors">
-                support@foxtra.ai
+              <a href="mailto:support@foxtra.com.au" className="text-white/70 font-sans hover:text-white transition-colors">
+                support@foxtra.com.au
               </a>
             </div>
 
@@ -92,8 +92,8 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-white mb-2 font-sans">
                 Sales Inquiries
               </h3>
-              <a href="mailto:sales@foxtra.ai" className="text-white/70 font-sans hover:text-white transition-colors">
-                sales@foxtra.ai
+              <a href="mailto:sales@foxtra.com.au" className="text-white/70 font-sans hover:text-white transition-colors">
+                sales@foxtra.com.au
               </a>
             </div>
 
@@ -105,8 +105,8 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-white mb-2 font-sans">
                 Partnerships
               </h3>
-              <a href="mailto:partnerships@foxtra.ai" className="text-white/70 font-sans hover:text-white transition-colors">
-                partnerships@foxtra.ai
+              <a href="mailto:partnerships@foxtra.com.au" className="text-white/70 font-sans hover:text-white transition-colors">
+                partnerships@foxtra.com.au
               </a>
             </div>
 
@@ -118,8 +118,8 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-white mb-2 font-sans">
                 General Questions
               </h3>
-              <a href="mailto:admin@foxtra.ai" className="text-white/70 font-sans hover:text-white transition-colors">
-                admin@foxtra.ai
+              <a href="mailto:admin@foxtra.com.au" className="text-white/70 font-sans hover:text-white transition-colors">
+                admin@foxtra.com.au
               </a>
             </div>
           </div>

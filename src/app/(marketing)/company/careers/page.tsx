@@ -205,7 +205,7 @@ export default function Careers() {
                 </div>
                 <div className="w-[30%] flex justify-end">
                   <a 
-                    href="mailto:careers@foxtra.ai"
+                    href="mailto:careers@foxtra.com.au"
                     className="inline-flex items-center px-8 py-4 text-white rounded-sm font-semibold text-lg shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                     style={{ backgroundColor: '#FF335C', boxShadow: '0 25px 50px -12px rgba(255, 51, 92, 0.25)' }}
                   >

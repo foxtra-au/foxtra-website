@@ -333,7 +333,7 @@ export default function CookieSettings() {
               <p className="text-white/80 mb-2">
                 If you have questions about our use of cookies, please contact us:
               </p>
-              <p className="text-white/80 mb-2"><strong>Email:</strong> admin@foxtra.ai</p>
+              <p className="text-white/80 mb-2"><strong>Email:</strong> admin@foxtra.com.au</p>
               <p className="text-white/80 mb-2"><strong>Phone:</strong> 0422 222 444</p>
               <p className="text-white/80"><strong>Address:</strong> U217 14 Lexington Drive, Bella Vista, NSW 2153</p>
             </div>
