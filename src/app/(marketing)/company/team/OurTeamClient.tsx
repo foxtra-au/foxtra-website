@@ -57,7 +57,7 @@ export function OurTeamClient() {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
       <div className="relative z-10">
-        {/* Title Section */}
+        {/* CEO Banner Section */}
         <section className="relative w-full pt-32 pb-20">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             {/* Small Title */}
@@ -79,8 +79,7 @@ export function OurTeamClient() {
               </span>
             </h1>
 
-            {/* CEO Banner Section - Hidden */}
-            <div className="hidden bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-stretch">
               {/* Left Side - CEO Photo (30%) */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -122,14 +121,9 @@ export function OurTeamClient() {
                   <p className="text-white/80 text-lg leading-relaxed font-light italic mb-4">
                     "At Foxtra, we believe that innovation happens when talented individuals come together with a shared vision. Our team is the heart of everything we do, and each member brings unique expertise, passion, and dedication to delivering exceptional AI solutions."
                   </p>
-                  <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-white font-bold text-lg">
-                      CEO
-                    </div>
-                    <div>
-                      <p className="text-white font-semibold">CEO & Founder</p>
-                      <p className="text-white/60 text-sm">Foxtra</p>
-                    </div>
+                  <div className="pt-4 border-t border-white/10">
+                    <p className="text-white font-semibold text-xl mb-1">Rajesh R Mekala</p>
+                    <p className="text-white/70 text-sm">CEO & Founder @ Foxtra</p>
                   </div>
                 </div>
               </motion.div>
