@@ -145,6 +145,20 @@ export function PortfolioSection() {
       category: "Mobile Development",
       image: "/services/mobile-app/zingo-customer.png",
       description: "Customer mobile app for service booking"
+    },
+    {
+      id: "mudgee-gardens",
+      title: "Mudgee Gardens",
+      category: "Web Development",
+      image: "/services/custom-development/mudgee-gardens.png",
+      description: "Garden and landscaping business website"
+    },
+    {
+      id: "my-biz-finance",
+      title: "My Biz Finance",
+      category: "Web Development",
+      image: "/services/custom-development/my-biz-finance.png",
+      description: "Financial services and business finance platform"
     }
   ];
 
