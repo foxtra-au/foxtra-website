@@ -32,12 +32,21 @@ export const metadata: Metadata = {
     locale: 'en_AU',
     siteName: 'Foxtra',
     url: getBaseUrl(),
+    images: [
+      {
+        url: '/favicon/android-chrome-512x512.png',
+        width: 512,
+        height: 512,
+        alt: 'Foxtra',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Foxtra — Technology Leadership & Development Services',
     description: 'On-demand technology leadership, strategy, and development services for startups and SMEs. Expert guidance to align business goals with scalable architecture.',
     site: '@foxtraai',
+    images: ['/favicon/android-chrome-512x512.png'],
   },
   other: {
     'youtube:channel': 'https://www.youtube.com/@foxtra-ai',
