@@ -24,6 +24,8 @@ interface FAQProps {
   categories: Categories;
   faqData: FAQData;
   className?: string;
+  showHeader?: boolean;
+  showCategoryTabs?: boolean;
 }
 
 interface FAQHeaderProps {
@@ -54,10 +56,14 @@ export const FAQ: React.FC<FAQProps> = ({
   categories,
   faqData,
   className,
+  showHeader = true,
+  showCategoryTabs = true,
   ...props 
 }) => {
   const categoryKeys = Object.keys(categories);
   const [selectedCategory, setSelectedCategory] = useState(categoryKeys[0]);
+
+  const allQuestions = Object.values(faqData).flat();
 
   return (
     <section 
@@ -67,16 +73,26 @@ export const FAQ: React.FC<FAQProps> = ({
       )}
       {...props}
     >
-      <FAQHeader title={title} subtitle={subtitle} />
-      <FAQTabs 
-        categories={categories}
-        selected={selectedCategory} 
-        setSelected={setSelectedCategory} 
-      />
-      <FAQList 
-        faqData={faqData}
-        selected={selectedCategory} 
-      />
+      {showHeader && <FAQHeader title={title} subtitle={subtitle} />}
+      {showCategoryTabs && (
+        <FAQTabs 
+          categories={categories}
+          selected={selectedCategory} 
+          setSelected={setSelectedCategory} 
+        />
+      )}
+      {showCategoryTabs ? (
+        <FAQList 
+          faqData={faqData}
+          selected={selectedCategory} 
+        />
+      ) : (
+        <div className="mx-auto mt-8 max-w-3xl space-y-4">
+          {allQuestions.map((faq, index) => (
+            <FAQItemComponent key={index} {...faq} />
+          ))}
+        </div>
+      )}
     </section>
   );
 };

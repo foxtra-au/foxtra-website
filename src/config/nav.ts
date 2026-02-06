@@ -100,7 +100,7 @@ export const navigationConfig: NavItem[] = [
           {
             label: "Client Testimonials",
             description: "What our clients say about working with us",
-            href: "/contact",
+            href: "/testimonials",
             iconName: "Star",
           },
         ],
@@ -228,13 +228,13 @@ export const navigationConfig: NavItem[] = [
           {
             label: "FAQs",
             description: "Frequently asked questions about our services",
-            href: "/contact",
+            href: "/resources/faqs",
             iconName: "HelpCircle",
           },
           {
             label: "Technology Stack",
             description: "Technologies and tools we use",
-            href: "/services/custom-development",
+            href: "/resources/technology-stack",
             iconName: "Code",
           },
         ],

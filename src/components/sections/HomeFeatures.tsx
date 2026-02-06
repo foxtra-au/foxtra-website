@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Briefcase, Code, Smartphone, Search, Target, Share2, Cloud, Brain } from "lucide-react";
+import { Briefcase, Code, Smartphone, Globe, Plug, Cloud, FileCheck, Brain } from "lucide-react";
 import Link from "next/link";
 
 interface Feature {
@@ -39,39 +39,39 @@ export function HomeFeatures() {
       href: "/services/custom-development"
     },
     {
+      icon: Globe,
+      title: "Web App Development",
+      description: "Scalable web applications built for performance and growth",
+      href: "/services/web-app-development"
+    },
+    {
       icon: Smartphone,
       title: "Mobile App Development",
       description: "Native and cross-platform mobile solutions",
       href: "/services/mobile-app-development"
     },
     {
-      icon: Search,
-      title: "AI SEO",
-      description: "Technical fixes and content at scale for better rankings",
-      href: "/services/ai-seo"
-    },
-    {
-      icon: Target,
-      title: "Google Ads",
-      description: "High-intent campaigns with smart bidding strategies",
-      href: "/services/google-ads"
-    },
-    {
-      icon: Share2,
-      title: "Social Media Management",
-      description: "Calendar, creation, and community management",
-      href: "/services/social-media-management"
+      icon: Plug,
+      title: "API Development",
+      description: "REST/GraphQL APIs, integrations, and backend services",
+      href: "/services/api-development"
     },
     {
       icon: Cloud,
       title: "Cloud Management",
-      description: "Architecture and DevOps optimization across AWS/Azure/GCP",
+      description: "Architecture and DevOps across AWS, Azure, and GCP",
       href: "/services/cloud-management"
+    },
+    {
+      icon: FileCheck,
+      title: "QA and Testing",
+      description: "Quality assurance and testing for reliable software",
+      href: "/services/qa-and-testing"
     },
     {
       icon: Brain,
       title: "AI & Automation",
-      description: "Intelligent automation and AI agents to streamline business processes",
+      description: "Intelligent automation and AI agents for your business",
       href: "/cto-services/ai-automation-strategy"
     }
   ];

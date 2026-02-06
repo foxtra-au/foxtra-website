@@ -1,12 +1,12 @@
 import { Container } from '@/components/ui/Container'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { CompanyBanner } from '@/components/ui/CompanyBanner'
+import { ServicePageWrapper } from '@/components/sections'
 import Link from 'next/link'
 
 export default function About() {
   return (
-    <>
+    <ServicePageWrapper>
       <CompanyBanner
         title="About Foxtra"
         description="We're building the future of AI-powered web applications with cutting-edge technology and modern development practices."
@@ -19,94 +19,71 @@ export default function About() {
         ]}
       />
 
-      {/* About Content */}
-      <main className="bg-white">
+      <main className="relative z-10">
         <Container className="py-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              About <span className="text-primary-600">Foxtra</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We're building the future of AI-powered web applications with cutting-edge technology
-              and modern development practices.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card>
-              <CardHeader>
-                <div className="text-4xl mb-2">🚀</div>
-                <CardTitle>Our Mission</CardTitle>
-                <CardDescription>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 mb-16">
+              <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 md:p-8 backdrop-blur-sm hover:bg-white/[0.04] transition-colors">
+                <div className="text-4xl mb-4">🚀</div>
+                <h2 className="text-xl font-semibold text-white mb-2">Our Mission</h2>
+                <p className="text-white/60">
                   To create innovative AI solutions that empower businesses and individuals to achieve more.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <div className="text-4xl mb-2">🎯</div>
-                <CardTitle>Our Vision</CardTitle>
-                <CardDescription>
+                </p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/[0.02] p-6 md:p-8 backdrop-blur-sm hover:bg-white/[0.04] transition-colors">
+                <div className="text-4xl mb-4">🎯</div>
+                <h2 className="text-xl font-semibold text-white mb-2">Our Vision</h2>
+                <p className="text-white/60">
                   A world where AI seamlessly integrates with everyday applications to enhance productivity and creativity.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              Technology Stack
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-6xl mb-4">⚛️</div>
-                <h3 className="text-xl font-semibold mb-2">Next.js 14</h3>
-                <p className="text-gray-600">React framework with App Router and Server Components</p>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl mb-4">🎨</div>
-                <h3 className="text-xl font-semibold mb-2">Tailwind CSS</h3>
-                <p className="text-gray-600">Utility-first CSS framework for rapid UI development</p>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl mb-4">🗄️</div>
-                <h3 className="text-xl font-semibold mb-2">MongoDB</h3>
-                <p className="text-gray-600">NoSQL database for flexible data storage</p>
+                </p>
               </div>
             </div>
-          </div>
 
-          <div className="bg-gray-50 rounded-lg p-8 mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              Learn from Our Experts
-            </h2>
-            <p className="text-xl text-gray-600 mb-8 text-center max-w-2xl mx-auto">
-              Stay updated with the latest AI automation insights, best practices, and industry trends from our team of experts.
-            </p>
+            <div className="rounded-xl border border-white/10 bg-white/[0.02] p-8 mb-16 backdrop-blur-sm">
+              <h2 className="text-2xl font-bold text-white mb-6 text-center">
+                Technology Stack
+              </h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center p-4 rounded-lg bg-white/[0.02] border border-white/5">
+                  <div className="text-5xl mb-3">⚛️</div>
+                  <h3 className="text-lg font-semibold text-white mb-1">Next.js</h3>
+                  <p className="text-sm text-white/60">React framework with App Router and Server Components</p>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-white/[0.02] border border-white/5">
+                  <div className="text-5xl mb-3">🎨</div>
+                  <h3 className="text-lg font-semibold text-white mb-1">Tailwind CSS</h3>
+                  <p className="text-sm text-white/60">Utility-first CSS for rapid UI development</p>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-white/[0.02] border border-white/5">
+                  <div className="text-5xl mb-3">🗄️</div>
+                  <h3 className="text-lg font-semibold text-white mb-1">MongoDB</h3>
+                  <p className="text-sm text-white/60">NoSQL database for flexible data storage</p>
+                </div>
+              </div>
+              <p className="text-center mt-6">
+                <Link
+                  href="/resources/technology-stack"
+                  className="text-sm text-rose-400 hover:text-rose-300 transition-colors"
+                >
+                  View full technology stack →
+                </Link>
+              </p>
+            </div>
+
             <div className="text-center">
-              <Link href="/blog">
-                <Button variant="outline" size="lg">
-                  Read Our Blog
+              <h2 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h2>
+              <p className="text-white/60 mb-6">
+                Join us on this exciting journey and experience the power of modern web development.
+              </p>
+              <Link href="/get-started">
+                <Button variant="default" size="lg" className="bg-rose-600 hover:bg-rose-500 text-white">
+                  Start Building
                 </Button>
               </Link>
             </div>
           </div>
-
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Join us on this exciting journey and experience the power of modern web development.
-            </p>
-            <Link href="/get-started">
-              <Button variant="default" size="lg">
-                Start Building
-              </Button>
-            </Link>
-          </div>
-        </div>
         </Container>
       </main>
-    </>
+    </ServicePageWrapper>
   )
 }
