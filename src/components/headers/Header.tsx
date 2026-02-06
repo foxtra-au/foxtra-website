@@ -49,6 +49,11 @@ import {
 } from 'lucide-react'
 import { navigationConfig, authLinks, type AuthLink } from '@/config/nav'
 
+const HIDDEN_NAV_LABELS = ['Marketing', 'Solutions', 'Industries']
+const visibleNavConfig = navigationConfig.filter(
+  (item) => !HIDDEN_NAV_LABELS.includes(item.label)
+)
+
 // Icon mapping
 const iconMap = {
   Code,
@@ -101,7 +106,7 @@ export function Header() {
   }
 
   // Convert navigation config to MegaMenu format
-  const megaMenuItems: MegaMenuItem[] = navigationConfig.map(item => ({
+  const megaMenuItems: MegaMenuItem[] = visibleNavConfig.map(item => ({
     id: item.id,
     label: item.label,
     link: item.href,
@@ -172,7 +177,7 @@ export function Header() {
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-white/10 bg-black/90 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigationConfig.map((item) => (
+              {visibleNavConfig.map((item) => (
                 <div key={item.id} className="space-y-1">
                   {item.href ? (
                     <Link

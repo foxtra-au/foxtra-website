@@ -5,6 +5,10 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'API Development | Foxtra',
   description: 'Design-first REST/GraphQL APIs, integrations, auth, and observability.',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function ApiDevelopment() {

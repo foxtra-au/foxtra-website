@@ -6,7 +6,7 @@ export function HomeBanner() {
       <HeroGeometric 
         badge="Foxtra"
         title1=""
-        title2="Technology Partnership."
+        title2="Software Development Studio."
         description="At Foxtra, we partner with businesses to provide full-service technology solutions. From strategy and architecture to development and support, we're your complete technology partner."
       />
     </div>

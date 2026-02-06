@@ -201,12 +201,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/blog-article-writing`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/services/cloud-management`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -219,43 +213,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/email-marketing`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/google-ads`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/services/mobile-app-development`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/sms-marketing`,
+      url: `${baseUrl}/services/web-app-development`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/social-media-ads`,
+      url: `${baseUrl}/services/portal-development`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/social-media-management`,
+      url: `${baseUrl}/services/qa-and-testing`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/video-marketing`,
+      url: `${baseUrl}/services/software-maintenance`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -296,12 +278,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/solutions/lawyers`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/solutions/lead-magnet`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,

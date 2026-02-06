@@ -5,23 +5,27 @@ import { customDevelopmentFAQ } from '@/data/faq-data'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Custom Software Development | Foxtra',
-  description: 'Custom apps that fit your workflows—designed, built, and shipped with AI-first thinking.',
+  title: 'Web App Development Sydney | Foxtra',
+  description: 'Custom web applications built for scale and performance. Full-stack web development services in Sydney, Australia.',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
-export default function CustomDevelopment() {
+export default function WebAppDevelopment() {
   const developmentFeatures = [
     "Full-stack web applications",
-    "Mobile app development", 
-    "AI-powered integrations",
-    "Scalable cloud architecture"
+    "Responsive design & UI/UX",
+    "Cloud-native architecture",
+    "Scalable backend systems"
   ];
 
   return (
     <ServicePageWrapper>
       <ServiceBanner
-        title="Custom Software Development"
-        description="Custom apps that fit your workflows—designed, built, and shipped with AI-first thinking."
+        title="Web App Development Sydney"
+        description="Custom web applications built for scale and performance. Full-stack web development services in Sydney, Australia."
         badge="Foxtra • Development Services"
         features={[]}
       />
@@ -34,7 +38,7 @@ export default function CustomDevelopment() {
       <DevelopmentProcess />
       <FAQ 
         title="Frequently Asked Questions"
-        subtitle="Everything you need to know about Custom Development"
+        subtitle="Everything you need to know about Web App Development"
         categories={customDevelopmentFAQ.categories}
         faqData={customDevelopmentFAQ.faqData}
         className="mt-16"
