@@ -42,8 +42,10 @@ const serviceTabs = [
   },
 ] as const;
 
+type ServiceTabId = (typeof serviceTabs)[number]['id'];
+
 export function FAQsClient() {
-  const [selectedService, setSelectedService] = useState(serviceTabs[0].id);
+  const [selectedService, setSelectedService] = useState<ServiceTabId>(serviceTabs[0].id);
   const current = serviceTabs.find((t) => t.id === selectedService)!;
 
   return (
