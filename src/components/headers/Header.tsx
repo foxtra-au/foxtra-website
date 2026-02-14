@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import MegaMenu from './megamenu/MegaMenu'
 import type { MegaMenuItem } from './megamenu/MegaMenu'
@@ -127,10 +128,15 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-1">
-              <span className="text-2xl font-bold text-white drop-shadow-lg">
-                Foxtra <span className="text-rose-600">•</span>
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/foxtra-logo-white-v2.png"
+                alt="Foxtra"
+                width={140}
+                height={40}
+                className="h-8 w-auto object-contain"
+                priority
+              />
             </Link>
           </div>
 

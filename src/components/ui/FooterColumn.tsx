@@ -41,7 +41,7 @@ const data = {
     name: 'Foxtra',
     description:
       'Building the future with AI technology. We help businesses transform their digital presence with cutting-edge AI solutions.',
-    logo: '/favicon/favicon-32x32.png',
+    logo: '/foxtra-logo-white-v2.png',
   },
 };
 
@@ -84,17 +84,14 @@ export default function Footer4Col() {
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <div className="text-primary flex justify-center gap-2 sm:justify-start">
+            <div className="text-primary flex justify-center gap-2 sm:justify-start items-center">
               <Image
                 src={data.company.logo || '/placeholder.svg'}
-                alt="logo"
-                width={32}
+                alt="Foxtra"
+                width={120}
                 height={32}
-                className="h-8 w-8 rounded-full"
+                className="h-8 w-auto object-contain"
               />
-              <span className="text-2xl font-semibold">
-                {data.company.name}
-              </span>
             </div>
 
             <p className="text-foreground/50 mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left">

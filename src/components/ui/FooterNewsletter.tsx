@@ -127,11 +127,15 @@ export default function FooterNewsletter() {
         </div>
         <div className="mb-16 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-1 lg:col-span-1">
-            <div className="mb-6 flex items-center space-x-2">
-              <Link href="/" className="flex items-center space-x-1">
-                <span className="text-2xl font-bold text-white drop-shadow-lg font-sans">
-                  Foxtra <span className="text-rose-600">•</span>
-                </span>
+            <div className="mb-6 flex items-center">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/foxtra-logo-white-v2.png"
+                  alt="Foxtra"
+                  width={140}
+                  height={40}
+                  className="h-8 w-auto object-contain"
+                />
               </Link>
             </div>
             <p className="text-white/60 mb-6 font-sans">
