@@ -6,8 +6,8 @@ export function HomeBanner() {
       <HeroGeometric 
         badge="Foxtra"
         title1=""
-        title2="Enabling Digital Transformation"
-        description="Strategic consulting and engineering services to modernise systems and support sustainable growth."
+        title2="Technology Consulting & Solutions"
+        description="Foxtra works with businesses to modernise systems and deliver reliable digital platforms. We provide strategic advisory, engineering and managed services to support long-term operational success."
       />
     </div>
   )
