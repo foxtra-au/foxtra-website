@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/services/digital-transformation',
+        destination: '/digital-transformation',
+        permanent: true,
+      },
+    ]
+  },
   images: {
     remotePatterns: [
       {

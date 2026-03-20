@@ -1,12 +1,49 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion } from "framer-motion";
 import { Calendar, Circle } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-
+/** Per-highlight accent: matching dot + pill border/tint (cycles if more than 5 items) */
+const HERO_HIGHLIGHT_PALETTE = [
+    {
+        dot: "bg-indigo-400",
+        border: "border-indigo-400/45",
+        borderHover: "hover:border-indigo-400/70",
+        bg: "bg-indigo-500/[0.12]",
+        bgHover: "hover:bg-indigo-500/[0.18]",
+    },
+    {
+        dot: "bg-sky-400",
+        border: "border-sky-400/45",
+        borderHover: "hover:border-sky-400/70",
+        bg: "bg-sky-500/[0.12]",
+        bgHover: "hover:bg-sky-500/[0.18]",
+    },
+    {
+        dot: "bg-emerald-400",
+        border: "border-emerald-400/45",
+        borderHover: "hover:border-emerald-400/70",
+        bg: "bg-emerald-500/[0.12]",
+        bgHover: "hover:bg-emerald-500/[0.18]",
+    },
+    {
+        dot: "bg-amber-400",
+        border: "border-amber-400/45",
+        borderHover: "hover:border-amber-400/70",
+        bg: "bg-amber-500/[0.12]",
+        bgHover: "hover:bg-amber-500/[0.18]",
+    },
+    {
+        dot: "bg-rose-400",
+        border: "border-rose-400/45",
+        borderHover: "hover:border-rose-400/70",
+        bg: "bg-rose-500/[0.12]",
+        bgHover: "hover:bg-rose-500/[0.18]",
+    },
+] as const;
 
 function HeroGeometric({
     badge = "Design Collective",
@@ -17,6 +54,12 @@ function HeroGeometric({
     showButtons = false,
     showStats = false,
     showBackground = true,
+    primaryCtaHref = "/bookings",
+    primaryCtaLabel = "Book Meeting",
+    primaryCtaIcon,
+    secondaryCtaHref = "/showcase",
+    secondaryCtaLabel = "View portfolio",
+    highlights,
 }: {
     badge?: string;
     title1?: string;
@@ -26,6 +69,14 @@ function HeroGeometric({
     showButtons?: boolean;
     showStats?: boolean;
     showBackground?: boolean;
+    /** When set with showButtons, overrides default Book Meeting / View portfolio */
+    primaryCtaHref?: string;
+    primaryCtaLabel?: string;
+    primaryCtaIcon?: ReactNode;
+    secondaryCtaHref?: string;
+    secondaryCtaLabel?: string;
+    /** Pill labels shown above CTA buttons (rounded-full) */
+    highlights?: string[];
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -68,10 +119,14 @@ function HeroGeometric({
                         animate="visible"
                     >
                         <h1 className="text-5xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                {title1}
-                            </span>
-                            <br />
+                            {title1 ? (
+                                <>
+                                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+                                        {title1}
+                                    </span>
+                                    <br />
+                                </>
+                            ) : null}
                             <span
                                 className={cn(
                                     "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
@@ -98,27 +153,67 @@ function HeroGeometric({
                         )}
                     </motion.div>
 
-                    {showButtons && (
-                        <motion.div
+                    {highlights && highlights.length > 0 && (
+                        <motion.ul
                             custom={3}
                             variants={fadeUpVariants}
                             initial="hidden"
                             animate="visible"
-                            className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4"
+                            className="mt-6 flex flex-wrap items-center justify-center gap-2 px-2 sm:mt-8 sm:gap-3"
+                            aria-label="Focus areas"
+                        >
+                            {highlights.map((label, index) => {
+                                const accent =
+                                    HERO_HIGHLIGHT_PALETTE[index % HERO_HIGHLIGHT_PALETTE.length];
+                                return (
+                                    <li
+                                        key={label}
+                                        className={cn(
+                                            "flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium tracking-wide text-white/85 backdrop-blur-sm transition-colors hover:text-white",
+                                            accent.border,
+                                            accent.borderHover,
+                                            accent.bg,
+                                            accent.bgHover
+                                        )}
+                                    >
+                                        <span
+                                            className={cn(
+                                                "h-2 w-2 shrink-0 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.25)]",
+                                                accent.dot
+                                            )}
+                                            aria-hidden
+                                        />
+                                        {label}
+                                    </li>
+                                );
+                            })}
+                        </motion.ul>
+                    )}
+
+                    {showButtons && (
+                        <motion.div
+                            custom={4}
+                            variants={fadeUpVariants}
+                            initial="hidden"
+                            animate="visible"
+                            className={cn(
+                                "flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4",
+                                highlights && highlights.length > 0 ? "mt-6" : "mt-8"
+                            )}
                         >
                             <Link
-                                href="/bookings"
+                                href={primaryCtaHref}
                                 className="inline-flex min-h-[42px] w-full items-center justify-center rounded-sm border border-transparent px-6 py-2 text-base font-medium text-white shadow-sm transition-all duration-200 hover:shadow-lg transform hover:scale-105 drop-shadow-lg sm:w-auto"
                                 style={{ backgroundColor: "#FF335C" }}
                             >
-                                <Calendar className="mr-2 h-4 w-4" />
-                                Book Meeting
+                                {primaryCtaIcon ?? <Calendar className="mr-2 h-4 w-4" />}
+                                {primaryCtaLabel}
                             </Link>
                             <Link
-                                href="/showcase"
+                                href={secondaryCtaHref}
                                 className="inline-flex min-h-[42px] w-full items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-2 text-base font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md sm:w-auto"
                             >
-                                View portfolio
+                                {secondaryCtaLabel}
                             </Link>
                         </motion.div>
                     )}
@@ -126,7 +221,7 @@ function HeroGeometric({
 
                 {showStats && (
                     <motion.div
-                        custom={4}
+                        custom={5}
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"

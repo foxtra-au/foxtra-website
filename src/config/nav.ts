@@ -28,6 +28,13 @@ export const navigationConfig: NavItem[] = [
             iconName: "Layers",
           },
           {
+            label: "Digital Transformation",
+            description:
+              "Modernise systems and platforms with consulting-led transformation delivery",
+            href: "/digital-transformation",
+            iconName: "RefreshCw",
+          },
+          {
             label: "Web Applications",
             description: "Custom web applications built for scale and performance",
             href: "/services/web-app-development",
