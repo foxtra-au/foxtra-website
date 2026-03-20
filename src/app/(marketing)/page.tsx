@@ -1,6 +1,6 @@
 import { HomeBanner } from '@/components/home'
 import { Case } from '@/components/ui/CasesWithInfiniteScroll'
-import { ConsultingCapabilities, HomePageWrapper, TestimonialBlock, HomeBlogSection } from '@/components/sections'
+import { ConsultingCapabilities, HomePageWrapper, TestimonialBlock, HomeBlogSection, WhyPartnerWithFoxtra } from '@/components/sections'
 import { Metadata } from 'next'
 import { getBaseUrl } from '@/lib/site-config'
 
@@ -33,6 +33,7 @@ export default function Home() {
       <div className="hidden">
         <TestimonialBlock />
       </div>
+      <WhyPartnerWithFoxtra />
       <HomeBlogSection />
     </HomePageWrapper>
   )
