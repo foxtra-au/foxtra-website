@@ -103,7 +103,7 @@ function HeroGeometric({
                         >
                             <Link
                                 href="/bookings"
-                                className="inline-flex items-center justify-center rounded-sm border border-transparent px-6 py-2 text-base font-medium text-white shadow-sm transition-all duration-200 hover:shadow-lg transform hover:scale-105 drop-shadow-lg"
+                                className="inline-flex min-h-[42px] items-center justify-center rounded-sm border border-transparent px-6 py-2 text-base font-medium text-white shadow-sm transition-all duration-200 hover:shadow-lg transform hover:scale-105 drop-shadow-lg"
                                 style={{ backgroundColor: "#FF335C" }}
                             >
                                 <Calendar className="mr-2 h-4 w-4" />
@@ -111,7 +111,7 @@ function HeroGeometric({
                             </Link>
                             <Link
                                 href="/showcase"
-                                className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md"
+                                className="inline-flex min-h-[42px] items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-2 text-base font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md"
                             >
                                 View portfolio
                             </Link>
