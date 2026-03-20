@@ -90,8 +90,8 @@ export default function FooterNewsletter() {
         </div>
       </div>
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="glass-effect mb-16 rounded-2xl p-8 md:p-12">
-          <div className="grid items-center gap-8 md:grid-cols-2">
+        <div className="mb-16 overflow-hidden rounded-md border border-white/20 transition-all duration-300 hover:border-white/30">
+          <div className="grid items-center gap-8 bg-black p-8 md:grid-cols-2 md:p-12">
             <div>
               <h3 className="mb-4 text-2xl font-bold md:text-3xl font-sans">
                 Stay ahead with Foxtra

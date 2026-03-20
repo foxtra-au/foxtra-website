@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Briefcase, Code, Smartphone, Globe, Plug, Cloud, FileCheck, Brain } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface Feature {
   icon: React.ElementType;
@@ -11,7 +12,11 @@ interface Feature {
   href: string;
 }
 
-export function HomeFeatures() {
+interface HomeFeaturesProps {
+  className?: string;
+}
+
+export function HomeFeatures({ className }: HomeFeaturesProps = {}) {
   const fadeUpVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
@@ -82,7 +87,7 @@ export function HomeFeatures() {
       variants={fadeUpVariants}
       initial="hidden"
       animate="visible"
-      className="max-w-6xl mx-auto mt-8"
+      className={cn("max-w-6xl mx-auto mt-8 px-4 sm:px-0", className)}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => {

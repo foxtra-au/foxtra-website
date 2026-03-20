@@ -118,7 +118,7 @@ export function HomeBlogSection() {
       >
         <Link 
           href="/blog"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 group"
+          className="inline-flex items-center gap-2 rounded-lg border border-yellow-400/80 bg-yellow-500 px-6 py-3 font-medium text-black transition-all duration-300 hover:bg-yellow-400 hover:border-yellow-300 group"
         >
           <TrendingUp className="h-4 w-4" />
           View All Articles

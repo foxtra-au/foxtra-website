@@ -22,6 +22,12 @@ export const navigationConfig: NavItem[] = [
         title: "What we build",
         items: [
           {
+            label: "View all services",
+            description: "Browse our service offerings in one place",
+            href: "/services",
+            iconName: "Layers",
+          },
+          {
             label: "Web Applications",
             description: "Custom web applications built for scale and performance",
             href: "/services/web-app-development",

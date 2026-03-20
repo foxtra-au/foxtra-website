@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { Circle } from "lucide-react";
+import { Calendar, Circle } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +15,7 @@ function HeroGeometric({
     description = "Crafting exceptional digital experiences through innovative design and cutting-edge technology.",
     tagline,
     showButtons = false,
+    showStats = false,
 }: {
     badge?: string;
     title1?: string;
@@ -21,6 +23,7 @@ function HeroGeometric({
     description?: string;
     tagline?: string;
     showButtons?: boolean;
+    showStats?: boolean;
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -39,7 +42,7 @@ function HeroGeometric({
         <div className="relative w-full flex items-center justify-center">
 
             <div className="relative z-10 container mx-auto px-4 md:px-6">
-                <div className="max-w-3xl mx-auto text-center">
+                <div className="mx-auto w-full max-w-5xl text-center md:max-w-6xl">
                     <motion.div
                         custom={0}
                         variants={fadeUpVariants}
@@ -59,7 +62,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
+                        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight">
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                 {title1}
                             </span>
@@ -80,7 +83,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-base sm:text-lg md:text-xl text-white/40 mb-4 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
+                        <p className="text-base sm:text-lg md:text-xl text-white/40 mb-4 leading-relaxed font-light tracking-wide mx-auto max-w-2xl px-4 sm:max-w-3xl md:max-w-4xl">
                             {description}
                         </p>
                         {tagline && (
@@ -96,30 +99,27 @@ function HeroGeometric({
                             variants={fadeUpVariants}
                             initial="hidden"
                             animate="visible"
-                            className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
+                            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-4"
                         >
-                            <button className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
-                                <span className="relative z-10 flex items-center">
-                                    Start Building Now
-                                    <svg className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                    </svg>
-                                </span>
-                            </button>
-                            
-                            <button className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/20">
-                                <span className="flex items-center">
-                                    <svg className="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                                    </svg>
-                                    Watch Demo
-                                </span>
-                            </button>
+                            <Link
+                                href="/bookings"
+                                className="inline-flex items-center justify-center rounded-sm border border-transparent px-6 py-2 text-base font-medium text-white shadow-sm transition-all duration-200 hover:shadow-lg transform hover:scale-105 drop-shadow-lg"
+                                style={{ backgroundColor: "#FF335C" }}
+                            >
+                                <Calendar className="mr-2 h-4 w-4" />
+                                Book Meeting
+                            </Link>
+                            <Link
+                                href="/showcase"
+                                className="inline-flex items-center justify-center rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md"
+                            >
+                                View portfolio
+                            </Link>
                         </motion.div>
                     )}
                 </div>
 
-                {showButtons && (
+                {showStats && (
                     <motion.div
                         custom={4}
                         variants={fadeUpVariants}

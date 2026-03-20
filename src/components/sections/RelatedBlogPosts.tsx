@@ -116,7 +116,7 @@ export function RelatedBlogPosts({
       >
         <Link 
           href="/blog"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 group text-sm"
+          className="inline-flex items-center gap-2 rounded-lg border border-yellow-400/80 bg-yellow-500 px-4 py-2 text-sm font-medium text-black transition-all duration-300 hover:bg-yellow-400 hover:border-yellow-300 group"
         >
           View All Articles
           <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />

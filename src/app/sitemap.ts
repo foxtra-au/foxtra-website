@@ -207,6 +207,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Services pages
   const servicesPages: MetadataRoute.Sitemap = [
     {
+      url: `${baseUrl}/services`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/services/api-development`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
