@@ -16,6 +16,7 @@ function HeroGeometric({
     tagline,
     showButtons = false,
     showStats = false,
+    showBackground = true,
 }: {
     badge?: string;
     title1?: string;
@@ -24,6 +25,7 @@ function HeroGeometric({
     tagline?: string;
     showButtons?: boolean;
     showStats?: boolean;
+    showBackground?: boolean;
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -40,6 +42,9 @@ function HeroGeometric({
 
     return (
         <div className="relative w-full flex items-center justify-center">
+            {showBackground && (
+                <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+            )}
 
             <div className="relative z-10 container mx-auto px-4 md:px-6">
                 <div className="mx-auto w-full max-w-5xl text-center md:max-w-6xl">
@@ -48,7 +53,7 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-2"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-1"
                     >
                         <Circle className="h-2 w-2 fill-rose-500/80" />
                         <span className="text-sm text-white/60 tracking-wide">
@@ -62,7 +67,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight">
+                        <h1 className="text-5xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight">
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                 {title1}
                             </span>
@@ -99,11 +104,11 @@ function HeroGeometric({
                             variants={fadeUpVariants}
                             initial="hidden"
                             animate="visible"
-                            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-4"
+                            className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center sm:gap-4"
                         >
                             <Link
                                 href="/bookings"
-                                className="inline-flex min-h-[42px] items-center justify-center rounded-sm border border-transparent px-6 py-2 text-base font-medium text-white shadow-sm transition-all duration-200 hover:shadow-lg transform hover:scale-105 drop-shadow-lg"
+                                className="inline-flex min-h-[42px] w-full items-center justify-center rounded-sm border border-transparent px-6 py-2 text-base font-medium text-white shadow-sm transition-all duration-200 hover:shadow-lg transform hover:scale-105 drop-shadow-lg sm:w-auto"
                                 style={{ backgroundColor: "#FF335C" }}
                             >
                                 <Calendar className="mr-2 h-4 w-4" />
@@ -111,7 +116,7 @@ function HeroGeometric({
                             </Link>
                             <Link
                                 href="/showcase"
-                                className="inline-flex min-h-[42px] items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-2 text-base font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md"
+                                className="inline-flex min-h-[42px] w-full items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-2 text-base font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md sm:w-auto"
                             >
                                 View portfolio
                             </Link>
@@ -151,7 +156,6 @@ function HeroGeometric({
                 )}
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
         </div>
     );
 }

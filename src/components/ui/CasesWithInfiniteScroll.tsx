@@ -57,19 +57,21 @@ function Case() {
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
               {clientLogos.map((logo, index) => (
-                <CarouselItem className="basis-1/4 lg:basis-1/6" key={index}>
-                  <div className="flex rounded-md aspect-square bg-white/5 backdrop-blur-sm border border-white/10 items-center justify-center p-6 hover:bg-white/10 transition-all duration-300">
+                <CarouselItem className="basis-1/3 sm:basis-1/4 lg:basis-1/6" key={index}>
+                  <div className="flex aspect-square w-full flex-col items-center justify-center rounded-md bg-white/5 backdrop-blur-sm border border-white/10 p-1.5 md:p-6 hover:bg-white/10 transition-all duration-300">
                     <div className="text-center">
-                      <div className="relative w-16 h-16 mb-2 mx-auto">
+                      <div className="relative mx-auto mb-1 w-10 h-10 md:w-12 md:h-12">
                         <Image
                           src={logo.src}
                           alt={logo.alt}
                           fill
                           className="object-contain"
-                          sizes="(max-width: 768px) 64px, 64px"
+                          sizes="48px"
                         />
                       </div>
-                      <span className="text-sm text-white/80 font-medium">{logo.name}</span>
+                      <span className="max-w-[95%] truncate text-[10px] leading-tight text-white/80 font-medium md:text-xs">
+                        {logo.name}
+                      </span>
                     </div>
                   </div>
                 </CarouselItem>

@@ -48,7 +48,7 @@ export function HomeBlogSection() {
       variants={fadeUpVariants}
       initial="hidden"
       animate="visible"
-      className="max-w-6xl mx-auto mt-20"
+      className="max-w-6xl mx-auto mt-20 px-4 sm:px-6"
     >
       <div className="text-left mb-12">
         <motion.div
