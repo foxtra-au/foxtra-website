@@ -49,6 +49,13 @@ export const navigationConfig: NavItem[] = [
             iconName: "Layers",
           },
           {
+            label: "Salesforce & CRM Solutions",
+            description:
+              "Salesforce strategy, implementation, integration and CRM optimisation",
+            href: "/salesforce-crm-solutions",
+            iconName: "Target",
+          },
+          {
             label: "Web Applications",
             description: "Custom web applications built for scale and performance",
             href: "/services/web-app-development",
