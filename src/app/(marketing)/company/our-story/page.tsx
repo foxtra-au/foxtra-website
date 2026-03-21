@@ -1,11 +1,13 @@
 import { Container } from '@/components/ui/Container'
 import { CompanyBanner } from '@/components/ui/CompanyBanner'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Our Story | Foxtra',
-  description: 'Learn about Foxtra\'s journey and mission to democratize AI technology.',
-}
+export const metadata = buildPageMetadata({
+  title: 'Our Story',
+  description: "Learn about Foxtra's journey and mission to democratize AI technology.",
+  path: '/company/our-story',
+  keywords: ['Foxtra story', 'company mission', 'AI technology', 'technology company'],
+})
 
 export default function OurStory() {
   return (

@@ -1,9 +1,10 @@
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Terms of Service | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Terms of Service',
   description: 'Terms of Service for Foxtra - AI-powered business solutions and digital transformation services.',
-}
+  path: '/terms',
+})
 
 export default function TermsOfService() {
   return (

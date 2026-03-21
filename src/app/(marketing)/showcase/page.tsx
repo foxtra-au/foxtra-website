@@ -1,12 +1,13 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, PortfolioSection } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Portfolio | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Portfolio',
   description: 'Explore our web and mobile development portfolio. Real projects delivered for businesses across accounting, healthcare, real estate, and more.',
-  robots: { index: true, follow: true },
-}
+  path: '/showcase',
+  keywords: ['portfolio', 'web development', 'mobile app development', 'case studies', 'Foxtra projects'],
+})
 
 export default function Showcase() {
   return (

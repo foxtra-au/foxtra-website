@@ -2,16 +2,14 @@ import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { DevelopmentProcess, TechnologiesMarquee, PortfolioShowcase, ServicePageWrapper, DevelopmentFeatures } from '@/components/sections'
 import { FAQ } from '@/components/ui/FaqTabs'
 import { customDevelopmentFAQ } from '@/data/faq-data'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Web App Development Sydney | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Web App Development Sydney',
   description: 'Custom web applications built for scale and performance. Full-stack web development services in Sydney, Australia.',
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+  path: '/services/web-app-development',
+  keywords: ['web app development', 'web development Sydney', 'full-stack development', 'custom web apps'],
+})
 
 export default function WebAppDevelopment() {
   const developmentFeatures = [

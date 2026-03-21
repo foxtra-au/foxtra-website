@@ -3,12 +3,14 @@ import { ServicePageWrapper, ChatDemo, AiChatAgentFeatures, RelatedBlogPosts } f
 import { AiChatWindow } from '@/components/ui/AiChatWindow'
 import { FAQ } from '@/components/ui/FaqTabs'
 import { aiChatAgentFAQ } from '@/data/faq-data'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'AI Chat Agent | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'AI Chat Agent',
   description: 'Website, WhatsApp, and in-app chat that answers, books, and qualifies.',
-}
+  path: '/services/ai-chat-agent',
+  keywords: ['AI chat', 'chatbot', 'WhatsApp bot', 'customer support automation'],
+})
 
 export default function AiChatAgent() {
   const aiChatAgentFeatures = [

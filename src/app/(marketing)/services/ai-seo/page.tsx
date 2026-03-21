@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, AiSeoFeatures, AiSeoBenefits, SeoTools } from '@/components/sections'
 import { Pricing } from '@/components/ui/PricingSectionWithComparison'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'AI SEO | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'AI SEO',
   description: 'Technical fixes, content at scale, and analytics-driven growth.',
-}
+  path: '/services/ai-seo',
+  keywords: ['AI SEO', 'search engine optimization', 'technical SEO', 'content SEO'],
+})
 
 export default function AiSeo() {
   const seoFeatures = [

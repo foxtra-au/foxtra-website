@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, AutomationFeatures, AutomationBenefits, AutomationTools } from '@/components/sections'
 import { N8nFlowDemo } from '@/components/ui/N8nFlowDemo'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Automations | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Automations',
   description: 'Trigger-based workflows that connect your apps and remove manual steps.',
-}
+  path: '/services/automations',
+  keywords: ['automation', 'workflow automation', 'Zapier', 'integrations', 'process automation'],
+})
 
 export default function Automations() {
   const automationFeatures = [

@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, SMSMarketingFeatures } from '@/components/sections'
 import { SMSTemplateDemo } from '@/components/ui/SMSTemplateDemo'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'SMS Marketing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'SMS Marketing',
   description: 'Direct SMS campaigns and notifications to reach your customers instantly.',
-}
+  path: '/services/sms-marketing',
+  keywords: ['SMS marketing', 'text messaging', 'SMS campaigns', 'SMS automation'],
+})
 
 export default function SmsMarketing() {
   const smsMarketingFeatures = [

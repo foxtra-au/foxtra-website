@@ -2,12 +2,14 @@ import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { MobileAppProcess, MobileAppTechnologies, MobileAppShowcase, ServicePageWrapper, MobileAppFeatures } from '@/components/sections'
 import { FAQ } from '@/components/ui/FaqTabs'
 import { mobileAppFAQ } from '@/data/mobile-app-faq-data'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Mobile App Development | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Mobile App Development',
   description: 'Native and cross-platform mobile solutions that deliver exceptional user experiences across iOS and Android.',
-}
+  path: '/services/mobile-app-development',
+  keywords: ['mobile app development', 'iOS apps', 'Android apps', 'cross-platform', 'React Native'],
+})
 
 export default function MobileAppDevelopment() {
   const mobileAppFeatures = [

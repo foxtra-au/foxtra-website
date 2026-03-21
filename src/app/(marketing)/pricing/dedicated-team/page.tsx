@@ -1,11 +1,13 @@
 import { ServicePageWrapper } from '@/components/sections';
 import { PricingModelDetail } from '@/components/sections/PricingModelDetail';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Dedicated Team Pricing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Dedicated Team Pricing',
   description: 'Learn about our Dedicated Team engagement model with full team dedication and direct client management.',
-};
+  path: '/pricing/dedicated-team',
+  keywords: ['dedicated team', 'team pricing', 'development team', 'engagement model'],
+});
 
 export default function DedicatedTeamPricing() {
   const modelData = {

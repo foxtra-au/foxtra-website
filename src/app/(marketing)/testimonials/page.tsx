@@ -1,12 +1,13 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, TestimonialBlock } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Client Testimonials | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Client Testimonials',
   description: 'What our clients say about working with us. Real stories from businesses that have transformed with our development and AI solutions.',
-  robots: { index: true, follow: true },
-}
+  path: '/testimonials',
+  keywords: ['client testimonials', 'customer reviews', 'Foxtra reviews', 'development feedback'],
+})
 
 export default function TestimonialsPage() {
   return (

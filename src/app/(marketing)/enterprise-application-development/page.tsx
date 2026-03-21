@@ -8,14 +8,15 @@ import {
   EnterpriseApplicationEngagements,
   EnterpriseApplicationFinalCta,
 } from '@/components/sections/enterprise-application-development';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Enterprise Application Development | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Enterprise Application Development',
   description:
     'Consulting-led enterprise application development. Scalable digital platforms, custom applications, integrations and workflow automation aligned to long-term business strategy.',
-  robots: { index: true, follow: true },
-};
+  path: '/enterprise-application-development',
+  keywords: ['enterprise applications', 'custom development', 'platform integration', 'workflow automation', 'application modernisation'],
+});
 
 export default function EnterpriseApplicationDevelopmentPage() {
   return (

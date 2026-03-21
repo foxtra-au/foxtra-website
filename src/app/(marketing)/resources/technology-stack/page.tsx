@@ -1,7 +1,7 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
 import { Container } from '@/components/ui/Container'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import {
   Code,
   Layout,
@@ -11,11 +11,12 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Technology Stack | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Technology Stack',
   description: 'Technologies and tools we use: Next.js, React, TypeScript, Tailwind CSS, Node.js, MongoDB, AWS, and more.',
-  robots: { index: true, follow: true },
-}
+  path: '/resources/technology-stack',
+  keywords: ['technology stack', 'Next.js', 'React', 'TypeScript', 'Tailwind', 'Node.js', 'AWS'],
+})
 
 interface StackCategory {
   title: string

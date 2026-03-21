@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, BlogArticleFeatures } from '@/components/sections'
 import { BlogArticleDemo } from '@/components/ui/BlogArticleDemo'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Blog & Article Writing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Blog & Article Writing',
   description: 'SEO-driven, authority-building content that engages your audience and drives organic traffic.',
-}
+  path: '/services/blog-article-writing',
+  keywords: ['blog writing', 'article writing', 'content writing', 'SEO content', 'content marketing'],
+})
 
 export default function BlogArticleWriting() {
   const blogArticleFeatures = [

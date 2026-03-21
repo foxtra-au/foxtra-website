@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import { Target, Map, Lightbulb, TrendingUp } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Tech Strategy & Roadmap | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Tech Strategy & Roadmap',
   description: 'Align business goals with scalable architecture. Develop comprehensive technology roadmaps that balance innovation with practical implementation, ensuring your tech investments drive measurable business outcomes.',
-}
+  path: '/cto-services/tech-strategy',
+  keywords: ['tech strategy', 'technology roadmap', 'digital strategy', 'IT planning'],
+})
 
 const tiles = [
   {

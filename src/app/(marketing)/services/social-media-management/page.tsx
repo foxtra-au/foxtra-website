@@ -3,12 +3,14 @@ import { ServicePageWrapper, SocialMediaFeatures, SocialMediaBenefits } from '@/
 import { SocialMediaPricing } from '@/components/ui/SocialMediaPricing'
 import { SocialMediaGallery } from '@/components/sections/SocialMediaGallery'
 import { SocialMediaBannerImage } from '@/components/ui/SocialMediaBannerImage'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Social Media Management | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Social Media Management',
   description: 'Professional social media management services that build your brand, engage your audience, and drive measurable results.',
-}
+  path: '/services/social-media-management',
+  keywords: ['social media management', 'social media strategy', 'content management', 'brand engagement'],
+})
 
 export default function SocialMediaManagement() {
   const socialMediaFeatures = [

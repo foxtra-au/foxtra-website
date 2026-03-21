@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import { Cloud, DollarSign, Settings, Zap } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Cloud & DevOps Advisory | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Cloud & DevOps Advisory',
   description: 'Optimise cost, performance, and scalability on AWS/Azure. Expert guidance on cloud architecture, infrastructure automation, and DevOps practices that reduce operational overhead while improving reliability and speed.',
-}
+  path: '/cto-services/cloud-advisory',
+  keywords: ['cloud advisory', 'DevOps', 'AWS', 'Azure', 'cloud architecture'],
+})
 
 const tiles = [
   {

@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import { Brain, Cog, BarChart3, TrendingUp } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'AI & Automation Strategy | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'AI & Automation Strategy',
   description: 'How to integrate AI agents, automation, and analytics. Transform your business operations with intelligent automation that reduces manual work, enhances decision-making, and drives measurable efficiency gains.',
-}
+  path: '/cto-services/ai-automation-strategy',
+  keywords: ['AI strategy', 'automation strategy', 'AI integration', 'business automation'],
+})
 
 const tiles = [
   {

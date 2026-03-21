@@ -1,11 +1,13 @@
 import { ServicePageWrapper } from '@/components/sections';
 import { PricingModelDetail } from '@/components/sections/PricingModelDetail';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Fixed Budget Pricing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Fixed Budget Pricing',
   description: 'Learn about our Fixed Budget engagement model with budget commitment and flexible scope delivery.',
-};
+  path: '/pricing/fixed-budget',
+  keywords: ['fixed budget', 'budget pricing', 'engagement model', 'project pricing'],
+});
 
 export default function FixedBudgetPricing() {
   const modelData = {

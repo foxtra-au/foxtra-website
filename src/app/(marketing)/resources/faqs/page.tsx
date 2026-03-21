@@ -1,13 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
 import { FAQsClient } from './FAQsClient'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'FAQs | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'FAQs',
   description: 'Frequently asked questions about our development services: custom development, mobile apps, AI voice and chat agents, and more.',
-  robots: { index: true, follow: true },
-}
+  path: '/resources/faqs',
+  keywords: ['FAQs', 'frequently asked questions', 'development services', 'AI agents', 'Foxtra support'],
+})
 
 export default function FAQsPage() {
   return (

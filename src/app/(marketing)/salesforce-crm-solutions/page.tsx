@@ -7,14 +7,15 @@ import {
   SalesforceCrmOutcomes,
   SalesforceCrmScenarios,
 } from '@/components/sections/salesforce-crm-solutions';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Salesforce & CRM Solutions | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Salesforce & CRM Solutions',
   description:
     'Consulting-led Salesforce strategy, implementation, integration and optimisation. CRM transformation, automation and managed platform services.',
-  robots: { index: true, follow: true },
-};
+  path: '/salesforce-crm-solutions',
+  keywords: ['Salesforce', 'CRM', 'CRM implementation', 'Salesforce integration', 'CRM optimisation'],
+});
 
 export default function SalesforceCrmSolutionsPage() {
   return (

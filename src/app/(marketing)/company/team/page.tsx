@@ -1,10 +1,12 @@
 import { OurTeamClient } from './OurTeamClient';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Our Team | Foxtra',
-  description: 'Meet the talented team behind Foxtra\'s innovative AI solutions.',
-};
+export const metadata = buildPageMetadata({
+  title: 'Our Team',
+  description: "Meet the talented team behind Foxtra's innovative AI solutions.",
+  path: '/company/team',
+  keywords: ['Foxtra team', 'technology team', 'AI experts', 'development team'],
+});
 
 export default function OurTeam() {
   return <OurTeamClient />;

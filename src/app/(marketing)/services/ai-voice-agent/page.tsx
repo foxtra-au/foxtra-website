@@ -3,12 +3,14 @@ import { ServicePageWrapper, AiVoiceAgentFeatures, AiVoiceBenefits, RelatedBlogP
 import { FAQ } from '@/components/ui/FaqTabs'
 import { AgentCards } from '@/components/ui/AgentCards'
 import { aiVoiceAgentFAQ } from '@/data/faq-data'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'AI Voice Agent | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'AI Voice Agent',
   description: 'Phone agents for sales, support, and scheduling with call flows and CRM notes.',
-}
+  path: '/services/ai-voice-agent',
+  keywords: ['AI voice agent', 'phone AI', 'voice bot', 'call automation', 'CRM integration'],
+})
 
 export default function AiVoiceAgent() {
   const aiVoiceAgentFeatures = [

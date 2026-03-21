@@ -7,14 +7,15 @@ import {
   DigitalTransformationBusinessImpact,
   DigitalTransformationScenarios,
 } from '@/components/sections/digital-transformation';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Digital Transformation Consulting | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Digital Transformation Consulting',
   description:
     'Modernise systems, optimise operations and build scalable digital capabilities. Consulting-led transformation roadmaps, platform modernisation and measurable outcomes.',
-  robots: { index: true, follow: true },
-};
+  path: '/digital-transformation',
+  keywords: ['digital transformation', 'platform modernisation', 'transformation consulting', 'digital strategy'],
+});
 
 export default function DigitalTransformationPage() {
   return (

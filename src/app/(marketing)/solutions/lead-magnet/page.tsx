@@ -3,12 +3,14 @@ import { LeadMagnetFeatures, LeadMagnetBenefits, LeadMagnetProcess } from '@/com
 import { LeadMagnetHero } from '@/components/sections/LeadMagnetHero'
 import { SocialMediaBannerImage } from '@/components/ui/SocialMediaBannerImage'
 import LeadMagnetPricing from '@/components/ui/LeadMagnetPricing'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Lead Magnet for Accountants | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Lead Magnet for Accountants',
   description: 'Capture leads instantly with our lead magnet plugin for accountants. Seamless lead capture, verified leads, and enhanced client confidence.',
-}
+  path: '/solutions/lead-magnet',
+  keywords: ['lead magnet', 'accountants', 'lead capture', 'lead generation', 'accounting marketing'],
+})
 
 export default function LeadMagnet() {
   const leadMagnetFeatures = [

@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, EmailMarketingFeatures } from '@/components/sections'
 import { EmailTemplateDemo } from '@/components/ui/EmailTemplateDemo'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Email Marketing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Email Marketing',
   description: 'Targeted email campaigns and automation to engage your audience.',
-}
+  path: '/services/email-marketing',
+  keywords: ['email marketing', 'email campaigns', 'email automation', 'newsletter marketing'],
+})
 
 export default function EmailMarketing() {
   const emailMarketingFeatures = [

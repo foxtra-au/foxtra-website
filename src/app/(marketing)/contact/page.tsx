@@ -2,23 +2,14 @@ import { ServicePageWrapper } from '@/components/sections';
 import { ServiceBanner } from '@/components/ui/ServiceBanner';
 import ContactForm from '@/components/ui/ContactForm';
 import { MapPin, Phone, Wrench, Mail, Handshake, HelpCircle } from 'lucide-react';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Foxtra - Get in Touch',
+export const metadata = buildPageMetadata({
+  title: 'Contact Us - Get in Touch',
   description: 'Reach out to Foxtra for AI automation solutions. Get technical support, sales inquiries, partnerships, and general questions answered by our expert team in Australia.',
+  path: '/contact',
   keywords: ['contact foxtra', 'ai automation support', 'business consultation', 'technical support', 'sales inquiry', 'australia ai support'],
-  openGraph: {
-    title: 'Contact Us | Foxtra - Get in Touch',
-    description: 'Reach out to Foxtra for AI automation solutions. Get technical support, sales inquiries, partnerships, and general questions answered by our expert team in Australia.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Contact Us | Foxtra - Get in Touch',
-    description: 'Reach out to Foxtra for AI automation solutions. Get expert support and consultation.',
-  },
-};
+});
 
 export default function Contact() {
   return (

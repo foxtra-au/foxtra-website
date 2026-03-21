@@ -1,20 +1,11 @@
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Book a Consultation | Foxtra - Schedule Your Meeting',
+export const metadata = buildPageMetadata({
+  title: 'Book a Consultation - Schedule Your Meeting',
   description: 'Schedule a free consultation with Foxtra experts to discuss your AI automation needs. Book a personalized meeting to explore AI chat agents, voice automation, and custom AI solutions for your business.',
+  path: '/bookings',
   keywords: ['book consultation', 'ai automation meeting', 'business consultation', 'foxtra meeting', 'schedule consultation', 'free ai consultation'],
-  openGraph: {
-    title: 'Book a Consultation | Foxtra - Schedule Your Meeting',
-    description: 'Schedule a free consultation with Foxtra experts to discuss your AI automation needs.',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary',
-    title: 'Book a Consultation | Foxtra - Schedule Your Meeting',
-    description: 'Schedule a free consultation with Foxtra experts to discuss your AI automation needs.',
-  },
-};
+});
 
 export default function BookingsLayout({
   children,

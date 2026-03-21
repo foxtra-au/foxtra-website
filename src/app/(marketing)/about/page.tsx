@@ -3,6 +3,14 @@ import { Button } from '@/components/ui/Button'
 import { CompanyBanner } from '@/components/ui/CompanyBanner'
 import { ServicePageWrapper } from '@/components/sections'
 import Link from 'next/link'
+import { buildPageMetadata } from '@/lib/metadata'
+
+export const metadata = buildPageMetadata({
+  title: 'About Foxtra',
+  description: "We're building the future of AI-powered web applications with cutting-edge technology and modern development practices.",
+  path: '/about',
+  keywords: ['about Foxtra', 'technology company', 'AI development', 'web applications'],
+})
 
 export default function About() {
   return (

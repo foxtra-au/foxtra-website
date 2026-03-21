@@ -1,11 +1,13 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, CloudManagementFeatures, CloudDatabaseDemo } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Cloud Management | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Cloud Management',
   description: 'Architecture, DevOps, security, and cost optimization across AWS/Azure/GCP.',
-}
+  path: '/services/cloud-management',
+  keywords: ['cloud management', 'AWS', 'Azure', 'GCP', 'DevOps', 'cloud architecture'],
+})
 
 export default function CloudManagement() {
   const cloudManagementFeatures = [

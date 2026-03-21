@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, GoogleAdsFeatures, GoogleAdsBenefits, GoogleAdsTools, GoogleAdServiceBenefit } from '@/components/sections'
 import { GoogleAdsPricing } from '@/components/ui/GoogleAdsPricing'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Google Ads | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Google Ads',
   description: 'High-intent campaigns with smart bidding and clear ROI reporting.',
-}
+  path: '/services/google-ads',
+  keywords: ['Google Ads', 'PPC', 'paid search', 'campaign optimization', 'ROI marketing'],
+})
 
 export default function GoogleAds() {
   const googleAdsFeatures = [

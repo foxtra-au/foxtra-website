@@ -7,14 +7,15 @@ import {
   AiIntelligentAutomationOutcomes,
   AiIntelligentAutomationScenarios,
 } from '@/components/sections/ai-intelligent-automation';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'AI & Intelligent Automation | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'AI & Intelligent Automation',
   description:
     'Consulting-led AI solutions and intelligent automation. AI strategy, workflow automation, predictive analytics and digital agents for scalable enterprise adoption.',
-  robots: { index: true, follow: true },
-};
+  path: '/ai-intelligent-automation',
+  keywords: ['AI automation', 'intelligent automation', 'workflow automation', 'AI strategy', 'predictive analytics', 'digital agents', 'enterprise AI'],
+});
 
 export default function AiIntelligentAutomationPage() {
   return (

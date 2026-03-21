@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
 import { Container } from '@/components/ui/Container'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Contact | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Support Contact',
   description: 'Get in touch with our team for support, sales, or partnership inquiries.',
-}
+  path: '/support/contact',
+  keywords: ['support contact', 'technical support', 'customer support', 'Foxtra support'],
+})
 
 export default function Contact() {
   return (

@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
 import { Container } from '@/components/ui/Container'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Case Studies | Foxtra',
-  description: 'Success stories from our clients and real-world results.',
-}
+export const metadata = buildPageMetadata({
+  title: 'Case Studies',
+  description: 'Success stories from our clients and real-world results from our development and AI solutions.',
+  path: '/resources/case-studies',
+  keywords: ['case studies', 'client success', 'implementation results', 'Foxtra projects'],
+})
 
 export default function CaseStudies() {
   return (

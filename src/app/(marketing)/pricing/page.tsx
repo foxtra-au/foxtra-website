@@ -1,10 +1,12 @@
 import { PricingContent } from '@/components/sections/PricingContent';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Pricing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Pricing',
   description: 'Transparent pricing for AI agents, custom development, and marketing services.',
-};
+  path: '/pricing',
+  keywords: ['pricing', 'development costs', 'AI agent pricing', 'custom development pricing'],
+});
 
 export default function Pricing() {
   return <PricingContent />;

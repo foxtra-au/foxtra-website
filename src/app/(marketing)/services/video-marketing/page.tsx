@@ -2,12 +2,14 @@ import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, VideoMarketingFeatures, UltraRealisticAIVideos } from '@/components/sections'
 import { VideoTemplateDemo } from '@/components/ui/VideoTemplateDemo'
 import { VideoIndustries } from '@/components/ui/VideoIndustries'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Video Marketing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Video Marketing',
   description: 'Engaging video content and campaigns to boost your brand visibility.',
-}
+  path: '/services/video-marketing',
+  keywords: ['video marketing', 'video content', 'video ads', 'social video'],
+})
 
 export default function VideoMarketing() {
   const videoMarketingFeatures = [

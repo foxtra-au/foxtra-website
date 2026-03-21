@@ -1,9 +1,11 @@
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Accessibility Statement | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Accessibility Statement',
   description: 'Foxtra is committed to making our website and services accessible to all users, including those with disabilities.',
-}
+  path: '/accessibility',
+  keywords: ['accessibility', 'WCAG', 'inclusive design', 'digital accessibility'],
+})
 
 export default function Accessibility() {
   return (

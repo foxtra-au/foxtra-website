@@ -2,16 +2,14 @@ import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { DevelopmentProcess, TechnologiesMarquee, ServicePageWrapper, DevelopmentFeatures } from '@/components/sections'
 import { FAQ } from '@/components/ui/FaqTabs'
 import { customDevelopmentFAQ } from '@/data/faq-data'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Portal Development | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Portal Development',
   description: 'Custom portal solutions for clients, partners, and internal teams. Secure, scalable, and user-friendly portal development.',
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+  path: '/services/portal-development',
+  keywords: ['portal development', 'customer portal', 'partner portal', 'web portal'],
+})
 
 export default function PortalDevelopment() {
   const portalFeatures = [

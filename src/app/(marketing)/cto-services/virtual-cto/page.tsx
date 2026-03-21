@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import { Briefcase, Target, TrendingUp, Users } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Virtual CTO | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Virtual CTO',
   description: 'On-demand technology leadership for startups and SMEs. Access experienced CTO expertise without the full-time cost, helping you make strategic technology decisions and build scalable solutions.',
-}
+  path: '/cto-services/virtual-cto',
+  keywords: ['virtual CTO', 'fractional CTO', 'CTO services', 'technology leadership'],
+})
 
 const tiles = [
   {

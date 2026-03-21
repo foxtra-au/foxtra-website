@@ -3,12 +3,14 @@ import { ServicePageWrapper, SocialAdsFeatures, SocialAdsBenefits } from '@/comp
 import { SocialAdsPricing } from '@/components/ui/SocialAdsPricing'
 import { SocialAdsProcess } from '@/components/sections/SocialAdsProcess'
 import { SocialMediaBannerImage } from '@/components/ui/SocialMediaBannerImage'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Social Media Advertising | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Social Media Advertising',
   description: 'Professional social media advertising services that drive targeted traffic, generate leads, and maximize your ROI across all platforms.',
-}
+  path: '/services/social-media-ads',
+  keywords: ['social media advertising', 'Facebook Ads', 'Instagram Ads', 'LinkedIn Ads', 'social ads'],
+})
 
 export default function SocialMediaAds() {
   const socialAdsFeatures = [

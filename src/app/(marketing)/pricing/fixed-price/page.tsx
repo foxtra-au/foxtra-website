@@ -1,11 +1,13 @@
 import { ServicePageWrapper } from '@/components/sections';
 import { PricingModelDetail } from '@/components/sections/PricingModelDetail';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Fixed Price Pricing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Fixed Price Pricing',
   description: 'Learn about our Fixed Price engagement model with predefined scope and guaranteed delivery.',
-};
+  path: '/pricing/fixed-price',
+  keywords: ['fixed price', 'fixed scope', 'engagement model', 'project delivery'],
+});
 
 export default function FixedPricePricing() {
   const modelData = {

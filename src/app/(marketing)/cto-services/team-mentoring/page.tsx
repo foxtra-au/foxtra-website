@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import { Users, GraduationCap, BookOpen, Code } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Team Mentoring & Leadership | Foxtra',
-  description: 'Guidance for in-house dev and product teams. Elevate your team\'s capabilities through hands-on mentoring, leadership development, and best practices that accelerate delivery and improve code quality.',
-}
+export const metadata = buildPageMetadata({
+  title: 'Team Mentoring & Leadership',
+  description: "Guidance for in-house dev and product teams. Elevate your team's capabilities through hands-on mentoring, leadership development, and best practices that accelerate delivery and improve code quality.",
+  path: '/cto-services/team-mentoring',
+  keywords: ['team mentoring', 'tech leadership', 'developer mentoring', 'engineering leadership'],
+})
 
 const tiles = [
   {

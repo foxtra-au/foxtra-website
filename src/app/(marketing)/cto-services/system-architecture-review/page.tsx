@@ -1,12 +1,14 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import { Search, Shield, Zap, TrendingUp } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'System Architecture Review | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'System Architecture Review',
   description: 'Comprehensive analysis of your technology infrastructure to identify bottlenecks, security vulnerabilities, and scalability challenges.',
-}
+  path: '/cto-services/system-architecture-review',
+  keywords: ['system architecture', 'architecture review', 'infrastructure audit', 'scalability'],
+})
 
 const tiles = [
   {

@@ -1,15 +1,13 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, ApiDevelopmentFeatures } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'QA and Testing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'QA and Testing',
   description: 'Quality assurance, automated and manual testing for reliable software. Test strategy, CI/CD pipelines, and regression testing.',
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+  path: '/services/qa-and-testing',
+  keywords: ['QA', 'quality assurance', 'software testing', 'automated testing', 'CI/CD testing'],
+})
 
 export default function QaAndTesting() {
   const qaTestingFeatures = [

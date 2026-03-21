@@ -8,14 +8,15 @@ import {
   CloudPlatformEngagements,
   CloudPlatformFinalCta,
 } from '@/components/sections/cloud-platform-engineering';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Cloud & Platform Engineering | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Cloud & Platform Engineering',
   description:
     'Consulting-led cloud architecture, DevOps, infrastructure as code and platform modernisation. Scalable, resilient platforms aligned to your business.',
-  robots: { index: true, follow: true },
-};
+  path: '/cloud-platform-engineering',
+  keywords: ['cloud architecture', 'DevOps', 'infrastructure as code', 'platform engineering', 'cloud modernisation'],
+});
 
 export default function CloudPlatformEngineeringPage() {
   return (

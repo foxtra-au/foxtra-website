@@ -1,9 +1,10 @@
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Privacy Policy',
   description: 'Privacy Policy for Foxtra - How we collect, use, and protect your personal information.',
-}
+  path: '/privacy',
+})
 
 export default function PrivacyPolicy() {
   return (

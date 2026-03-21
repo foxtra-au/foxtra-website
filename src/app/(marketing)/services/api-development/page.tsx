@@ -1,15 +1,13 @@
 import { ServiceBanner } from '@/components/ui/ServiceBanner'
 import { ServicePageWrapper, ApiDevelopmentFeatures, ApiDatabaseDemo } from '@/components/sections'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-  title: 'API Development | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'API Development',
   description: 'Design-first REST/GraphQL APIs, integrations, auth, and observability.',
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
+  path: '/services/api-development',
+  keywords: ['API development', 'REST API', 'GraphQL', 'API integration', 'backend development'],
+})
 
 export default function ApiDevelopment() {
   const apiDevelopmentFeatures = [

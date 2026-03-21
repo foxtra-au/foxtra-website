@@ -1,11 +1,13 @@
 import { ServicePageWrapper } from '@/components/sections';
 import { PricingModelDetail } from '@/components/sections/PricingModelDetail';
-import { Metadata } from 'next';
+import { buildPageMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = {
-  title: 'Time & Material Pricing | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'Time & Material Pricing',
   description: 'Learn about our Time & Material engagement model with flexible hourly billing and transparent project management.',
-};
+  path: '/pricing/time-material',
+  keywords: ['time and material', 'hourly billing', 'flexible pricing', 'project management'],
+});
 
 export default function TimeMaterialPricing() {
   const modelData = {

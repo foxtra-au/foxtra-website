@@ -3,13 +3,15 @@ import { ServicePageWrapper, AIWebsitesFeatures, AIWebsitesBenefits, PortfolioSh
 import AIWebsitesPricingNew from '@/components/ui/AIWebsitesPricingNew'
 import { AIWebsitesProcess } from '@/components/sections/AIWebsitesProcess'
 import { SocialMediaBannerImage } from '@/components/ui/SocialMediaBannerImage'
-import { Metadata } from 'next'
+import { buildPageMetadata } from '@/lib/metadata'
 import { ShoppingCart } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'AI Websites | Foxtra',
+export const metadata = buildPageMetadata({
+  title: 'AI Websites',
   description: 'Get a professional website built by AI in just 4 hours. Smart design, fast delivery, affordable pricing starting at $499.',
-}
+  path: '/services/ai-websites',
+  keywords: ['AI websites', 'AI website builder', 'fast website', 'affordable web design'],
+})
 
 export default function AIWebsites() {
   const aiWebsiteFeatures = [
