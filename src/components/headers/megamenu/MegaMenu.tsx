@@ -81,9 +81,9 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
               {openMenu === navItem.label && navItem.subMenus && (
                 <div className="absolute left-0 top-full w-auto pt-2 z-50">
                   <motion.div
-                    className="w-max border border-white/10 bg-black/90 backdrop-blur-xl px-8 py-4 shadow-2xl font-sans"
+                    className="w-max border border-white/10 bg-black/90 backdrop-blur-xl px-5 py-2.5 shadow-2xl font-sans"
                     style={{
-                      borderRadius: 16,
+                      borderRadius: 10,
                     }}
                     layoutId="menu"
                     initial={{ opacity: 0, y: -10 }}
@@ -91,16 +91,32 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="flex w-fit shrink-0 space-x-12 overflow-hidden">
-                      {navItem.subMenus.map((sub) => (
-                        <motion.div layout className={`w-full ${sub.title.toLowerCase() === 'industries' ? 'min-w-[400px]' : sub.title.toLowerCase() === 'cto services' ? 'min-w-[448px]' : sub.title.toLowerCase() === 'process & operations' ? 'min-w-[448px]' : 'min-w-[200px]'}`} key={sub.title}>
+                    <div className="flex w-fit shrink-0 space-x-7 overflow-hidden">
+                      {navItem.subMenus.map((sub) => {
+                        const subTitleLower = sub.title.toLowerCase();
+                        const isServicesColumn = subTitleLower === 'services';
+                        /** Same fixed column width as Work (Proof & credibility) */
+                        const sameWidthAsWorkColumn =
+                          isServicesColumn || subTitleLower === 'proof & credibility';
+                        const columnMinMax =
+                          subTitleLower === 'industries'
+                            ? 'min-w-[240px]'
+                            : subTitleLower === 'cto services'
+                              ? 'min-w-[269px]'
+                              : subTitleLower === 'process & operations'
+                                ? 'min-w-[269px]'
+                                : sameWidthAsWorkColumn
+                                  ? 'w-[min(21rem,calc(100vw-2rem))] min-w-0 shrink-0'
+                                  : 'min-w-[120px]';
+                        return (
+                        <motion.div layout className={`w-full ${columnMinMax}`} key={sub.title}>
                           <h3 className="mb-4 text-sm capitalize text-white/50 mega-menu-text">
                             {sub.title}
                           </h3>
                           {/* Check if this is the Industries section and has many items, or CTO Services section */}
                           {(sub.title.toLowerCase() === 'industries' && sub.items.length > 6) || 
                            (sub.title.toLowerCase() === 'cto services' && sub.items.length > 3) ? (
-                            <div className="grid grid-cols-2 gap-x-8 gap-y-8">
+                            <div className="grid grid-cols-2 gap-x-5 gap-y-5">
                               {sub.items.map((item) => {
                                 const Icon = item.icon;
                                 return (
@@ -134,9 +150,12 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                               })}
                             </div>
                           ) : (
-                            <ul className={sub.title.toLowerCase() === 'process & operations' ? 'space-y-12' : 'space-y-8'}>
+                            <ul className={subTitleLower === 'process & operations' ? 'space-y-7' : 'space-y-5'}>
                               {sub.items.map((item) => {
                                 const Icon = item.icon;
+                                const textColClass = sameWidthAsWorkColumn
+                                  ? 'min-w-0 flex-1 max-w-full leading-5'
+                                  : 'w-max leading-5';
                                 return (
                                   <li key={item.label}>
                                     <a
@@ -154,11 +173,11 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                                       <div className="flex size-8 shrink-0 items-center justify-center rounded-md border border-white/20 text-white/60 transition-all duration-300 group-hover:text-black group-hover:border-white">
                                         <Icon className="h-4 w-4 flex-none" />
                                       </div>
-                                      <div className="w-max leading-5">
-                                        <p className="shrink-0 text-sm text-white transition-colors duration-300 mega-menu-text">
+                                      <div className={textColClass}>
+                                        <p className="text-sm text-white transition-colors duration-300 mega-menu-text">
                                           {item.label}
                                         </p>
-                                        <p className="shrink-0 text-xs text-white/50 transition-colors duration-300 mega-menu-text">
+                                        <p className="text-xs text-white/50 transition-colors duration-300 mega-menu-text whitespace-normal">
                                           {item.description}
                                         </p>
                                       </div>
@@ -169,7 +188,8 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                             </ul>
                           )}
                         </motion.div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </motion.div>
                 </div>

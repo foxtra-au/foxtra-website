@@ -19,14 +19,8 @@ export const navigationConfig: NavItem[] = [
     label: "Services",
     subMenus: [
       {
-        title: "What we build",
+        title: "Services",
         items: [
-          {
-            label: "View all services",
-            description: "Browse our service offerings in one place",
-            href: "/services",
-            iconName: "Layers",
-          },
           {
             label: "Digital Transformation",
             description:
@@ -61,59 +55,6 @@ export const navigationConfig: NavItem[] = [
               "AI strategy, workflow automation and intelligent solutions for enterprise",
             href: "/ai-intelligent-automation",
             iconName: "Brain",
-          },
-          {
-            label: "Web Applications",
-            description: "Custom web applications built for scale and performance",
-            href: "/services/web-app-development",
-            iconName: "Globe",
-          },
-          {
-            label: "Mobile Applications",
-            description: "Native and cross-platform mobile solutions",
-            href: "/services/mobile-app-development",
-            iconName: "Smartphone",
-          },
-          {
-            label: "APIs & Integrations",
-            description: "Design-first REST/GraphQL APIs and integrations",
-            href: "/services/api-development",
-            iconName: "Plug",
-          },
-          {
-            label: "Cloud & DevOps",
-            description: "Deploy and scale with modern cloud infrastructure",
-            href: "/services/cloud-management",
-            iconName: "Cloud",
-          },
-        ],
-      },
-      {
-        title: "What we build",
-        items: [
-          {
-            label: "UI/UX Design",
-            description: "Design interfaces that users love and businesses trust",
-            href: "/services/custom-development",
-            iconName: "Palette",
-          },
-          {
-            label: "System Architecture & Solution Design",
-            description: "Scalable system architecture and technical solution design",
-            href: "/cto-services/system-architecture-review",
-            iconName: "Layout",
-          },
-          {
-            label: "QA and Testing",
-            description: "Quality assurance, automated and manual testing for reliable software",
-            href: "/services/qa-and-testing",
-            iconName: "FileCheck",
-          },
-          {
-            label: "Maintenance & Support",
-            description: "Keep your software running smoothly with ongoing support",
-            href: "/services/software-maintenance",
-            iconName: "Wrench",
           },
         ],
       },

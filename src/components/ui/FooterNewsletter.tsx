@@ -1,59 +1,9 @@
 'use client';
 
-import { Instagram, Linkedin, Twitter, Youtube, Facebook } from 'lucide-react';
+import { Instagram, Linkedin, Youtube, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-const footerColumns = [
-  {
-    title: 'CTO Services',
-    links: [
-      { text: 'Virtual CTO', href: '/cto-services/virtual-cto' },
-      { text: 'Tech Strategy & Roadmap', href: '/cto-services/tech-strategy' },
-      { text: 'System Architecture Review', href: '/cto-services/system-architecture-review' },
-      { text: 'Team Mentoring & Leadership', href: '/cto-services/team-mentoring' },
-      { text: 'Cloud & DevOps Advisory', href: '/cto-services/cloud-advisory' },
-      { text: 'AI & Automation Strategy', href: '/cto-services/ai-automation-strategy' },
-      { text: 'Process Setup', href: '/cto-services/process-setup' },
-      { text: 'CRM Setup', href: '/cto-services/crm-setup' },
-      { text: 'Operations Support', href: '/cto-services/operations-support' },
-    ],
-  },
-  {
-    title: 'Development',
-    links: [
-      { text: 'Custom Development', href: '/services/custom-development' },
-      { text: 'Mobile App Development', href: '/services/mobile-app-development' },
-      { text: 'AI Websites', href: '/services/ai-websites' },
-      { text: 'Pricing', href: '/pricing' },
-    ],
-  },
-  {
-    title: 'Marketing',
-    links: [
-      { text: 'AI SEO', href: '/services/ai-seo' },
-      { text: 'Google Ads', href: '/services/google-ads' },
-      { text: 'Social Media Management', href: '/services/social-media-management' },
-      { text: 'Video Marketing', href: '/services/video-marketing' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { text: 'Our Story', href: '/company/our-story' },
-      { text: 'Careers', href: '/company/careers' },
-      { text: 'Blog', href: '/blog' },
-      { text: 'Contact', href: '/contact' },
-    ],
-  },
-];
-
-const legalLinks = [
-  { text: 'Terms of Service', href: '/terms' },
-  { text: 'Privacy Policy', href: '/privacy' },
-  { text: 'Cookie Settings', href: '/cookies' },
-  { text: 'Accessibility', href: '/accessibility' },
-];
+import { footerColumns, footerLegalLinks } from '@/config/footer-links';
 
 const socialIcons = [
   { icon: <Youtube className="h-5 w-5" />, href: 'https://www.youtube.com/@foxtra-ai' },
@@ -125,9 +75,10 @@ export default function FooterNewsletter() {
             </div>
           </div>
         </div>
-        <div className="mb-16 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-          <div className="col-span-2 md:col-span-1 lg:col-span-1">
-            <div className="mb-6 flex items-center">
+        {/* 6 columns on lg+: brand (2 cols) | Services | Company | Industries | Support */}
+        <div className="mb-16 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-6 lg:gap-x-8 lg:gap-y-8">
+          <div className="col-span-2 flex flex-col lg:col-span-2">
+            <div className="mb-6 flex items-center justify-center sm:justify-start">
               <Link href="/" className="flex items-center">
                 <Image
                   src="/foxtra-logo-white-v2.png"
@@ -138,11 +89,11 @@ export default function FooterNewsletter() {
                 />
               </Link>
             </div>
-            <p className="text-white/60 mb-6 font-sans">
-              Empowering businesses with reliable, scalable, and innovative
-              AI solutions for digital transformation.
+            <p className="text-white/60 mb-6 text-center font-sans text-sm leading-relaxed sm:max-w-md sm:text-left">
+              Empowering businesses with reliable, scalable, and innovative AI solutions for
+              digital transformation.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
               {socialIcons.map((item, i) => (
                 <a
                   key={i}
@@ -156,30 +107,35 @@ export default function FooterNewsletter() {
               ))}
             </div>
           </div>
-          {footerColumns.map((col) => (
-            <div key={col.title}>
-              <h4 className="mb-4 text-lg font-semibold font-sans">{col.title}</h4>
-              <ul className="space-y-3">
-                {col.links.map((link) => (
-                  <li key={link.text}>
-                    <Link
-                      href={link.href}
-                      className="text-white/60 hover:text-white transition font-sans"
-                    >
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+
+          <nav className="contents" aria-label="Footer">
+            {footerColumns.map((col) => (
+              <div key={col.title} className="text-center sm:text-left">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-white/90 font-sans">
+                  {col.title}
+                </h4>
+                <ul className="space-y-2.5">
+                  {col.links.map((link) => (
+                    <li key={`${col.title}-${link.href}`}>
+                      <Link
+                        href={link.href}
+                        className="text-white/55 hover:text-white text-sm transition font-sans leading-snug"
+                      >
+                        {link.text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
         </div>
         <div className="border-white/10 flex flex-col items-center justify-between border-t pt-8 md:flex-row">
           <p className="text-white/60 mb-4 text-sm md:mb-0 font-sans">
-            © 2025 Foxtra. All rights reserved.
+            © {new Date().getFullYear()} Foxtra. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            {legalLinks.map((link) => (
+            {footerLegalLinks.map((link) => (
               <Link
                 key={link.text}
                 href={link.href}
