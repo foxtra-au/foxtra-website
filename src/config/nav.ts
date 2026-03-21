@@ -56,6 +56,13 @@ export const navigationConfig: NavItem[] = [
             iconName: "Target",
           },
           {
+            label: "AI & Intelligent Automation",
+            description:
+              "AI strategy, workflow automation and intelligent solutions for enterprise",
+            href: "/ai-intelligent-automation",
+            iconName: "Brain",
+          },
+          {
             label: "Web Applications",
             description: "Custom web applications built for scale and performance",
             href: "/services/web-app-development",

@@ -1,12 +1,14 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import {
   Sparkles,
   Cloud,
   Building2,
   Users,
   Brain,
+  ArrowRight,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -14,6 +16,7 @@ interface Capability {
   title: string;
   description: string;
   icon: LucideIcon;
+  href?: string;
 }
 
 const rowOne: Capability[] = [
@@ -22,18 +25,21 @@ const rowOne: Capability[] = [
     description:
       'Helping organisations modernise legacy systems and enable scalable digital operations.',
     icon: Sparkles,
+    href: '/digital-transformation',
   },
   {
     title: 'Cloud & Platform Engineering',
     description:
       'Designing resilient cloud architectures, DevOps practices and high-performance platforms.',
     icon: Cloud,
+    href: '/cloud-platform-engineering',
   },
   {
     title: 'Enterprise Application Development',
     description:
       'Building secure, integrated software solutions tailored to complex business environments.',
     icon: Building2,
+    href: '/enterprise-application-development',
   },
 ];
 
@@ -43,12 +49,14 @@ const rowTwo: Capability[] = [
     description:
       'Delivering strategic Salesforce implementations, integrations and optimisation services.',
     icon: Users,
+    href: '/salesforce-crm-solutions',
   },
   {
     title: 'AI & Intelligent Automation',
     description:
       'Embedding AI-driven automation to improve efficiency and decision-making.',
     icon: Brain,
+    href: '/ai-intelligent-automation',
   },
 ];
 
@@ -73,6 +81,17 @@ function CapabilityCard({
         </div>
         <h3 className="mb-2 text-lg font-semibold text-white">{item.title}</h3>
         <p className="text-sm leading-relaxed text-white/60">{item.description}</p>
+        {item.href && (
+          <div className="mt-4 flex justify-end">
+            <Link
+              href={item.href}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-rose-500 text-white transition-all duration-200 hover:bg-rose-600 hover:scale-105"
+              aria-label={`View ${item.title}`}
+            >
+              <ArrowRight className="h-5 w-5" aria-hidden />
+            </Link>
+          </div>
+        )}
       </div>
     </motion.div>
   );
