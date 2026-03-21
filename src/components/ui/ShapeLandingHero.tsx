@@ -60,6 +60,7 @@ function HeroGeometric({
     secondaryCtaHref = "/showcase",
     secondaryCtaLabel = "View portfolio",
     highlights,
+    showSecondaryButton = true,
 }: {
     badge?: string;
     title1?: string;
@@ -77,6 +78,8 @@ function HeroGeometric({
     secondaryCtaLabel?: string;
     /** Pill labels shown above CTA buttons (rounded-full) */
     highlights?: string[];
+    /** When false, only the primary CTA is shown */
+    showSecondaryButton?: boolean;
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -209,12 +212,14 @@ function HeroGeometric({
                                 {primaryCtaIcon ?? <Calendar className="mr-2 h-4 w-4" />}
                                 {primaryCtaLabel}
                             </Link>
-                            <Link
-                                href={secondaryCtaHref}
-                                className="inline-flex min-h-[42px] w-full items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-2 text-base font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md sm:w-auto"
-                            >
-                                {secondaryCtaLabel}
-                            </Link>
+                            {showSecondaryButton ? (
+                                <Link
+                                    href={secondaryCtaHref}
+                                    className="inline-flex min-h-[42px] w-full items-center justify-center rounded-md border border-white/20 bg-white/10 px-6 py-2 text-base font-medium text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-500 hover:text-black drop-shadow-md sm:w-auto"
+                                >
+                                    {secondaryCtaLabel}
+                                </Link>
+                            ) : null}
                         </motion.div>
                     )}
                 </div>

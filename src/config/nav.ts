@@ -35,6 +35,13 @@ export const navigationConfig: NavItem[] = [
             iconName: "RefreshCw",
           },
           {
+            label: "Cloud & Platform Engineering",
+            description:
+              "Consulting-led cloud architecture, DevOps and platform modernisation",
+            href: "/cloud-platform-engineering",
+            iconName: "Server",
+          },
+          {
             label: "Web Applications",
             description: "Custom web applications built for scale and performance",
             href: "/services/web-app-development",

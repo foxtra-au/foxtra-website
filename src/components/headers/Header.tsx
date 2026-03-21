@@ -48,6 +48,7 @@ import {
   GitBranch,
   Cog,
   RefreshCw,
+  Server,
 } from 'lucide-react'
 import { navigationConfig, authLinks, type AuthLink } from '@/config/nav'
 
@@ -94,6 +95,7 @@ const iconMap = {
   GitBranch,
   Cog,
   RefreshCw,
+  Server,
 }
 
 export function Header() {

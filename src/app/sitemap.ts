@@ -243,6 +243,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/cloud-platform-engineering`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/services/mobile-app-development`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
