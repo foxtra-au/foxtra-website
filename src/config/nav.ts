@@ -42,6 +42,13 @@ export const navigationConfig: NavItem[] = [
             iconName: "Server",
           },
           {
+            label: "Enterprise Application Development",
+            description:
+              "Scalable digital platforms, custom applications and integrations for complex business environments",
+            href: "/enterprise-application-development",
+            iconName: "Layers",
+          },
+          {
             label: "Web Applications",
             description: "Custom web applications built for scale and performance",
             href: "/services/web-app-development",
