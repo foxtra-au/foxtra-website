@@ -85,7 +85,7 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                     style={{
                       borderRadius: 10,
                     }}
-                    layoutId="menu"
+                    layoutId={`mega-menu-panel-${navItem.id}`}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -106,10 +106,18 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                               : subTitleLower === 'process & operations'
                                 ? 'min-w-[269px]'
                                 : sameWidthAsWorkColumn
-                                  ? 'w-[min(21rem,calc(100vw-2rem))] min-w-0 shrink-0'
+                                  ? 'w-[min(21rem,calc(100vw-2rem))] max-w-[min(21rem,calc(100vw-2rem))] min-w-0 shrink-0 overflow-hidden'
                                   : 'min-w-[120px]';
                         return (
-                        <motion.div layout className={`w-full ${columnMinMax}`} key={sub.title}>
+                        <motion.div
+                          layout
+                          className={
+                            sameWidthAsWorkColumn
+                              ? columnMinMax
+                              : `w-full ${columnMinMax}`
+                          }
+                          key={sub.title}
+                        >
                           <h3 className="mb-4 text-sm capitalize text-white/50 mega-menu-text">
                             {sub.title}
                           </h3>
@@ -160,7 +168,11 @@ const MegaMenu = React.forwardRef<HTMLUListElement, MegaMenuProps>(
                                   <li key={item.label}>
                                     <a
                                       href={item.href || "#"}
-                                      className="flex items-start space-x-3 group mega-menu-submenu-item"
+                                      className={
+                                        sameWidthAsWorkColumn
+                                          ? 'flex min-w-0 max-w-full items-start space-x-3 group mega-menu-submenu-item'
+                                          : 'flex items-start space-x-3 group mega-menu-submenu-item'
+                                      }
                                       onMouseEnter={(e) => {
                                         const iconDiv = e.currentTarget.querySelector('div') as HTMLElement;
                                         if (iconDiv) iconDiv.style.backgroundColor = '#FFCC02';

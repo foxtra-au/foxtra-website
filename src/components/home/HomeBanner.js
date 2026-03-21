@@ -2,7 +2,7 @@ import { HeroGeometric } from '@/components/ui/ShapeLandingHero'
 
 export function HomeBanner() {
   return (
-    <div className="relative pt-28 pb-12 md:pb-16">
+    <div className="relative pt-32 pb-12 md:pt-40 md:pb-16">
       <HeroGeometric 
         badge="Foxtra"
         title1=""
