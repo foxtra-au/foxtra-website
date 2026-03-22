@@ -14,9 +14,6 @@ export default function robots(): MetadataRoute.Robots {
           '/admin/',
           // Block all Next.js static assets and build files
           '/_next/',
-          // Block favicon and manifest files (these are in HTML head but shouldn't be crawled as pages)
-          '/favicon.ico',
-          '/favicon/',
         ],
       },
     ],

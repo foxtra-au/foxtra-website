@@ -69,6 +69,27 @@ export const metadata: Metadata = {
   manifest: '/favicon/site.webmanifest',
 }
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Foxtra',
+  url: 'https://www.foxtra.com.au',
+  logo: 'https://www.foxtra.com.au/favicon/android-chrome-512x512.png',
+  sameAs: [
+    'https://www.youtube.com/@foxtra-ai',
+    'https://www.instagram.com/foxtra.ai/',
+    'https://www.linkedin.com/company/foxtra-ai',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    areaServed: 'AU',
+    availableLanguage: 'English',
+  },
+  description:
+    'On-demand technology leadership, strategy, and development services for startups and SMEs in Australia.',
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -79,6 +100,10 @@ export default function RootLayout({
       <head>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <GoogleAnalyticsScript />
         <ClickRankVerificationScript />
       </head>
